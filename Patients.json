@@ -1,0 +1,53 @@
+{
+  "$type": "MedocScanner.Models.PatientCollection, MedocScanner",
+    "$values": [
+        {
+            "$type": "MedocScanner.Models.Patient, MedocScanner",
+            "IdPatient": "123456123",
+            "FirstNamePatient": "jon",
+            "LastNamePatient": "hindrix",
+            "DescriptionPatient": "mal au ventre coté droit",
+            "PatientGender": true,
+            "CreatedDatePatient": "2022-04-13T10:31:09.3856686+02:00",
+            "PatientBirthday": "2022-04-13T10:31:09.3856686+02:00",
+            "PatientAdress": "7000 Mons",
+            "Medicines": null
+        },
+        {
+            "$type": "MedocScanner.Models.Patient, MedocScanner",
+            "IdPatient": "456789456",
+            "FirstNamePatient": "khaled",
+            "LastNamePatient": "khelifi",
+            "DescriptionPatient": "mal a la tête ",
+            "PatientGender": true,
+            "CreatedDatePatient": "2022-04-13T10:31:09.3856686+02:00",
+            "PatientBirthday": "2022-04-13T10:31:09.3856686+02:00",
+            "PatientAdress": "chemin de la pricession 200 Bt 2-1, 7000 Mons",
+            "Medicines": null
+        },
+        {
+            "$type": "MedocScanner.Models.Patient, MedocScanner",
+            "IdPatient": "456789456",
+            "FirstNamePatient": "khaled",
+            "LastNamePatient": "khelifi",
+            "DescriptionPatient": "mal a la tête ",
+            "PatientGender": true,
+            "CreatedDatePatient": "2022-04-13T10:31:09.3856686+02:00",
+            "PatientBirthday": "2022-04-13T10:31:09.3856686+02:00",
+            "PatientAdress": "chemin de la pricession 200 Bt 2-1, 7000 Mons",
+            "Medicines": null
+        },
+        {
+            "$type": "MedocScanner.Models.Patient, MedocScanner",
+            "IdPatient": "326546549",
+            "FirstNamePatient": "toto",
+            "LastNamePatient": "test",
+            "DescriptionPatient": "mal au ventre coté gauche",
+            "PatientGender": true,
+            "CreatedDatePatient": "2022-04-13T10:31:09.3866717+02:00",
+            "PatientBirthday": "2022-04-13T10:31:09.3866717+02:00",
+            "PatientAdress": "6000 charleroi",
+            "Medicines": null
+        }
+    ]
+}

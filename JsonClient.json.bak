@@ -1,0 +1,45 @@
+{
+  "$type": "Jarditech.Models.ClientCollection, Jarditech",
+  "$values": [
+    {
+      "$type": "Jarditech.Models.Client, Jarditech",
+      "FullName": "khaled khelifi",
+      "IdClient": 1,
+      "FirstName": "khaled",
+      "LastName": "khelifi",
+      "Adress": "7000,Mons",
+      "MailClient": "khelifi.khaled55@gmail.com",
+      "PhoneClient": "0467833158"
+    },
+    {
+      "$type": "Jarditech.Models.Client, Jarditech",
+      "FullName": "mathilde dpdt",
+      "IdClient": 3,
+      "FirstName": "mathilde",
+      "LastName": "dpdt",
+      "Adress": "7000,Mons",
+      "MailClient": "mathilde@gmail.com",
+      "PhoneClient": "0467833158"
+    },
+    {
+      "$type": "Jarditech.Models.Client, Jarditech",
+      "FullName": "Filip dpdt",
+      "IdClient": 4,
+      "FirstName": "Filip",
+      "LastName": "dpdt",
+      "Adress": "Mons",
+      "MailClient": "dpdt@gmail.com",
+      "PhoneClient": "0123456789"
+    },
+    {
+      "$type": "Jarditech.Models.Client, Jarditech",
+      "FullName": "Dominique Mm",
+      "IdClient": 5,
+      "FirstName": "Dominique",
+      "LastName": "Mm",
+      "Adress": "chrarba ",
+      "MailClient": "Dominique@gmail.com",
+      "PhoneClient": "045678966655"
+    }
+  ]
+}

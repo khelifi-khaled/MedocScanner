@@ -1,0 +1,106 @@
+{
+  "$type": "Jarditech.Models.MachinCollection, Jarditech",
+  "$values": [
+    {
+      "$type": "Jarditech.Models.TailleHaie, Jarditech",
+      "Sharpening": true,
+      "IdMachine": 1,
+      "ConstructeurMachine": "reno",
+      "ReferenceMachine": "123456",
+      "DepoDate": "2022-04-06T16:15:28.7519096+02:00",
+      "RetraitDate": "2022-04-20T16:15:28.7519096+02:00",
+      "Client": {
+        "$type": "Jarditech.Models.Client, Jarditech",
+        "FullName": "maxime lover",
+        "IdClient": 0,
+        "FirstName": "maxime",
+        "LastName": "lover",
+        "Adress": "Mons",
+        "MailClient": "maxime@gmail.com",
+        "PhoneClient": "099999999999"
+      },
+      "DescriptionClient": "problem",
+      "WorkDescription": "good",
+      "Entretenir": true,
+      "Repar": true,
+      "Price": 15.99,
+      "WorkTime": 60,
+      "MachineStatus": "Retrait"
+    },
+    {
+      "$type": "Jarditech.Models.Tondeuse, Jarditech",
+      "IdMachine": 2,
+      "ConstructeurMachine": "IKJ123",
+      "ReferenceMachine": "HREF55842",
+      "DepoDate": "2022-04-06T16:15:28.8321183+02:00",
+      "RetraitDate": "2022-04-20T16:15:28.8321183+02:00",
+      "Client": {
+        "$type": "Jarditech.Models.Client, Jarditech",
+        "FullName": "mathilde dpdt",
+        "IdClient": 3,
+        "FirstName": "mathilde",
+        "LastName": "dpdt",
+        "Adress": "7000,Mons",
+        "MailClient": "mathilde@gmail.com",
+        "PhoneClient": "0467833158"
+      },
+      "DescriptionClient": "problem Test 1",
+      "WorkDescription": "Description Atelier Test1",
+      "Entretenir": true,
+      "Repar": true,
+      "Price": 0.0,
+      "WorkTime": 60,
+      "MachineStatus": "Reparation_En_Cours"
+    },
+    {
+      "$type": "Jarditech.Models.Tondeuse, Jarditech",
+      "IdMachine": 3,
+      "ConstructeurMachine": "KOW1200LLM",
+      "ReferenceMachine": "UYGER00215A",
+      "DepoDate": "2022-04-06T16:15:28.8449017+02:00",
+      "RetraitDate": "2022-04-20T16:15:28.8449017+02:00",
+      "Client": {
+        "$type": "Jarditech.Models.Client, Jarditech",
+        "FullName": "khaled khelifi",
+        "IdClient": 1,
+        "FirstName": "khaled",
+        "LastName": "khelifi",
+        "Adress": "7000,Mons",
+        "MailClient": "khelifi.khaled55@gmail.com",
+        "PhoneClient": "0467833158"
+      },
+      "DescriptionClient": "Test 123123123",
+      "WorkDescription": "Last one ",
+      "Entretenir": false,
+      "Repar": true,
+      "Price": 0.0,
+      "WorkTime": 600,
+      "MachineStatus": "Attent_Retrait"
+    },
+    {
+      "$type": "Jarditech.Models.Tondeuse, Jarditech",
+      "IdMachine": 4,
+      "ConstructeurMachine": "zefzefz",
+      "ReferenceMachine": "zefzef",
+      "DepoDate": "2022-04-06T16:15:28.8450384+02:00",
+      "RetraitDate": "2022-04-20T16:15:28.8450384+02:00",
+      "Client": {
+        "$type": "Jarditech.Models.Client, Jarditech",
+        "FullName": "Filip dpdt",
+        "IdClient": 4,
+        "FirstName": "Filip",
+        "LastName": "dpdt",
+        "Adress": "Mons",
+        "MailClient": "dpdt@gmail.com",
+        "PhoneClient": "0123456789"
+      },
+      "DescriptionClient": "ergergerg",
+      "WorkDescription": "zfezef",
+      "Entretenir": true,
+      "Repar": true,
+      "Price": 0.0,
+      "WorkTime": 22,
+      "MachineStatus": "Attent_Retrait"
+    }
+  ]
+}
