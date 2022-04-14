@@ -12,7 +12,7 @@ namespace MedocScanner.Models
 
         public Pharmacist() { }
 
-        public Pharmacist(string password = "", string firstName = "", string lastName = "", string workerEmail = "", string phoneWorker = "", string hWorkerAdress = "", string WorkerAdress = "") : base (password, firstName, lastName, workerEmail, phoneWorker, hWorkerAdress, WorkerAdress)
+        public Pharmacist(string password = "", string firstName = "", string lastName = "", string workerEmail = "", string phoneWorker = "", string hWorkerAdress = "", string WorkerAdress = "") : base(password, firstName, lastName, workerEmail, phoneWorker, hWorkerAdress, WorkerAdress)
         {
 
         }

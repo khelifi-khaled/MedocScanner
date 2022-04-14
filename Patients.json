@@ -3,51 +3,65 @@
     "$values": [
         {
             "$type": "MedocScanner.Models.Patient, MedocScanner",
-            "IdPatient": "123456123",
-            "FirstNamePatient": "jon",
+            "IdPatient": "123456789",
+            "FirstNamePatient": "Abella",
             "LastNamePatient": "hindrix",
             "DescriptionPatient": "mal au ventre coté droit",
-            "PatientGender": true,
-            "CreatedDatePatient": "2022-04-13T10:31:09.3856686+02:00",
-            "PatientBirthday": "2022-04-13T10:31:09.3856686+02:00",
-            "PatientAdress": "7000 Mons",
-            "Medicines": null
+            "PatientGender": false,
+            "PatientBirthday": "1991-04-13T12:54:04.7727929+02:00",
+            "PatientAdress": "7000 Mons"
         },
         {
             "$type": "MedocScanner.Models.Patient, MedocScanner",
-            "IdPatient": "456789456",
-            "FirstNamePatient": "khaled",
-            "LastNamePatient": "khelifi",
-            "DescriptionPatient": "mal a la tête ",
-            "PatientGender": true,
-            "CreatedDatePatient": "2022-04-13T10:31:09.3856686+02:00",
-            "PatientBirthday": "2022-04-13T10:31:09.3856686+02:00",
-            "PatientAdress": "chemin de la pricession 200 Bt 2-1, 7000 Mons",
-            "Medicines": null
+            "IdPatient": "31216498796454",
+            "FirstNamePatient": "Adriana",
+            "LastNamePatient": "koko",
+            "DescriptionPatient": "mal au ventre coté droit",
+            "PatientGender": false,
+            "PatientBirthday": "1995-04-13T12:54:04.7727929+02:00",
+            "PatientAdress": "7000 Mons"
         },
         {
             "$type": "MedocScanner.Models.Patient, MedocScanner",
-            "IdPatient": "456789456",
-            "FirstNamePatient": "khaled",
-            "LastNamePatient": "khelifi",
-            "DescriptionPatient": "mal a la tête ",
+            "IdPatient": "31216498796454",
+            "FirstNamePatient": "nadine",
+            "LastNamePatient": "lola",
+            "DescriptionPatient": "mal au ventre coté droit",
+            "PatientGender": false,
+            "PatientBirthday": "2001-04-13T12:54:04.7727929+02:00",
+            "PatientAdress": "7000 Mons"
+        },
+
+        {
+            "$type": "MedocScanner.Models.Patient, MedocScanner",
+            "IdPatient": "654213264987",
+            "FirstNamePatient": "Gioto",
+            "LastNamePatient": "Xavier",
+            "DescriptionPatient": "mal au ventre coté droit",
             "PatientGender": true,
-            "CreatedDatePatient": "2022-04-13T10:31:09.3856686+02:00",
-            "PatientBirthday": "2022-04-13T10:31:09.3856686+02:00",
-            "PatientAdress": "chemin de la pricession 200 Bt 2-1, 7000 Mons",
-            "Medicines": null
+            "PatientBirthday": "1972-04-13T12:54:04.7727929+02:00",
+            "PatientAdress": "7000 Mons"
         },
         {
             "$type": "MedocScanner.Models.Patient, MedocScanner",
             "IdPatient": "326546549",
-            "FirstNamePatient": "toto",
-            "LastNamePatient": "test",
+            "FirstNamePatient": "Adorjan",
+            "LastNamePatient": "lalllou",
             "DescriptionPatient": "mal au ventre coté gauche",
             "PatientGender": true,
-            "CreatedDatePatient": "2022-04-13T10:31:09.3866717+02:00",
-            "PatientBirthday": "2022-04-13T10:31:09.3866717+02:00",
-            "PatientAdress": "6000 charleroi",
-            "Medicines": null
+            "PatientBirthday": "1966-04-13T12:54:04.7737914+02:00",
+            "PatientAdress": "6000 charleroi"
+        },
+
+        {
+            "$type": "MedocScanner.Models.Patient, MedocScanner",
+            "IdPatient": "326546549",
+            "FirstNamePatient": "Maya",
+            "LastNamePatient": "arouase",
+            "DescriptionPatient": "mal au ventre coté gauche",
+            "PatientGender": false,
+            "PatientBirthday": "2010-04-13T12:54:04.7737914+02:00",
+            "PatientAdress": "6000 charleroi"
         }
     ]
 }

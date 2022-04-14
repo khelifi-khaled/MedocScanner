@@ -1,0 +1,23 @@
+{
+  "$type": "MedocScanner.Models.MedicineCollection, MedocScanner",
+    "$values": [
+        {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "1231231321",
+            "MedecineDescription": "Metagenics MetaRelax 180 Comprimés",
+            "MedecinePrice": 12.99
+        },
+        {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "65498756431",
+            "MedecineDescription": "Metagenics MetaRelax 100 Comprimés",
+            "MedecinePrice": 14.00
+        },
+        {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "3216549875",
+            "MedecineDescription": "perfusion algodystrophie 200 ml",
+            "MedecinePrice": 10.26
+        }
+    ]
+}

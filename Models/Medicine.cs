@@ -11,14 +11,11 @@ namespace MedocScanner.Models
         private string _idMedecine;
         private string _medecineDescription;
         private double _medecinePrice;
-        private DateTime _prescriptionMedecineDate;
-
 
         public Medicine() { }
 
-        public Medicine(DateTime prescriptionMedecineDate ,string idMedecine = "0", string medecineDescription = "", double medecinePrice = 0.0,int quantity = 0)
-        {
-            _prescriptionMedecineDate = prescriptionMedecineDate;
+        public Medicine(string idMedecine = "0", string medecineDescription = "", double medecinePrice = 0.0)
+        {            
             _idMedecine = idMedecine;
             _medecineDescription = medecineDescription;
             _medecinePrice = medecinePrice;
@@ -52,19 +49,6 @@ namespace MedocScanner.Models
                 _medecinePrice = value;
             }
         }
-
-
-        public DateTime PrescriptionMedecineDate
-        {
-            get => _prescriptionMedecineDate;
-
-
-            set
-            {
-                _prescriptionMedecineDate = value;
-            }
-        }
-
        
 
     }//end class 

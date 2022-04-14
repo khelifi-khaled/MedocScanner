@@ -63,10 +63,19 @@
     <Compile Include="Models\PatientCollection.cs" />
     <Compile Include="Models\Pharmacist.cs" />
     <Compile Include="Models\PharmacistCollection.cs" />
+    <Compile Include="Models\Prescription.cs" />
     <Compile Include="Utilities\DataAccess.cs" />
     <Compile Include="Utilities\DataAccessJsn.cs" />
     <Compile Include="Utilities\Interfaces\IDataAccess.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
+    <Compile Include="ViewModels\PatientCardVM.cs" />
+    <Compile Include="ViewModels\ScannePatientVM.cs" />
+    <Compile Include="Views\PatientCard.xaml.cs">
+      <DependentUpon>PatientCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScannePatient.xaml.cs">
+      <DependentUpon>ScannePatient.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,6 +88,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\PatientCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ScannePatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Doctor.cs" />
@@ -111,8 +128,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

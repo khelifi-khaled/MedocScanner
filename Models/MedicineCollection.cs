@@ -3,7 +3,7 @@
 
 namespace MedocScanner.Models
 {
-    public class MedicineCollection : ObservableCollection<Pharmacist>
+    public class MedicineCollection : ObservableCollection<Medicine>
     {
 
 

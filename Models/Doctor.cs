@@ -8,22 +8,15 @@ namespace MedocScanner.Models
 {
     public  class Doctor : Worker
     {
-        private List<Patient> _patientsDoctor;
+       
 
         public  Doctor() { }
 
-        public Doctor(List<Patient> patientsDoctor = null, string password = "", string firstName = "", string lastName = "", string workerEmail = "", string phoneWorker = "", string hWorkerAdress = "", string WorkerAdress = "") : base(password, firstName, lastName, workerEmail, hWorkerAdress, WorkerAdress, phoneWorker)
+        public Doctor( string password = "", string firstName = "", string lastName = "", string workerEmail = "", string phoneWorker = "", string hWorkerAdress = "", string WorkerAdress = "") : base(password, firstName, lastName, workerEmail, phoneWorker, hWorkerAdress, WorkerAdress)
         {
-            _patientsDoctor = patientsDoctor;
+
         }
 
-
-
-        public List<Patient> PatientsDoctor
-        {
-            get => _patientsDoctor;
-            set { _patientsDoctor = value; }
-        }
 
 
 
