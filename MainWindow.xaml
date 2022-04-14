@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
+        <Menu IsMainMenu="True">
+            <MenuItem Header="_Programme">
+                <Separator/>
+                <MenuItem x:Name ="Sauver" Header="Sauver" Click="Sauver_Click" />
+                <MenuItem x:Name ="Exit" Header="_Exit" Click="Exit_Click" />
+            </MenuItem>
+            <MenuItem Header="Connexion">
+                <MenuItem x:Name="Login" Header="se connecter"  Click="Login_Click"/>
+                
+            </MenuItem>
+            
+        </Menu>
         <DataGrid ItemsSource="{Binding Patients, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
                   AutoGenerateColumns="False" 
                   Margin="5 10" 

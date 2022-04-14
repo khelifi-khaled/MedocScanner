@@ -1,0 +1,25 @@
+﻿<Window x:Class="MedocScanner.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedocScanner.Views"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="300" Width="350">
+    <StackPanel>
+        
+        <!-- login -->
+        <Label Content="votre statue  :"  HorizontalAlignment="Center" Margin="0 10 10 0"/>
+        <ComboBox x:Name="ComboBoxTypesWorker" ItemsSource="{Binding Path=ListTypeWorker , UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Path=WorkerTypeStected}" Width="150" HorizontalAlignment="Center" Margin="0 30 0 0" />
+
+
+        <!--le mot de passe -->
+        <Label Content="le mot de passe :" HorizontalAlignment="Center" Margin="0 10 10 0"/>
+        <TextBox x:Name="password" Width="150" HorizontalAlignment="Center"  Text="{Binding Path=ClientEnCoursEncodage.LastName,UpdateSourceTrigger=PropertyChanged}" />
+        <!--BTN login -->
+        <Button x:Name="Btnlogin" Width="100" Margin="0 50 0 0" Click="Btnlogin_Click" Content="Login" />
+
+
+
+    </StackPanel>
+</Window>

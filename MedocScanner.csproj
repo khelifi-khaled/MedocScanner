@@ -67,9 +67,13 @@
     <Compile Include="Utilities\DataAccess.cs" />
     <Compile Include="Utilities\DataAccessJsn.cs" />
     <Compile Include="Utilities\Interfaces\IDataAccess.cs" />
+    <Compile Include="ViewModels\LoginWindowVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
     <Compile Include="ViewModels\PatientCardVM.cs" />
     <Compile Include="ViewModels\ScannePatientVM.cs" />
+    <Compile Include="Views\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PatientCard.xaml.cs">
       <DependentUpon>PatientCard.xaml</DependentUpon>
     </Compile>
@@ -88,6 +92,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PatientCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

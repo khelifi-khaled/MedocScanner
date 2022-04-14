@@ -90,5 +90,24 @@ namespace MedocScanner
 
              
         }
+
+        private void Sauver_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }//end class 
 }//end project 

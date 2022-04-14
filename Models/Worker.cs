@@ -131,6 +131,8 @@ namespace MedocScanner.Models
         /// <returns>true if password is correct</returns>
         public abstract bool IsRightPassword(string tryPassword) ;
 
+        
+
     }//end class 
 
 }//end project
