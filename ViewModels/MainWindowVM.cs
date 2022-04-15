@@ -9,48 +9,57 @@ namespace MedocScanner.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private const string DOCTORS_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\Doctors.json";
+       
 
         private const string MEDICINES_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\medicines.json";
 
         private const string PATIENTS_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\Patients.json";
 
-        private const string PHARMACISTS_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\Pharmacists.json";
+        private const string WORKERS_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\Workers.json";
+
+        private const string PRESCRIPTION_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\Prescriptions.json";
 
 
         public MainWindowVM()
         {
-            AccessjsonDoctors = new DataAccessJsn(DOCTORS_JSON_FILE, new string[] { "json" });
+           
             AccessjsonMedicine = new DataAccessJsn(MEDICINES_JSON_FILE, new string[] { "json" });
             AccessjsonPatients = new DataAccessJsn(PATIENTS_JSON_FILE, new string[] { "json" });
-            AccessjsonPharmacists = new DataAccessJsn(PHARMACISTS_JSON_FILE, new string[] { "json" });
+            AccessjsonWorkers = new DataAccessJsn(WORKERS_JSON_FILE, new string[] { "json" });
+            AccessjsonPrescriptions = new DataAccessJsn(PRESCRIPTION_JSON_FILE, new string[] { "json" });
 
-            Doctors = AccessjsonDoctors.GetDoctorsDatas();
             Medicines = AccessjsonMedicine.GetMedicinesDatas();
             Patients = AccessjsonPatients.GetPatientsDatas();
-            Pharmacists = AccessjsonPharmacists.GetPharmacistsDatas();
+            Workers = AccessjsonWorkers.GetWorkersDatas();
+            Prescriptions= AccessjsonPrescriptions.GetPrescriptionsDatas();
         }
 
             
-        public DoctorCollection Doctors { get ; set; }
+        
 
         public MedicineCollection Medicines { get ; set; }
 
         public PatientCollection Patients { get ; set; }
 
-        public PharmacistCollection Pharmacists { get ; set; }
+        public WorkerCollection Workers { get ; set; }
+
+
+        public PrescriptionCollection Prescriptions { get; set; }
 
 
 
 
 
-        public DataAccessJsn AccessjsonDoctors { get; set; }
+
 
         public DataAccessJsn AccessjsonMedicine { get; set; }
 
         public DataAccessJsn AccessjsonPatients { get; set; }
 
-        public DataAccessJsn AccessjsonPharmacists { get; set; }
+        public DataAccessJsn AccessjsonWorkers { get; set; }
+
+
+        public DataAccessJsn AccessjsonPrescriptions { get; set; }
 
 
 

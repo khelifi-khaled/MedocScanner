@@ -33,7 +33,17 @@ namespace MedocScanner.Models
 
 
        
+        public string FullName
+        {
+            get
+            {
+                return $"{_firstName} {_lastName}";
+            }
+            set
+            {
 
+            }
+        }
 
         public string Password
         {

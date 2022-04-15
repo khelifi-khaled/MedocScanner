@@ -15,7 +15,7 @@
 
         <!--le mot de passe -->
         <Label Content="le mot de passe :" HorizontalAlignment="Center" Margin="0 10 10 0"/>
-        <TextBox x:Name="password" Width="150" HorizontalAlignment="Center"  Text="{Binding Path=ClientEnCoursEncodage.LastName,UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox x:Name="password" Width="150" HorizontalAlignment="Center"/>
         <!--BTN login -->
         <Button x:Name="Btnlogin" Width="100" Margin="0 50 0 0" Click="Btnlogin_Click" Content="Login" />
 

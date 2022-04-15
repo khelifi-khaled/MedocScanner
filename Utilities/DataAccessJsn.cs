@@ -16,61 +16,36 @@ namespace MedocScanner.Utilities
 
 
         /// <summary>
-        /// retrieve Doctors's informations from the external source
+        /// retrieve Workers's informations from the external source
         /// </summary>
-        /// <returns>a DoctorCollection </returns>
-        public override DoctorCollection GetDoctorsDatas()
+        /// <returns>a WorkerCollection </returns>
+        public override WorkerCollection GetWorkersDatas()
         {
             if (IsValidAccessPath)
             {
                 string jsonFile = File.ReadAllText(AccessPath);
 
-                DoctorCollection Doctors = new DoctorCollection();
+                WorkerCollection Workers = new WorkerCollection();
 
                 //settings are necessary to get also specific properties of the derivated class
-                //and not only common properties of the base class (User)
+                //and not only common properties of the base class (Worker)
 
                 JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
 
-                Doctors = JsonConvert.DeserializeObject<DoctorCollection>(jsonFile, settings);
+                Workers = JsonConvert.DeserializeObject<WorkerCollection>(jsonFile, settings);
 
-                return Doctors;
+                return Workers;
             }
             else
             {
                 return null;
             }
-        }//end GetDoctorsDatas
+        }//end GetWorkersDatas
 
 
 
 
-        /// <summary>
-        /// retrieve Pharmacist's informations from the external source
-        /// </summary>
-        /// <returns>a PharmacistCollection </returns>
-        public override PharmacistCollection GetPharmacistsDatas()
-        {
-            if (IsValidAccessPath)
-            {
-                string jsonFile = File.ReadAllText(AccessPath);
-
-                PharmacistCollection Pharmacists = new PharmacistCollection();
-
-                //settings are necessary to get also specific properties of the derivated class
-                //and not only common properties of the base class (User)
-
-                JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
-
-                Pharmacists = JsonConvert.DeserializeObject<PharmacistCollection>(jsonFile, settings);
-
-                return Pharmacists;
-            }
-            else
-            {
-                return null;
-            }
-        }//end GetPharmacistsDatas
+        
 
 
 
@@ -135,10 +110,10 @@ namespace MedocScanner.Utilities
 
 
         /// <summary>
-        /// update all Doctors datas from the Doctor collection to the external source
+        /// update all Workers datas from the Worker collection to the external source
         /// </summary>
         /// <param name="ds"></param>
-        public override void UpdateAllDoctorsDatas(DoctorCollection ds)
+        public override void UpdateAllWorkersDatas(WorkerCollection ds)
         {
             if (IsValidAccessPath)
             {
@@ -155,26 +130,7 @@ namespace MedocScanner.Utilities
         }//end UpdateAllDoctorsDatas
 
 
-        /// <summary>
-        /// update all Pharmacists datas from the Pharmacist collection to the external source
-        /// </summary>
-        /// <param name="ps"></param>
-        public override void UpdateAllPharmacistsDatas(PharmacistCollection ps)
-        {
-            if (IsValidAccessPath)
-            {
-                JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
-
-                string json = JsonConvert.SerializeObject(ps, (Newtonsoft.Json.Formatting)System.Xml.Formatting.Indented, settings);
-
-                File.WriteAllText(AccessPath, json);
-            }
-            else
-            {
-                Console.WriteLine("UpdateAllDoctorsDatas error can't update datasource file");
-            }
-
-        }// end  UpdateAllPharmacistsDatas
+        
 
 
         /// <summary>
@@ -217,6 +173,52 @@ namespace MedocScanner.Utilities
                 Console.WriteLine("UpdateAllDoctorsDatas error can't update datasource file");
             }
         }//end UpdateAllPatientsDatas
+
+
+
+
+        public override void UpdateAllPrescriptionsDatas(PrescriptionCollection ps)
+        {
+            if (IsValidAccessPath)
+            {
+                JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+
+                string json = JsonConvert.SerializeObject(ps, (Newtonsoft.Json.Formatting)System.Xml.Formatting.Indented, settings);
+
+                File.WriteAllText(AccessPath, json);
+            }
+            else
+            {
+                Console.WriteLine("UpdateAllDoctorsDatas error can't update datasource file");
+            }
+        }
+
+
+        public override PrescriptionCollection GetPrescriptionsDatas()
+        {
+            if (IsValidAccessPath)
+            {
+                string jsonFile = File.ReadAllText(AccessPath);
+
+                PrescriptionCollection Prescriptions = new PrescriptionCollection();
+
+                //settings are necessary to get also specific properties of the derivated class
+                //and not only common properties of the base class (User)
+
+                JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+
+                Prescriptions = JsonConvert.DeserializeObject<PrescriptionCollection>(jsonFile, settings);
+
+                return Prescriptions;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+
 
     }//end class 
 }//end project 

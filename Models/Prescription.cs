@@ -26,11 +26,14 @@ namespace MedocScanner.Models
             _doctor= doctor;
         }
 
-        public Prescription(DateTime prescriptionDate, uint idPrescription = 0)
+       
+
+        public Prescription(DateTime prescriptionDate, uint idPrescription = 0, Patient patient=null)
         {
             _idPrescription = idPrescription;
             _prescriptionDate = prescriptionDate;
-            
+            _patient = patient;
+
         }
 
         public uint IdPrescription

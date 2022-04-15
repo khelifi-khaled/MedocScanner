@@ -14,18 +14,18 @@ namespace MedocScanner.Utilities.Interfaces
             set;
         }
 
-        /// <summary>
-        /// retrieve Doctors's informations from the external source
-        /// </summary>
-        /// <returns>a DoctorCollection </returns>
-        DoctorCollection GetDoctorsDatas();
-
 
         /// <summary>
-        /// retrieve Pharmacist's informations from the external source
+        /// retrieve Prescription's informations from the external source
         /// </summary>
-        /// <returns>a PharmacistCollection </returns>
-        PharmacistCollection GetPharmacistsDatas();
+        /// <returns>a PrescriptionCollection </returns>
+        PrescriptionCollection GetPrescriptionsDatas();
+
+        /// <summary>
+        /// retrieve Worker's informations from the external source
+        /// </summary>
+        /// <returns>a WorkerCollection </returns>
+        WorkerCollection GetWorkersDatas();
 
 
         /// <summary>
@@ -44,17 +44,13 @@ namespace MedocScanner.Utilities.Interfaces
         PatientCollection GetPatientsDatas();
 
 
-        /// <summary>
-        /// update all Doctors datas from the Doctor collection to the external source
-        /// </summary>
-        /// <param name="ds"></param>
-        void UpdateAllDoctorsDatas(DoctorCollection ds);
+
 
         /// <summary>
-        /// update all Pharmacists datas from the Pharmacist collection to the external source
+        /// update all Workers datas from the Worker collection to the external source
         /// </summary>
         /// <param name="ps"></param>
-        void UpdateAllPharmacistsDatas(PharmacistCollection ps);
+        void UpdateAllWorkersDatas(WorkerCollection ps);
 
 
 
@@ -71,7 +67,13 @@ namespace MedocScanner.Utilities.Interfaces
         /// </summary>
         /// <param name="ps"></param>
         void UpdateAllPatientsDatas(PatientCollection ps);
-        
+
+        /// <summary>
+        /// update all Prescriptions datas from the Prescription collection to the external source
+        /// </summary>
+        /// <param name="ps"></param>
+        void UpdateAllPrescriptionsDatas(PrescriptionCollection ps);
+
 
     }
 }

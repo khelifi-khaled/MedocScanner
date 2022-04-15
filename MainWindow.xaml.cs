@@ -58,6 +58,11 @@ namespace MedocScanner
             MainVM.Medicines.Add(m2);
 
             MainVM.AccessjsonMedicine.UpdateAllMedicinesDatas(MainVM.Medicines);
+
+
+
+
+           
         }
 
         private void TestCreateDoctor_Click(object sender, RoutedEventArgs e)
@@ -65,35 +70,28 @@ namespace MedocScanner
 
             Doctor m1 = new Doctor("Test1234","Antoine","okendi", "Antoine@gmail.com","0467833154","Pv 2 - salle 345","1000 Bruxelles") ;
             Doctor m2 = new Doctor("Test1234567", "zaki", "imponza", "imponza@yahoo.com", "0467835684", "Pv 1 - salle 854", "1040 Etterbeek");
-            MainVM.Doctors = new DoctorCollection();
-            MainVM.Doctors.Add(m1);
-            MainVM.Doctors.Add(m2);
+            MainVM.Workers = new WorkerCollection();
+            MainVM.Workers.Add(m1);
+            MainVM.Workers.Add(m2);     
 
-            Patient p1 = new Patient();
-
-            Patient p2 = new Patient();
-
-            p1=MainVM.Patients.ToList().Find(p => p.IdPatient.Equals("123456123"));
-
-            p2 = MainVM.Patients.ToList().Find(p => p.IdPatient.Equals("326546549"));
-
-         
-
-            MainVM.AccessjsonDoctors.UpdateAllDoctorsDatas(MainVM.Doctors);
-
+            Pharmacist p1 = new Pharmacist("toto123", "jon", "kaka", "jon@gmail.com", "0456789523", "Pv 6 - salle 2-1", "1000 Bruxelles");
+            Pharmacist p2 = new Pharmacist("toto123123123", "noel", "Cotton", "noel@Hotmail.com", "0400000003", "Pv 3 - salle 225", "1040 Etterbeek");
+            MainVM.Workers.Add(p1);
+            MainVM.Workers.Add(p2);
+            MainVM.AccessjsonWorkers.UpdateAllWorkersDatas(MainVM.Workers);
         }
 
         private void TestPatientcodebare_Click(object sender, RoutedEventArgs e)
         {
-            ScannePatient p = new ScannePatient(MainVM.Patients);
-            p.Show();
+            
 
-             
+
+
         }
 
         private void Sauver_Click(object sender, RoutedEventArgs e)
         {
-
+          
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -105,7 +103,8 @@ namespace MedocScanner
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-
+            LoginWindow Login = new LoginWindow(MainVM.Workers, MainVM.Patients, MainVM.Medicines);
+            Login.Show();
         }
 
         

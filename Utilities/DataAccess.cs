@@ -81,18 +81,13 @@ namespace MedocScanner.Utilities
         }//end CheckAccessPath
 
 
-        /// <summary>
-        /// retrieve Doctors's informations from the external source
-        /// </summary>
-        /// <returns>a DoctorCollection </returns>
-       public abstract DoctorCollection GetDoctorsDatas();
-
+       
 
         /// <summary>
         /// retrieve Pharmacist's informations from the external source
         /// </summary>
         /// <returns>a PharmacistCollection </returns>
-        public abstract PharmacistCollection GetPharmacistsDatas();
+        public abstract WorkerCollection  GetWorkersDatas();
 
 
         /// <summary>
@@ -111,17 +106,13 @@ namespace MedocScanner.Utilities
         public abstract PatientCollection GetPatientsDatas();
 
 
-        /// <summary>
-        /// update all Doctors datas from the Doctor collection to the external source
-        /// </summary>
-        /// <param name="ds"></param>
-        public abstract void UpdateAllDoctorsDatas(DoctorCollection ds);
+        
 
         /// <summary>
         /// update all Pharmacists datas from the Pharmacist collection to the external source
         /// </summary>
         /// <param name="ps"></param>
-        public abstract void UpdateAllPharmacistsDatas(PharmacistCollection ps);
+        public abstract void UpdateAllWorkersDatas(WorkerCollection ps);
 
 
 
@@ -138,6 +129,12 @@ namespace MedocScanner.Utilities
         /// </summary>
         /// <param name="ps"></param>
         public abstract void UpdateAllPatientsDatas(PatientCollection ps);
+
+
+        public abstract void UpdateAllPrescriptionsDatas(PrescriptionCollection ps);
+
+
+        public abstract PrescriptionCollection GetPrescriptionsDatas();
 
 
     }//end class 

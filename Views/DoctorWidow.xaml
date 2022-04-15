@@ -1,0 +1,49 @@
+﻿<Window x:Class="MedocScanner.Views.DoctorWidow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedocScanner.Views" xmlns:viewmodels="clr-namespace:MedocScanner.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:DoctorWindowVM}"
+        mc:Ignorable="d"
+        Title="DoctorWidow" Height="450" Width="450">
+    <StackPanel>
+        <Menu IsMainMenu="True">
+            <MenuItem Header="_Programme">
+                <Separator/>
+                <MenuItem x:Name ="Sauver" Header="Sauver" Click="Sauver_Click" />
+                <MenuItem x:Name ="se_deconnecter" Header="_Exit" Click="se_deconnecter_Click"/>
+            </MenuItem>
+
+        </Menu>
+        <Grid Height="387">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+
+
+                <TextBlock Text="Bonjour Docteur " Margin="0 0 0 0 " Width="104" Height="33"/>
+
+                <!--nom + prenom de docteur  -->
+                
+                <TextBlock Width="152" Height="39" Text="{Binding DoctorConnected.FullName, UpdateSourceTrigger=PropertyChanged}" Margin="50 0 0 0"/>
+
+                
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" >
+                <Button
+                x:Name="ButtonNew_prescription"
+                Width="183"
+                Margin="5,150,5,0"
+                Click="ButtonNew_prescription_Click"
+                Content="nouvelle prescription médicale" />
+
+
+            </StackPanel>
+        </Grid>
+
+    </StackPanel>
+</Window>

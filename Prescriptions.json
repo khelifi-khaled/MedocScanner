@@ -1,0 +1,12 @@
+{
+  "$type": "MedocScanner.Models.PrescriptionCollection, MedocScanner",
+  "$values": [
+    {
+      "$type": "MedocScanner.Models.Prescription, MedocScanner",
+      "IdPrescription": 1,
+      "PrescriptionDate": "2022-04-15T04:23:03.469316+02:00",
+      "Patient": null,
+      "Doctor": null
+    }
+  ]
+}
