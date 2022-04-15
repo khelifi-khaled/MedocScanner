@@ -11,11 +11,12 @@ namespace MedocScanner.ViewModels
 
         public Worker _doctorConnected; 
 
-        public DoctorWindowVM(Worker doctorConnected , PatientCollection patients, MedicineCollection medicines )
+        public DoctorWindowVM(Worker doctorConnected , PatientCollection patients, MedicineCollection medicines, PrescriptionCollection pescriptions)
         {
             DoctorConnected=doctorConnected;
             Patients=patients;
             Medicines = medicines;
+            Pescriptions = pescriptions;
         }
 
         public Worker DoctorConnected
@@ -27,6 +28,11 @@ namespace MedocScanner.ViewModels
                 OnPropertyChanged(nameof(DoctorConnected));
             }
         }
+
+
+
+        public PrescriptionCollection Pescriptions { get; set; }
+
 
         public PatientCollection Patients { get; set; }
 

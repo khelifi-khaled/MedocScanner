@@ -1,9 +1,5 @@
-﻿using Newtonsoft.Json.Converters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+
 
 namespace MedocScanner.Models
 {
@@ -12,28 +8,32 @@ namespace MedocScanner.Models
         private uint _idPrescription;
         private DateTime _prescriptionDate ;
         private Patient _patient;
-        private Doctor _doctor;
+        private Worker _doctor;
+        private MedicineCollection _medicines;
 
 
 
         public Prescription() { }
 
-        public Prescription(DateTime prescriptionDate, uint idPrescription = 0,  Patient patient = null, Doctor doctor = null)
+        public Prescription(DateTime prescriptionDate, uint idPrescription = 0,  Patient patient = null, Worker doctor = null, MedicineCollection medicines=null)
         {
             _idPrescription = idPrescription;
             _prescriptionDate = prescriptionDate;
             _patient= patient;
             _doctor= doctor;
+            _medicines= medicines;
         }
 
        
 
-        public Prescription(DateTime prescriptionDate, uint idPrescription = 0, Patient patient=null)
-        {
-            _idPrescription = idPrescription;
-            _prescriptionDate = prescriptionDate;
-            _patient = patient;
 
+        public MedicineCollection Medicines
+        {
+            get => _medicines;
+            set
+            {
+                _medicines = value;
+            }
         }
 
         public uint IdPrescription
@@ -64,7 +64,7 @@ namespace MedocScanner.Models
             }
         }
 
-        public Doctor Doctor 
+        public Worker Doctor 
         {
             get => _doctor;
             set

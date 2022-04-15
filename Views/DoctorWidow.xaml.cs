@@ -13,9 +13,9 @@ namespace MedocScanner.Views
     {
         public DoctorWindowVM DoctorVM { get; set; }
 
-        public DoctorWidow(Worker doctorConnected, PatientCollection patients, MedicineCollection medicines)
+        public DoctorWidow(Worker doctorConnected,PatientCollection patients,MedicineCollection medicines, PrescriptionCollection pescriptions)
         {
-            DoctorVM = new DoctorWindowVM(doctorConnected, patients, medicines);
+            DoctorVM = new DoctorWindowVM(doctorConnected, patients, medicines, pescriptions);
             DataContext = DoctorVM;
             InitializeComponent();
         }
@@ -36,7 +36,8 @@ namespace MedocScanner.Views
 
         private void ButtonNew_prescription_Click(object sender, RoutedEventArgs e)
         {
-
+            ScannePatientWindow ScannePatient = new ScannePatientWindow(DoctorVM.DoctorConnected, DoctorVM.Patients, DoctorVM.Medicines , DoctorVM.Pescriptions);
+            ScannePatient.Show();
         }
     }
 }

@@ -31,6 +31,13 @@ namespace MedocScanner.Models
           
         }
 
+
+        public string FullName
+        {
+            get { return $"{_firstNamePatient} {_lastNamePatient}"; }
+            set { }
+        }
+
         public string IdPatient
         {
             get =>  _idPatient; 

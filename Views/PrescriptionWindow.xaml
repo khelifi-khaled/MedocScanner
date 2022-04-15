@@ -1,0 +1,33 @@
+﻿<Window x:Class="MedocScanner.Views.PrescriptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedocScanner.Views" xmlns:viewmodels="clr-namespace:MedocScanner.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:PrescriptionWindowVM}"
+        mc:Ignorable="d"
+        Title="PrescriptionWindow" Height="450" Width="800">
+    <StackPanel>
+        <Grid Height="450">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <!--N° d'ordonnance-->
+                <Label Content="N° d'ordonnance:" Margin="10 0 0 0"/>
+                <TextBox x:Name="IdPrescription" Width="200" IsReadOnly="True" Background="#eee" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.IdPrescription, UpdateSourceTrigger=PropertyChanged}"/>
+                <!--le nom + prenom de Médecin-->
+                <Label Content="Médecin:" Margin="10 0 0 0"/>
+                <TextBox x:Name="FullNameDoctor" Width="200" IsReadOnly="True" Background="#eee" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Doctor.FullName, UpdateSourceTrigger=PropertyChanged}"/>
+                <!--le nom + prenom de Patient -->
+                <Label Content="Patient :" Margin="10 0 0 0"/>
+                <TextBox x:Name="s" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Patient.FullName, UpdateSourceTrigger=PropertyChanged}"  />
+                <!--La Date d'ordonnance -->
+                <Label Content="La Date d'ordonnance :" Margin="10 0 0 0"/>
+                <TextBox x:Name="PrescriptionDate" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.PrescriptionDate, UpdateSourceTrigger=PropertyChanged}"  />
+            </StackPanel>
+        </Grid>
+        
+
+    </StackPanel>
+</Window>

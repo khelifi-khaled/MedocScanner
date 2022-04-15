@@ -103,7 +103,7 @@ namespace MedocScanner
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow Login = new LoginWindow(MainVM.Workers, MainVM.Patients, MainVM.Medicines);
+            LoginWindow Login = new LoginWindow(MainVM.Workers, MainVM.Patients, MainVM.Medicines, MainVM.Prescriptions);
             Login.Show();
         }
 

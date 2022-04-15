@@ -27,9 +27,9 @@ namespace MedocScanner.Views
 
 
 
-        public LoginWindow(WorkerCollection workers, PatientCollection patients, MedicineCollection medicines)
+        public LoginWindow(WorkerCollection workers, PatientCollection patients, MedicineCollection medicines, PrescriptionCollection prescriptions)
         {
-            LoginVM=new LoginWindowVM(workers, patients, medicines); 
+            LoginVM=new LoginWindowVM(workers, patients, medicines, prescriptions); 
             DataContext=LoginVM;
             InitializeComponent();
         }
@@ -48,7 +48,7 @@ namespace MedocScanner.Views
 
                         if (LoginVM.WorkerSelected!=null)//if worker is not null sow the password is correct  
                         {
-                            DoctorWidow doctor = new DoctorWidow(LoginVM.WorkerSelected,LoginVM.Patients,LoginVM.Medicines);
+                            DoctorWidow doctor = new DoctorWidow(LoginVM.WorkerSelected,LoginVM.Patients,LoginVM.Medicines,LoginVM.Prescriptions);
                             doctor.Show();
                             this.Close();
                         }

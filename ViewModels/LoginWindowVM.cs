@@ -16,11 +16,12 @@ namespace MedocScanner.ViewModels
 
         private string[] _listTypeWorker = { "Doctor", "Pharmacist"};
 
-        public LoginWindowVM(WorkerCollection workers , PatientCollection patients,MedicineCollection medicines)
+        public LoginWindowVM(WorkerCollection workers , PatientCollection patients,MedicineCollection medicines, PrescriptionCollection prescriptions)
         {
             Workers = workers;
             Patients = patients;
             Medicines = medicines;
+            Prescriptions = prescriptions;
         }
 
 
@@ -34,6 +35,7 @@ namespace MedocScanner.ViewModels
                 OnPropertyChanged(nameof(ListTypeWorker));
             }
         }
+        public PrescriptionCollection Prescriptions { get; set; }
 
         public PatientCollection Patients { get; set; }
 

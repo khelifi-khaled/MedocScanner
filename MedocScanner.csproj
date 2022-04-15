@@ -70,11 +70,19 @@
     <Compile Include="ViewModels\DoctorWindowVM.cs" />
     <Compile Include="ViewModels\LoginWindowVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
+    <Compile Include="ViewModels\PrescriptionWindowVM.cs" />
+    <Compile Include="ViewModels\ScannePatientWindowVM.cs" />
     <Compile Include="Views\DoctorWidow.xaml.cs">
       <DependentUpon>DoctorWidow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrescriptionWindow.xaml.cs">
+      <DependentUpon>PrescriptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScannePatientWindow.xaml.cs">
+      <DependentUpon>ScannePatientWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -93,6 +101,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PrescriptionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ScannePatientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
