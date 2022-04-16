@@ -1,0 +1,39 @@
+﻿<Window x:Class="MedocScanner.Views.MedocWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodels="clr-namespace:MedocScanner.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MedocWindowVM}"
+        mc:Ignorable="d"
+        Title="MedocWindow" Height="300" Width="250">
+    <StackPanel Margin="0,0,0,43">
+
+        <!--Num de Médicament -->
+        <Label Content="scannez votre Médicament  ici SVP " Margin=" 0 0 0 0" Width="206"/>
+        <TextBox x:Name="TxtIdMedicin" TextChanged="TxtIdMedicin_TextChanged" Margin=" 0 10 0 0" Height="20" Width="219"/>
+        <!--La description de Médicament -->
+        <Label Content="La description de Médicament : " Margin=" 0 0 0 0" Width="206"/>
+        <TextBox x:Name="TxtMedecineDescription"  Margin=" 0 10 0 0" Height="20" Width="219"  IsReadOnly="True" Text="{Binding Path=MedicineSelected.MedecineDescription, UpdateSourceTrigger=PropertyChanged}" />
+        <!--Le Prix de Médicament -->
+        <Label Content="Le prix de Médicament HTVA : " Margin=" 0 0 0 0" Width="206"/>
+        <TextBox x:Name="TxtMedecinePrice"  Margin=" 0 10 0 0" Height="20" Width="219"  IsReadOnly="True" Text="{Binding Path=MedicineSelected.MedecinePrice, UpdateSourceTrigger=PropertyChanged}" />
+
+        
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+
+            <Button
+                x:Name="AddMedoc"
+                Width="100"
+                Margin="5,25,5,0"
+                Click="AddMedoc_Click"
+                Content="Ajouter" />
+            <Button
+                x:Name="CancelAddMedoc"
+                Width="100"
+                Margin="5,25,5,0"
+                Click="CancelAddMedoc_Click"
+                Content="Anuler" Height="20"/>
+
+        </StackPanel>
+    </StackPanel>
+    
+</Window>

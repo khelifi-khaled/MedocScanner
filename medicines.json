@@ -11,7 +11,19 @@
             "$type": "MedocScanner.Models.Medicine, MedocScanner",
             "IdMedecine": "65498756431",
             "MedecineDescription": "Metagenics MetaRelax 100 Comprimés",
-            "MedecinePrice": 14.00
+            "MedecinePrice": 14.25
+        },
+        {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "351654987656",
+            "MedecineDescription": "Bande adhésive non-tissé - 10mx5cm",
+            "MedecinePrice": 1.69
+        },
+        {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "316549841321",
+            "MedecineDescription": "Enterofytol 60 capsules",
+            "MedecinePrice": 19.89
         },
         {
             "$type": "MedocScanner.Models.Medicine, MedocScanner",

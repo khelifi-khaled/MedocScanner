@@ -36,6 +36,15 @@ namespace MedocScanner.ViewModels
             }
         }
 
+        public PrescriptionCollection Prescriptions { get; set; }
+
+        public Patient PatientSelected { get; set; }
+
+        public Worker DoctorConnected { get; set; }
+
+        public PatientCollection Patients { get; set; }
+
+        public MedicineCollection PatientMedicines { get; set; }
 
 
 

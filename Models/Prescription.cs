@@ -11,8 +11,6 @@ namespace MedocScanner.Models
         private Worker _doctor;
         private MedicineCollection _medicines;
 
-
-
         public Prescription() { }
 
         public Prescription(DateTime prescriptionDate, uint idPrescription = 0,  Patient patient = null, Worker doctor = null, MedicineCollection medicines=null)
@@ -72,6 +70,8 @@ namespace MedocScanner.Models
                 _doctor = value;
             }
         }
+
+       
 
 
     }//end class 

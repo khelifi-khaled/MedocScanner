@@ -30,5 +30,20 @@ namespace MedocScanner.Views
             DataContext=PrescriptionVM;
             InitializeComponent();
         }
+
+       
+
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
+
+        private void NouveauMedoc_Click(object sender, RoutedEventArgs e)
+        {
+            MedocWindow medocWindow = new MedocWindow(PrescriptionVM.ThisPrescription, PrescriptionVM.Medicines);
+            medocWindow.Show();   
+        }
     }
 }

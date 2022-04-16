@@ -7,27 +7,65 @@
         mc:Ignorable="d"
         Title="PrescriptionWindow" Height="450" Width="800">
     <StackPanel>
-        <Grid Height="450">
+        <Grid Height="359" Width="768">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
+            <StackPanel Grid.Column="0" Margin="0,0,0,80">
                 <!--N° d'ordonnance-->
                 <Label Content="N° d'ordonnance:" Margin="10 0 0 0"/>
                 <TextBox x:Name="IdPrescription" Width="200" IsReadOnly="True" Background="#eee" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.IdPrescription, UpdateSourceTrigger=PropertyChanged}"/>
-                <!--le nom + prenom de Médecin-->
-                <Label Content="Médecin:" Margin="10 0 0 0"/>
-                <TextBox x:Name="FullNameDoctor" Width="200" IsReadOnly="True" Background="#eee" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Doctor.FullName, UpdateSourceTrigger=PropertyChanged}"/>
-                <!--le nom + prenom de Patient -->
-                <Label Content="Patient :" Margin="10 0 0 0"/>
-                <TextBox x:Name="s" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Patient.FullName, UpdateSourceTrigger=PropertyChanged}"  />
                 <!--La Date d'ordonnance -->
                 <Label Content="La Date d'ordonnance :" Margin="10 0 0 0"/>
                 <TextBox x:Name="PrescriptionDate" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.PrescriptionDate, UpdateSourceTrigger=PropertyChanged}"  />
+                <!--le nom + prenom de Médecin-->
+                <Label Content="Médecin:" Margin="10 0 0 0"/>
+                <TextBox x:Name="FullNameDoctor" Width="200" IsReadOnly="True"  HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Doctor.FullName, UpdateSourceTrigger=PropertyChanged}"/>
+                <!--le nom + prenom de Patient -->
+                <Label Content="Patient :" Margin="10 0 0 0"/>
+                <TextBox x:Name="PatientFullName" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Patient.FullName, UpdateSourceTrigger=PropertyChanged}"  />
+                <!--Discription de Patient -->
+                <Label Content="Discription de Patient :" Margin="10 0 0 0"/>
+                <TextBox x:Name="PatientDiscription" Width="200"  HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Patient.DescriptionPatient, UpdateSourceTrigger=PropertyChanged}" Height="68"  />
+
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="0,0,0,80">
+                <DataGrid ItemsSource="{Binding ThisPrescription.Medicines, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                  AutoGenerateColumns="False" 
+                  Margin="5 10" 
+                  ScrollViewer.CanContentScroll="True" 
+                  CanUserAddRows="False"
+                  HorizontalAlignment="Center"
+                  SelectionUnit="FullRow"
+                  CanUserDeleteRows="False" 
+                  Height="Auto"  
+                  AlternatingRowBackground="LightCyan">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="barcode" Binding="{Binding IdMedecine}"/>
+                        <DataGridTextColumn Header="Medecine Description " Binding="{Binding MedecineDescription}"/>
+                        <DataGridTextColumn Header="Medecine Price" Binding="{Binding MedecinePrice}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </Grid>
-        
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            
+            <Button
+                x:Name="ButtonSave"
+                Width="100"
+                Margin="5,0,5,0"
+                Click="ButtonSave_Click"
+                Content="Sauver" />
+            <Button
+                x:Name="NouveauMedoc"
+                Width="100"
+                Margin="5,0,5,0"
+                Click="NouveauMedoc_Click"
+                Content="NouveauMedoc" />
+            
+        </StackPanel>
+
 
     </StackPanel>
 </Window>

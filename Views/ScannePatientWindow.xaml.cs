@@ -53,9 +53,14 @@ namespace MedocScanner.Views
                 }
                 else
                 {
-                    MessageBox.Show($"cher docteur {scannePatientVM.DoctorConnected.FullName}ce patient n'existe pas dans le fichier", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show($"cher docteur {scannePatientVM.DoctorConnected.FullName}ce patient n'existe pas dans le fichier json ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
+        }
+
+        private void Btn_Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
