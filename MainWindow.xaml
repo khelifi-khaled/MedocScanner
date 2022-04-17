@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:MedocScanner"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/logo_small_icon_only.png" />
+    </Window.Background>
     <StackPanel>
         <Menu IsMainMenu="True">
             <MenuItem Header="_Programme">
@@ -19,28 +22,7 @@
             </MenuItem>
             
         </Menu>
-        <DataGrid ItemsSource="{Binding Patients, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
-                  AutoGenerateColumns="False" 
-                  Margin="5 10" 
-                  ScrollViewer.CanContentScroll="True" 
-                  CanUserAddRows="False"
-                  HorizontalAlignment="Center"
-                  SelectionUnit="FullRow"
-                  CanUserDeleteRows="False" 
-                  Height="Auto"  
-                  AlternatingRowBackground="LightCyan">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="barcode" Binding="{Binding IdPatient}"/>
-                <DataGridTextColumn Header="prénom " Binding="{Binding FirstNamePatient}"/>
-                <DataGridTextColumn Header="nom" Binding="{Binding LastNamePatient}"/>
-                <DataGridTextColumn Header="Discription" Binding="{Binding DescriptionPatient}"/>
-                <DataGridTextColumn Header="genre" Binding="{Binding PatientGender}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="TestCreatePatient" Content="Test Create Patient" Width="150" Height="20" HorizontalAlignment="Center"  Click="TestCreatePatient_Click" Margin="650 0 0 0"  />
-        <Button x:Name="TestCreateMedicine" Content="Test Create Medicine" Width="150" Height="20" HorizontalAlignment="Center"  Click="TestCreateMedicine_Click" Margin="650 0 0 0"  />
-        <Button x:Name="TestCreateDoctor" Content="Test Create Doctor" Width="150" Height="20" HorizontalAlignment="Center"  Click="TestCreateDoctor_Click" Margin="650 0 0 0"  />
+       
         
-
     </StackPanel>
 </Window>

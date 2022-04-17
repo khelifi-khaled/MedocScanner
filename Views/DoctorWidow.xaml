@@ -10,8 +10,8 @@
         <Menu IsMainMenu="True">
             <MenuItem Header="_Programme">
                 <Separator/>
-                <MenuItem x:Name ="Sauver" Header="Sauver" Click="Sauver_Click" />
-                <MenuItem x:Name ="se_deconnecter" Header="_Exit" Click="se_deconnecter_Click"/>
+                <MenuItem x:Name ="se_deconnecter" Header="se deconnecter" Click="se_deconnecter_Click"/>
+                <MenuItem x:Name ="Exit" Header="Exit" Click="Exit_Click" />
             </MenuItem>
 
         </Menu>
