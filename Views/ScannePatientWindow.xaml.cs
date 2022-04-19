@@ -1,18 +1,8 @@
 ﻿using MedocScanner.Models;
 using MedocScanner.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace MedocScanner.Views
 {
@@ -21,11 +11,11 @@ namespace MedocScanner.Views
     /// </summary>
     public partial class ScannePatientWindow : Window
     {
-        ScannePatientWindowVM scannePatientVM { get; set; }
+        public ScannePatientWindowVM scannePatientVM { get; set; }
 
-        public ScannePatientWindow(Worker doctorConnected, PatientCollection patients, MedicineCollection medicines,PrescriptionCollection prescriptions)
+        public ScannePatientWindow(PatientCollection patients, MedicineCollection medicines, Prescription prescriptionForPatient, PrescriptionCollection prescriptions)
         {
-            scannePatientVM=new ScannePatientWindowVM(doctorConnected, patients, medicines, prescriptions);
+            scannePatientVM=new ScannePatientWindowVM(patients, medicines, prescriptionForPatient, prescriptions);
             DataContext=scannePatientVM;
             InitializeComponent();
         }
@@ -38,22 +28,16 @@ namespace MedocScanner.Views
 
                 if (scannePatientVM.PatientSelected!=null)
                 {
-                    //Empty Medicine Collection  for our patient 
-                    scannePatientVM.PatientMedicines = new MedicineCollection();
+                    //sending the patient selected to our prescription 
+                    scannePatientVM.PrescriptionForPatient.Patient = scannePatientVM.PatientSelected;
 
-                    //Prescription with(Today date + PrescriptionId +  our patient + the doctor connected + Empty Medicine Collection of our patient)
-                    scannePatientVM.PrescriptionForPatient = new Prescription(DateTime.Now, scannePatientVM.Prescriptions.GetPrescriptionId(), scannePatientVM.PatientSelected, scannePatientVM.DoctorConnected, scannePatientVM.PatientMedicines);
-
-                    //Making the new prescription in out main Prescription collection    
-                    scannePatientVM.Prescriptions.Add(scannePatientVM.PrescriptionForPatient);
-
-                    PrescriptionWindow NewPrescriptionWindow = new PrescriptionWindow(scannePatientVM.PrescriptionForPatient, scannePatientVM.Medicines);
+                    PrescriptionWindow NewPrescriptionWindow = new PrescriptionWindow(scannePatientVM.PrescriptionForPatient, scannePatientVM.Medicines, scannePatientVM.Prescriptions);
                     NewPrescriptionWindow.Show();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show($"cher docteur {scannePatientVM.DoctorConnected.FullName}ce patient n'existe pas dans le fichier json ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show($"cher docteur {scannePatientVM.PrescriptionForPatient.Doctor.FullName} ce patient n'existe pas dans le fichier json ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }

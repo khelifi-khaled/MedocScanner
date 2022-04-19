@@ -13,7 +13,6 @@
         <Menu IsMainMenu="True">
             <MenuItem Header="_Programme">
                 <Separator/>
-                <MenuItem x:Name ="Sauver" Header="Sauver" Click="Sauver_Click" />
                 <MenuItem x:Name ="Exit" Header="_Exit" Click="Exit_Click" />
             </MenuItem>
             <MenuItem Header="Connexion">

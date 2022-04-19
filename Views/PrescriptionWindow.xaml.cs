@@ -1,18 +1,6 @@
 ﻿using MedocScanner.Models;
 using MedocScanner.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MedocScanner.Views
 {
@@ -24,9 +12,9 @@ namespace MedocScanner.Views
         public PrescriptionWindowVM PrescriptionVM { get; set; }
 
 
-        public PrescriptionWindow(Prescription thisPrescription, MedicineCollection medicines)
+        public PrescriptionWindow(Prescription thisPrescription, MedicineCollection medicines, PrescriptionCollection prescriptions)
         {
-            PrescriptionVM = new PrescriptionWindowVM(thisPrescription, medicines) ;
+            PrescriptionVM = new PrescriptionWindowVM(thisPrescription, medicines, prescriptions) ;
             DataContext=PrescriptionVM;
             InitializeComponent();
         }
@@ -35,7 +23,8 @@ namespace MedocScanner.Views
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-
+            PrescriptionVM.Prescriptions.Add(PrescriptionVM.ThisPrescription);
+            this.Close();
         }
 
         

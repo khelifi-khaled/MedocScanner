@@ -16,30 +16,24 @@
         "$values": [
           {
             "$type": "MedocScanner.Models.Medicine, MedocScanner",
-            "IdMedecine": "3215647896548",
-            "MedecineDescription": "Metagenics MetaRelax 180 Comprimés",
-            "MedecinePrice": 12.99
+            "IdMedecine": "351654987656",
+            "MedecineDescription": "Bande adhésive non-tissé - 10mx5cm",
+            "MedecinePrice": 1.69
           },
           {
             "$type": "MedocScanner.Models.Medicine, MedocScanner",
-            "IdMedecine": "5454545457878",
-            "MedecineDescription": "Metagenics MetaRelax 100 Comprimés",
-            "MedecinePrice": 14.25
-          },
-          {
-            "$type": "MedocScanner.Models.Medicine, MedocScanner",
-            "IdMedecine": "9632587412365",
+            "IdMedecine": "316549841321",
             "MedecineDescription": "Enterofytol 60 capsules",
             "MedecinePrice": 19.89
           }
         ]
       },
       "IdPrescription": 2,
-      "PrescriptionDate": "2022-04-19T14:53:59.4588234+02:00",
+      "PrescriptionDate": "2022-04-19T11:07:51.823253+02:00",
       "Patient": {
         "$type": "MedocScanner.Models.Patient, MedocScanner",
         "FullName": "Abella hindrix",
-        "IdPatient": "1245236548521",
+        "IdPatient": "123456789",
         "FirstNamePatient": "Abella",
         "LastNamePatient": "hindrix",
         "DescriptionPatient": "mal au ventre coté droit",
@@ -66,18 +60,18 @@
         "$values": [
           {
             "$type": "MedocScanner.Models.Medicine, MedocScanner",
-            "IdMedecine": "3215647896548",
+            "IdMedecine": "1231231321",
             "MedecineDescription": "Metagenics MetaRelax 180 Comprimés",
             "MedecinePrice": 12.99
           }
         ]
       },
       "IdPrescription": 3,
-      "PrescriptionDate": "2022-04-19T14:59:49.8107142+02:00",
+      "PrescriptionDate": "2022-04-19T11:52:45.6523607+02:00",
       "Patient": {
         "$type": "MedocScanner.Models.Patient, MedocScanner",
         "FullName": "Abella hindrix",
-        "IdPatient": "1245236548521",
+        "IdPatient": "123456789",
         "FirstNamePatient": "Abella",
         "LastNamePatient": "hindrix",
         "DescriptionPatient": "mal au ventre coté droit",

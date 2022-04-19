@@ -1,4 +1,5 @@
 ﻿using MedocScanner.Models;
+using MedocScanner.Utilities;
 using System.ComponentModel;
 
 
@@ -9,15 +10,41 @@ namespace MedocScanner.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Worker _doctorConnected; 
+        public Worker _doctorConnected;
 
-        public DoctorWindowVM(Worker doctorConnected , PatientCollection patients, MedicineCollection medicines, PrescriptionCollection pescriptions)
+        private const string MEDICINES_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\medicines.json";
+
+        private const string PATIENTS_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\Patients.json";
+
+        private const string PRESCRIPTION_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\Prescriptions.json";
+
+        public DoctorWindowVM(Worker doctorConnected )
         {
             DoctorConnected=doctorConnected;
-            Patients=patients;
-            Medicines = medicines;
-            Pescriptions = pescriptions;
+            AccessjsonPatients = new DataAccessJsn(PATIENTS_JSON_FILE, new string[] { "json" });
+            AccessjsonMedicine = new DataAccessJsn(MEDICINES_JSON_FILE, new string[] { "json" });
+            AccessjsonPrescriptions = new DataAccessJsn(PRESCRIPTION_JSON_FILE, new string[] { "json" });
+
+            Medicines = AccessjsonMedicine.GetMedicinesDatas();
+            Patients = AccessjsonPatients.GetPatientsDatas();
+            Prescriptions = AccessjsonPrescriptions.GetPrescriptionsDatas();
+
         }
+
+
+        public MedicineCollection Medicines { get; set; }
+
+        public PatientCollection Patients { get; set; }
+
+        public PrescriptionCollection Prescriptions { get; set; }
+
+        public DataAccessJsn AccessjsonMedicine { get; set; }
+
+        public DataAccessJsn AccessjsonPatients { get; set; }
+
+
+        public DataAccessJsn AccessjsonPrescriptions { get; set; }
+
 
         public Worker DoctorConnected
         {
@@ -31,12 +58,9 @@ namespace MedocScanner.ViewModels
 
 
 
-        public PrescriptionCollection Pescriptions { get; set; }
+       public  Prescription PrescriptionForPatient { get; set; }
 
-
-        public PatientCollection Patients { get; set; }
-
-        public MedicineCollection Medicines { get; set; }
+        public MedicineCollection PatientMedicines { get; set; }
 
 
         protected void OnPropertyChanged(string propertyName)

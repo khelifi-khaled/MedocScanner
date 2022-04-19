@@ -1,6 +1,6 @@
-﻿
-using MedocScanner.Models;
+﻿using MedocScanner.Models;
 using MedocScanner.ViewModels;
+using System;
 using System.Windows;
 
 
@@ -13,20 +13,16 @@ namespace MedocScanner.Views
     {
         public DoctorWindowVM DoctorVM { get; set; }
 
-        public DoctorWidow(Worker doctorConnected,PatientCollection patients,MedicineCollection medicines, PrescriptionCollection pescriptions)
+        public DoctorWidow(Worker doctorConnected)
         {
-            DoctorVM = new DoctorWindowVM(doctorConnected, patients, medicines, pescriptions);
+            DoctorVM = new DoctorWindowVM(doctorConnected);
             DataContext = DoctorVM;
             InitializeComponent();
         }
 
        
 
-        private void Sauver_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
+       
        
 
         private void se_deconnecter_Click(object sender, RoutedEventArgs e)
@@ -38,13 +34,26 @@ namespace MedocScanner.Views
 
         private void ButtonNew_prescription_Click(object sender, RoutedEventArgs e)
         {
-            ScannePatientWindow ScannePatient = new ScannePatientWindow(DoctorVM.DoctorConnected, DoctorVM.Patients, DoctorVM.Medicines , DoctorVM.Pescriptions);
+
+            //Empty Medicine Collection  for our patient 
+            DoctorVM.PatientMedicines = new MedicineCollection();
+
+            //Prescription with(Today date + PrescriptionId +  our patient = null  + the doctor connected + Empty Medicine Collection of our patient)
+            DoctorVM.PrescriptionForPatient = new Prescription(DateTime.Now, DoctorVM.Prescriptions.GetPrescriptionId(),null, DoctorVM.DoctorConnected,DoctorVM.PatientMedicines);
+
+            ScannePatientWindow ScannePatient = new ScannePatientWindow(DoctorVM.Patients, DoctorVM.Medicines , DoctorVM.PrescriptionForPatient,DoctorVM.Prescriptions);
             ScannePatient.Show();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Sauver_Click(object sender, RoutedEventArgs e)
+        {
+            DoctorVM.AccessjsonPrescriptions.UpdateAllPrescriptionsDatas(DoctorVM.Prescriptions);
+            MessageBox.Show("Tous les prescriptions ont bien été enregistrée dans le fichier JSON ", "Message", MessageBoxButton.OK);
         }
     }
 }

@@ -3,7 +3,7 @@
     "$values": [
         {
             "$type": "MedocScanner.Models.Patient, MedocScanner",
-            "IdPatient": "1245236548521",
+            "IdPatient": "123456789",
             "FirstNamePatient": "Abella",
             "LastNamePatient": "hindrix",
             "DescriptionPatient": "mal au ventre coté droit",
@@ -13,7 +13,7 @@
         },
         {
             "$type": "MedocScanner.Models.Patient, MedocScanner",
-            "IdPatient": "3125468753264",
+            "IdPatient": "31216498796454",
             "FirstNamePatient": "Adriana",
             "LastNamePatient": "koko",
             "DescriptionPatient": "mal au ventre coté droit",
@@ -23,7 +23,7 @@
         },
         {
             "$type": "MedocScanner.Models.Patient, MedocScanner",
-            "IdPatient": "3265234987425",
+            "IdPatient": "31216498796454",
             "FirstNamePatient": "nadine",
             "LastNamePatient": "lola",
             "DescriptionPatient": "mal au ventre coté droit",
@@ -34,7 +34,7 @@
 
         {
             "$type": "MedocScanner.Models.Patient, MedocScanner",
-            "IdPatient": "5421378954624",
+            "IdPatient": "654213264987",
             "FirstNamePatient": "Gioto",
             "LastNamePatient": "Xavier",
             "DescriptionPatient": "mal au ventre coté droit",
@@ -44,7 +44,7 @@
         },
         {
             "$type": "MedocScanner.Models.Patient, MedocScanner",
-            "IdPatient": "5487623457869",
+            "IdPatient": "326546549",
             "FirstNamePatient": "Adorjan",
             "LastNamePatient": "lalllou",
             "DescriptionPatient": "mal au ventre coté gauche",
@@ -55,7 +55,7 @@
 
         {
             "$type": "MedocScanner.Models.Patient, MedocScanner",
-            "IdPatient": "2135487569325",
+            "IdPatient": "326546549",
             "FirstNamePatient": "Maya",
             "LastNamePatient": "arouase",
             "DescriptionPatient": "mal au ventre coté gauche",

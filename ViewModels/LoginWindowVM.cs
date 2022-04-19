@@ -1,10 +1,6 @@
 ﻿using MedocScanner.Models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MedocScanner.ViewModels
 {
@@ -16,12 +12,10 @@ namespace MedocScanner.ViewModels
 
         private string[] _listTypeWorker = { "Doctor", "Pharmacist"};
 
-        public LoginWindowVM(WorkerCollection workers , PatientCollection patients,MedicineCollection medicines, PrescriptionCollection prescriptions)
+        public LoginWindowVM(WorkerCollection workers)
         {
             Workers = workers;
-            Patients = patients;
-            Medicines = medicines;
-            Prescriptions = prescriptions;
+
         }
 
 
@@ -35,14 +29,15 @@ namespace MedocScanner.ViewModels
                 OnPropertyChanged(nameof(ListTypeWorker));
             }
         }
-        public PrescriptionCollection Prescriptions { get; set; }
 
-        public PatientCollection Patients { get; set; }
 
-        public MedicineCollection Medicines { get; set; }
+
 
 
         public WorkerCollection Workers { get; set; }
+
+
+
 
         public Worker WorkerSelected
         {

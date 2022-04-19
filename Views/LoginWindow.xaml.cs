@@ -1,18 +1,7 @@
 ﻿using MedocScanner.Models;
 using MedocScanner.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace MedocScanner.Views
 {
@@ -27,9 +16,9 @@ namespace MedocScanner.Views
 
 
 
-        public LoginWindow(WorkerCollection workers, PatientCollection patients, MedicineCollection medicines, PrescriptionCollection prescriptions)
+        public LoginWindow(WorkerCollection workers)
         {
-            LoginVM=new LoginWindowVM(workers, patients, medicines, prescriptions); 
+            LoginVM=new LoginWindowVM(workers); 
             DataContext=LoginVM;
             InitializeComponent();
         }
@@ -48,7 +37,7 @@ namespace MedocScanner.Views
 
                         if (LoginVM.WorkerSelected!=null)//if worker is not null sow the password is correct  
                         {
-                            DoctorWidow doctor = new DoctorWidow(LoginVM.WorkerSelected,LoginVM.Patients,LoginVM.Medicines,LoginVM.Prescriptions);
+                            DoctorWidow doctor = new DoctorWidow(LoginVM.WorkerSelected);
                             doctor.Show();
                             this.Close();
                         }

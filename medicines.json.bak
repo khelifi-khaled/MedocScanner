@@ -21,13 +21,13 @@
         },
         {
             "$type": "MedocScanner.Models.Medicine, MedocScanner",
-            "IdMedecine": "9632587412365",
+            "IdMedecine": "9874563213654",
             "MedecineDescription": "Enterofytol 60 capsules",
             "MedecinePrice": 19.89
         },
         {
             "$type": "MedocScanner.Models.Medicine, MedocScanner",
-            "IdMedecine": "98745632125874",
+            "IdMedecine": "3333222144587",
             "MedecineDescription": "perfusion algodystrophie 200 ml",
             "MedecinePrice": 10.26
         }

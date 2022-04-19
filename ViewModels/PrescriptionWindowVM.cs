@@ -1,10 +1,5 @@
 ﻿using MedocScanner.Models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MedocScanner.ViewModels
 {
@@ -15,15 +10,15 @@ namespace MedocScanner.ViewModels
 
         private Prescription _thisPrescription;
 
-        public PrescriptionWindowVM(Prescription thisPrescription, MedicineCollection medicines)
+        public PrescriptionWindowVM(Prescription thisPrescription, MedicineCollection medicines , PrescriptionCollection prescriptions)
         {
             ThisPrescription=thisPrescription;
             Medicines=medicines;
+            Prescriptions = prescriptions;
         }
 
 
 
-        public MedicineCollection Medicines { get; set; }
 
 
         public Prescription ThisPrescription 
@@ -38,15 +33,8 @@ namespace MedocScanner.ViewModels
 
         public PrescriptionCollection Prescriptions { get; set; }
 
-        public Patient PatientSelected { get; set; }
 
-        public Worker DoctorConnected { get; set; }
-
-        public PatientCollection Patients { get; set; }
-
-        public MedicineCollection PatientMedicines { get; set; }
-
-
+        public MedicineCollection Medicines { get; set; }
 
 
         protected void OnPropertyChanged(string propertyName)
