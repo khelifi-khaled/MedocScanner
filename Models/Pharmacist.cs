@@ -13,11 +13,6 @@ namespace MedocScanner.Models
         }
 
 
-
-
-
-
-
         public override bool IsRightPassword(string tryPassword)
         {
             return tryPassword.Equals(this.Password);

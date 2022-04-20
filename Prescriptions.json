@@ -96,6 +96,232 @@
         "H_WorkerAdress": "Pv 2 - salle 345",
         "WorkerAdress": "1000 Bruxelles"
       }
+    },
+    {
+      "$type": "MedocScanner.Models.Prescription, MedocScanner",
+      "Medicines": {
+        "$type": "MedocScanner.Models.MedicineCollection, MedocScanner",
+        "$values": [
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "5454545457878",
+            "MedecineDescription": "Metagenics MetaRelax 100 Comprimés",
+            "MedecinePrice": 14.25
+          },
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "98745632125874",
+            "MedecineDescription": "perfusion algodystrophie 200 ml",
+            "MedecinePrice": 10.26
+          }
+        ]
+      },
+      "IdPrescription": 4,
+      "PrescriptionDate": "2022-04-19T19:25:16.4693482+02:00",
+      "Patient": {
+        "$type": "MedocScanner.Models.Patient, MedocScanner",
+        "FullName": "Abella hindrix",
+        "IdPatient": "1245236548521",
+        "FirstNamePatient": "Abella",
+        "LastNamePatient": "hindrix",
+        "DescriptionPatient": "mal au ventre coté droit",
+        "PatientGender": false,
+        "PatientBirthday": "1991-04-13T12:54:04.7727929+02:00",
+        "PatientAdress": "7000 Mons"
+      },
+      "Doctor": {
+        "$type": "MedocScanner.Models.Doctor, MedocScanner",
+        "FullName": "Antoine okendi",
+        "Password": "Test1234",
+        "FirstName": "Antoine",
+        "LastName": "okendi",
+        "WorkerEmail": "Antoine@gmail.com",
+        "PhoneWorker": "0467833154",
+        "H_WorkerAdress": "Pv 2 - salle 345",
+        "WorkerAdress": "1000 Bruxelles"
+      }
+    },
+    {
+      "$type": "MedocScanner.Models.Prescription, MedocScanner",
+      "Medicines": {
+        "$type": "MedocScanner.Models.MedicineCollection, MedocScanner",
+        "$values": [
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "98745632125874",
+            "MedecineDescription": "perfusion algodystrophie 200 ml",
+            "MedecinePrice": 10.26
+          },
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "2354679452154",
+            "MedecineDescription": "Bande adhésive non-tissé - 10mx5cm",
+            "MedecinePrice": 1.69
+          },
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "5454545457878",
+            "MedecineDescription": "Metagenics MetaRelax 100 Comprimés",
+            "MedecinePrice": 14.25
+          }
+        ]
+      },
+      "IdPrescription": 5,
+      "PrescriptionDate": "2022-04-20T14:44:02.6889538+02:00",
+      "Patient": {
+        "$type": "MedocScanner.Models.Patient, MedocScanner",
+        "FullName": "Adriana koko",
+        "IdPatient": "3125468753264",
+        "FirstNamePatient": "Adriana",
+        "LastNamePatient": "koko",
+        "DescriptionPatient": "mal au ventre coté droit",
+        "PatientGender": false,
+        "PatientBirthday": "1995-04-13T12:54:04.7727929+02:00",
+        "PatientAdress": "7000 Mons"
+      },
+      "Doctor": {
+        "$type": "MedocScanner.Models.Doctor, MedocScanner",
+        "FullName": "Antoine okendi",
+        "Password": "Test1234",
+        "FirstName": "Antoine",
+        "LastName": "okendi",
+        "WorkerEmail": "Antoine@gmail.com",
+        "PhoneWorker": "0467833154",
+        "H_WorkerAdress": "Pv 2 - salle 345",
+        "WorkerAdress": "1000 Bruxelles"
+      }
+    },
+    {
+      "$type": "MedocScanner.Models.Prescription, MedocScanner",
+      "Medicines": {
+        "$type": "MedocScanner.Models.MedicineCollection, MedocScanner",
+        "$values": [
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "3215647896548",
+            "MedecineDescription": "Metagenics MetaRelax 180 Comprimés",
+            "MedecinePrice": 12.99
+          },
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "98745632125874",
+            "MedecineDescription": "perfusion algodystrophie 200 ml",
+            "MedecinePrice": 10.26
+          }
+        ]
+      },
+      "IdPrescription": 6,
+      "PrescriptionDate": "2022-04-20T15:19:32.0639923+02:00",
+      "Patient": {
+        "$type": "MedocScanner.Models.Patient, MedocScanner",
+        "FullName": "Maya arouase",
+        "IdPatient": "2135487569325",
+        "FirstNamePatient": "Maya",
+        "LastNamePatient": "arouase",
+        "DescriptionPatient": "mal au ventre coté gauche",
+        "PatientGender": false,
+        "PatientBirthday": "2010-04-13T12:54:04.7737914+02:00",
+        "PatientAdress": "6000 charleroi"
+      },
+      "Doctor": {
+        "$type": "MedocScanner.Models.Doctor, MedocScanner",
+        "FullName": "Antoine okendi",
+        "Password": "Test1234",
+        "FirstName": "Antoine",
+        "LastName": "okendi",
+        "WorkerEmail": "Antoine@gmail.com",
+        "PhoneWorker": "0467833154",
+        "H_WorkerAdress": "Pv 2 - salle 345",
+        "WorkerAdress": "1000 Bruxelles"
+      }
+    },
+    {
+      "$type": "MedocScanner.Models.Prescription, MedocScanner",
+      "Medicines": {
+        "$type": "MedocScanner.Models.MedicineCollection, MedocScanner",
+        "$values": [
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "98745632125874",
+            "MedecineDescription": "perfusion algodystrophie 200 ml",
+            "MedecinePrice": 10.26
+          },
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "5454545457878",
+            "MedecineDescription": "Metagenics MetaRelax 100 Comprimés",
+            "MedecinePrice": 14.25
+          }
+        ]
+      },
+      "IdPrescription": 7,
+      "PrescriptionDate": "2022-04-20T15:39:31.1666032+02:00",
+      "Patient": {
+        "$type": "MedocScanner.Models.Patient, MedocScanner",
+        "FullName": "Maya arouase",
+        "IdPatient": "2135487569325",
+        "FirstNamePatient": "Maya",
+        "LastNamePatient": "arouase",
+        "DescriptionPatient": "mal au ventre coté gauche",
+        "PatientGender": false,
+        "PatientBirthday": "2010-04-13T12:54:04.7737914+02:00",
+        "PatientAdress": "6000 charleroi"
+      },
+      "Doctor": {
+        "$type": "MedocScanner.Models.Doctor, MedocScanner",
+        "FullName": "Antoine okendi",
+        "Password": "Test1234",
+        "FirstName": "Antoine",
+        "LastName": "okendi",
+        "WorkerEmail": "Antoine@gmail.com",
+        "PhoneWorker": "0467833154",
+        "H_WorkerAdress": "Pv 2 - salle 345",
+        "WorkerAdress": "1000 Bruxelles"
+      }
+    },
+    {
+      "$type": "MedocScanner.Models.Prescription, MedocScanner",
+      "Medicines": {
+        "$type": "MedocScanner.Models.MedicineCollection, MedocScanner",
+        "$values": [
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "98745632125874",
+            "MedecineDescription": "perfusion algodystrophie 200 ml",
+            "MedecinePrice": 10.26
+          },
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "2354679452154",
+            "MedecineDescription": "Bande adhésive non-tissé - 10mx5cm",
+            "MedecinePrice": 1.69
+          }
+        ]
+      },
+      "IdPrescription": 8,
+      "PrescriptionDate": "2022-04-20T15:42:15.46062+02:00",
+      "Patient": {
+        "$type": "MedocScanner.Models.Patient, MedocScanner",
+        "FullName": "Maya arouase",
+        "IdPatient": "2135487569325",
+        "FirstNamePatient": "Maya",
+        "LastNamePatient": "arouase",
+        "DescriptionPatient": "mal au ventre coté gauche",
+        "PatientGender": false,
+        "PatientBirthday": "2010-04-13T12:54:04.7737914+02:00",
+        "PatientAdress": "6000 charleroi"
+      },
+      "Doctor": {
+        "$type": "MedocScanner.Models.Doctor, MedocScanner",
+        "FullName": "zaki imponza",
+        "Password": "Test1234567",
+        "FirstName": "zaki",
+        "LastName": "imponza",
+        "WorkerEmail": "imponza@yahoo.com",
+        "PhoneWorker": "0467835684",
+        "H_WorkerAdress": "Pv 1 - salle 854",
+        "WorkerAdress": "1040 Etterbeek"
+      }
     }
   ]
 }

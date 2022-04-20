@@ -28,17 +28,7 @@ namespace MedocScanner.Views
 
         private void AddMedoc_Click(object sender, RoutedEventArgs e)
         {
-          
-            if (MedocWindowVM.MedicineSelected!=null)
-            {
-                MedocWindowVM.Prescription.Medicines.Add(MedocWindowVM.MedicineSelected);
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("le médicament sélectionné est introuvable", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-        
+            MedocWindowVM.AddMedoc(this);
         }
 
         private void CancelAddMedoc_Click(object sender, RoutedEventArgs e)

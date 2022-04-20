@@ -23,7 +23,7 @@ namespace MedocScanner.Models
         }
 
        
-
+        
 
         public MedicineCollection Medicines
         {

@@ -46,27 +46,6 @@ namespace MedocScanner.Utilities.Interfaces
 
 
 
-        /// <summary>
-        /// update all Workers datas from the Worker collection to the external source
-        /// </summary>
-        /// <param name="ps"></param>
-        void UpdateAllWorkersDatas(WorkerCollection ps);
-
-
-
-        /// <summary>
-        /// update all Medicines datas from the Medicine collection to the external source
-        /// </summary>
-        /// <param name="ms"></param>
-        void UpdateAllMedicinesDatas(MedicineCollection ms);
-
-
-
-        /// <summary>
-        /// update all Patients datas from the Patient collection to the external source
-        /// </summary>
-        /// <param name="ps"></param>
-        void UpdateAllPatientsDatas(PatientCollection ps);
 
         /// <summary>
         /// update all Prescriptions datas from the Prescription collection to the external source

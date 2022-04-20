@@ -1,5 +1,8 @@
 ﻿using MedocScanner.Models;
+using MedocScanner.Views;
 using System.ComponentModel;
+using System.Windows;
+using System.Windows.Input;
 
 namespace MedocScanner.ViewModels
 {
@@ -28,7 +31,27 @@ namespace MedocScanner.ViewModels
         public PrescriptionCollection Prescriptions { get; set; }
 
 
+        public void Scanner(KeyEventArgs e,string idPatient , ScannePatientWindow win)
+        {
+            if (e.Key == Key.Enter)
+            {
+                PatientSelected = Patients.GetPatien(idPatient);
 
+                if (PatientSelected != null)
+                {
+                    //sending the patient selected to our prescription 
+                    PrescriptionForPatient.Patient = PatientSelected;
+
+                    PrescriptionWindow NewPrescriptionWindow = new PrescriptionWindow(PrescriptionForPatient, Medicines, Prescriptions);
+                    NewPrescriptionWindow.Show();
+                    win.Close();
+                }
+                else
+                {
+                    MessageBox.Show($"cher docteur {PrescriptionForPatient.Doctor.FullName} ce patient n'existe pas dans le fichier json ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+        }
 
 
         protected void OnPropertyChanged(string propertyName)

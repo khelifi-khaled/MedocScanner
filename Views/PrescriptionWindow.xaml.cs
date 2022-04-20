@@ -23,8 +23,7 @@ namespace MedocScanner.Views
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            PrescriptionVM.Prescriptions.Add(PrescriptionVM.ThisPrescription);
-            this.Close();
+            PrescriptionVM.SavePrescription(this);
         }
 
         
@@ -33,6 +32,11 @@ namespace MedocScanner.Views
         {
             MedocWindow medocWindow = new MedocWindow(PrescriptionVM.ThisPrescription, PrescriptionVM.Medicines);
             medocWindow.Show();   
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

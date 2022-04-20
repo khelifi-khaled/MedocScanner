@@ -1,8 +1,8 @@
-﻿
+﻿using MedocScanner.Utilities.Interfaces;
 
 namespace MedocScanner.Models
 {
-    public abstract class Worker
+    public abstract class Worker : IWorker
     {
        
         private string _password;
@@ -29,24 +29,11 @@ namespace MedocScanner.Models
 
 
        
-        public string FullName
-        {
-            get
-            {
-                return $"{_firstName} {_lastName}";
-            }
-            set
-            {
-
-            }
-        }
+        public string FullName => $"{_firstName} {_lastName}";
 
         public string Password
         {
-            get
-            {
-                return _password;
-            }
+            get => _password;
             set
             {
                 _password = value;
@@ -56,10 +43,7 @@ namespace MedocScanner.Models
 
         public string FirstName
         {
-            get
-            {
-                return _firstName;
-            }
+            get => _firstName;
             set
             {
                 _firstName = value;
@@ -69,10 +53,7 @@ namespace MedocScanner.Models
 
         public string LastName
         {
-            get
-            {
-                return _lastName;
-            }
+            get=> _lastName;
             set
             {
                 _lastName = value;
@@ -82,10 +63,7 @@ namespace MedocScanner.Models
 
         public string WorkerEmail
         {
-            get
-            {
-                return _workerEmail;
-            }
+            get=> _workerEmail;
             set
             {
                 _workerEmail = value;
@@ -95,10 +73,7 @@ namespace MedocScanner.Models
 
         public string PhoneWorker
         {
-            get
-            {
-                return _phoneWorker;
-            }
+            get => _phoneWorker;
             set
             {
                 _phoneWorker = value;
@@ -107,10 +82,7 @@ namespace MedocScanner.Models
 
         public string H_WorkerAdress
         {
-            get
-            {
-                return _hWorkerAdress;
-            }
+            get=> _hWorkerAdress;
             set
             {
                 _hWorkerAdress = value;
@@ -119,10 +91,7 @@ namespace MedocScanner.Models
 
         public string  WorkerAdress
         {
-            get
-            {
-                return _workerAdress;
-            }
+            get => _workerAdress;
             set
             {
                 _workerAdress = value;

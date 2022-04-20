@@ -67,6 +67,7 @@
     <Compile Include="Utilities\DataAccess.cs" />
     <Compile Include="Utilities\DataAccessJsn.cs" />
     <Compile Include="Utilities\Interfaces\IDataAccess.cs" />
+    <Compile Include="Utilities\Interfaces\IWorker.cs" />
     <Compile Include="ViewModels\DoctorWindowVM.cs" />
     <Compile Include="ViewModels\LoginWindowVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />

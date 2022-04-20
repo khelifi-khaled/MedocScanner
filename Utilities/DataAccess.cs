@@ -106,30 +106,6 @@ namespace MedocScanner.Utilities
         public abstract PatientCollection GetPatientsDatas();
 
 
-        
-
-        /// <summary>
-        /// update all Pharmacists datas from the Pharmacist collection to the external source
-        /// </summary>
-        /// <param name="ps"></param>
-        public abstract void UpdateAllWorkersDatas(WorkerCollection ps);
-
-
-
-        /// <summary>
-        /// update all Medicines datas from the Medicine collection to the external source
-        /// </summary>
-        /// <param name="ms"></param>
-        public abstract void UpdateAllMedicinesDatas(MedicineCollection ms);
-
-
-
-        /// <summary>
-        /// update all Patients datas from the Patient collection to the external source
-        /// </summary>
-        /// <param name="ps"></param>
-        public abstract void UpdateAllPatientsDatas(PatientCollection ps);
-
 
         public abstract void UpdateAllPrescriptionsDatas(PrescriptionCollection ps);
 

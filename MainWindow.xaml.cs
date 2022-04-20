@@ -7,7 +7,7 @@ namespace MedocScanner
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+      public partial class MainWindow : Window
     {
         public MainWindowVM MainVM { get; set; }
 
@@ -17,25 +17,19 @@ namespace MedocScanner
             MainVM = new MainWindowVM();
             DataContext = MainVM;
             InitializeComponent();
-        }
-        
+        }       
 
-       
-
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow Login = new LoginWindow(MainVM.Workers);
+           LoginWindow Login = new LoginWindow(MainVM.Workers);
             Login.Show();
-            this.Close();
+            this.Close(); 
         }
 
-        
+        private void Exit_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }//end class 
 }//end project 

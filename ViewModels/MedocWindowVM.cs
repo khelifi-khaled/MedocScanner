@@ -1,5 +1,7 @@
 ﻿using MedocScanner.Models;
+using MedocScanner.Views;
 using System.ComponentModel;
+using System.Windows;
 
 namespace MedocScanner.ViewModels
 {
@@ -31,6 +33,19 @@ namespace MedocScanner.ViewModels
             }
         }
 
+
+        public void AddMedoc(MedocWindow win)
+        {
+            if (MedicineSelected != null)
+            {
+                Prescription.Medicines.AddMedicine(MedicineSelected);
+                win.Close();
+            }
+            else
+            {
+                MessageBox.Show("le médicament sélectionné est introuvable", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
 
         protected void OnPropertyChanged(string propertyName)
         {

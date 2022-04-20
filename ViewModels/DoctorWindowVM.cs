@@ -1,7 +1,9 @@
 ﻿using MedocScanner.Models;
 using MedocScanner.Utilities;
+using MedocScanner.Views;
+using System;
 using System.ComponentModel;
-
+using System.Windows;
 
 namespace MedocScanner.ViewModels
 {
@@ -62,6 +64,26 @@ namespace MedocScanner.ViewModels
 
         public MedicineCollection PatientMedicines { get; set; }
 
+
+        public void CreateNewPrescription()
+        {
+            //Medicine Collection for our patient 
+            PatientMedicines = new MedicineCollection();
+            //Prescription For our Patient with Now DateTime + id + the pateint is null + Doctor Connected
+            PrescriptionForPatient = new Prescription(DateTime.Now, Prescriptions.GetPrescriptionId(),null, DoctorConnected, PatientMedicines);
+
+            ScannePatientWindow ScannePatient = new ScannePatientWindow(Patients, Medicines, PrescriptionForPatient, Prescriptions);
+            ScannePatient.Show();
+
+        }//end CreateNewPrescription
+
+
+
+        public void SauvgardPrescription()
+        {
+            AccessjsonPrescriptions.UpdateAllPrescriptionsDatas(Prescriptions);
+            MessageBox.Show("Tous les prescriptions ont bien été enregistrée dans le fichier JSON ", "Message", MessageBoxButton.OK);
+        }//end SauvgardPrescription
 
         protected void OnPropertyChanged(string propertyName)
         {

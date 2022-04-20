@@ -58,6 +58,7 @@ namespace MedocScanner.Models
             get => _descriptionPatient;
             set { _descriptionPatient = value; }
         }
+       
 
         public bool PatientGender
         {

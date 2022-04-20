@@ -22,29 +22,14 @@ namespace MedocScanner.Views
 
         private void TxtIdPatient_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key==Key.Enter)
-            {
-                scannePatientVM.PatientSelected = scannePatientVM.Patients.GetPatien(TxtIdPatient.Text);
-
-                if (scannePatientVM.PatientSelected!=null)
-                {
-                    //sending the patient selected to our prescription 
-                    scannePatientVM.PrescriptionForPatient.Patient = scannePatientVM.PatientSelected;
-
-                    PrescriptionWindow NewPrescriptionWindow = new PrescriptionWindow(scannePatientVM.PrescriptionForPatient, scannePatientVM.Medicines, scannePatientVM.Prescriptions);
-                    NewPrescriptionWindow.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show($"cher docteur {scannePatientVM.PrescriptionForPatient.Doctor.FullName} ce patient n'existe pas dans le fichier json ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-            }
+            scannePatientVM.Scanner(e,TxtIdPatient.Text,this);
         }
 
         private void Btn_Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }
