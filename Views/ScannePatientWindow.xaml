@@ -8,7 +8,7 @@
         Title="ScannePatientWindow" Height="170" Width="250">
     <StackPanel>
         <Label Content="scannez votre patient ici SVP " Margin=" 0 0 0 0" Width="167"/>
-        <TextBox x:Name="TxtIdPatient" KeyDown="TxtIdPatient_KeyDown" Margin=" 0 10 0 0" Height="20" Width="200"/>
+        <TextBox x:Name="IdPatient" KeyDown="IdPatient_KeyDown" Margin=" 0 10 0 0" Height="20" Width="200"/>
         <Button x:Name="Btn_Cancel" Content="annuler" Width="100" Margin=" 0 35 0 0" Click="Btn_Cancel_Click" />
     </StackPanel>
 </Window>

@@ -25,7 +25,7 @@ namespace MedocScanner.Views
 
         private void Btnlogin_Click(object sender, RoutedEventArgs e)
         {
-            LoginVM.Login(password.Text,this);
+            LoginVM.Login(password.Password,this);
         }
     }
 }

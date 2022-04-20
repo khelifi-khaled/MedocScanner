@@ -20,16 +20,15 @@ namespace MedocScanner.Views
             InitializeComponent();
         }
 
-        private void TxtIdPatient_KeyDown(object sender, KeyEventArgs e)
-        {
-            scannePatientVM.Scanner(e,TxtIdPatient.Text,this);
-        }
 
         private void Btn_Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        
+        private void IdPatient_KeyDown(object sender, KeyEventArgs e)
+        {
+            scannePatientVM.Scanner(e, IdPatient.Text, this);
+        }
     }
 }
