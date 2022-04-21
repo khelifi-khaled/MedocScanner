@@ -11,7 +11,7 @@ namespace MedocScanner.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-        private string[] _listTypeWorker = { "Doctor", "Pharmacist"};
+        private string[] _listTypeWorker = { "Médecin", "Pharmacien" };
 
         public LoginWindowVM(WorkerCollection workers)
         {
@@ -67,7 +67,7 @@ namespace MedocScanner.ViewModels
 
                         if (WorkerSelected != null)//if worker is not null sow the password is correct  
                         {
-                            DoctorWidow doctor = new DoctorWidow(WorkerSelected);
+                            DoctorWidow doctor = new DoctorWidow((Doctor)WorkerSelected);
                             doctor.Show();
                             win.Close();
                         }
@@ -75,6 +75,21 @@ namespace MedocScanner.ViewModels
                         {
                             MessageBox.Show("votre mot de passe est incorecte ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
+                    }else
+                    {
+                        WorkerSelected= Workers.GetWorkerConected(password);
+
+                        if (WorkerSelected != null)//if worker is not null sow the password is correct  
+                        {
+                            PharmacistWindow pharmacis = new PharmacistWindow();
+                            pharmacis.Show();
+                            win.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("votre mot de passe est incorecte ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                        
                     }
                 }
                 else

@@ -68,20 +68,36 @@
     <Compile Include="Utilities\DataAccessJsn.cs" />
     <Compile Include="Utilities\Interfaces\IDataAccess.cs" />
     <Compile Include="Utilities\Interfaces\IWorker.cs" />
+    <Compile Include="ViewModels\DoctorInfosWindowVM.cs" />
     <Compile Include="ViewModels\DoctorWindowVM.cs" />
     <Compile Include="ViewModels\LoginWindowVM.cs" />
+    <Compile Include="ViewModels\MadocPrescriptionWindowVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
     <Compile Include="ViewModels\MedocWindowVM.cs" />
+    <Compile Include="ViewModels\PatienInfosWindowVM.cs" />
+    <Compile Include="ViewModels\PharmacistWindowVM.cs" />
     <Compile Include="ViewModels\PrescriptionWindowVM.cs" />
     <Compile Include="ViewModels\ScannePatientWindowVM.cs" />
+    <Compile Include="Views\DoctorInfosWindow.xaml.cs">
+      <DependentUpon>DoctorInfosWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DoctorWidow.xaml.cs">
       <DependentUpon>DoctorWidow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MedocPrescriptionWindow.xaml.cs">
+      <DependentUpon>MedocPrescriptionWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MedocWindow.xaml.cs">
       <DependentUpon>MedocWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientInfosWindow.xaml.cs">
+      <DependentUpon>PatientInfosWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PharmacistWindow.xaml.cs">
+      <DependentUpon>PharmacistWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PrescriptionWindow.xaml.cs">
       <DependentUpon>PrescriptionWindow.xaml</DependentUpon>
@@ -101,6 +117,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\DoctorInfosWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DoctorWidow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,7 +129,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\MedocPrescriptionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MedocWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientInfosWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PharmacistWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

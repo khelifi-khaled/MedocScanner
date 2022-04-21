@@ -360,6 +360,44 @@
         "H_WorkerAdress": "Pv 2 - salle 345",
         "WorkerAdress": "1000 Bruxelles"
       }
+    },
+    {
+      "$type": "MedocScanner.Models.Prescription, MedocScanner",
+      "Medicines": {
+        "$type": "MedocScanner.Models.MedicineCollection, MedocScanner",
+        "$values": [
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "98745632125874",
+            "MedecineDescription": "perfusion algodystrophie 200 ml",
+            "MedecinePrice": 10.26
+          }
+        ]
+      },
+      "IdPrescription": 10,
+      "PrescriptionDate": "2022-04-20T17:41:15.1920752+02:00",
+      "Patient": {
+        "$type": "MedocScanner.Models.Patient, MedocScanner",
+        "FullName": "Gioto Xavier",
+        "IdPatient": "5421378954624",
+        "FirstNamePatient": "Gioto",
+        "LastNamePatient": "Xavier",
+        "DescriptionPatient": "mal au ventre coté droit",
+        "PatientGender": true,
+        "PatientBirthday": "1972-04-13T12:54:04.7727929+02:00",
+        "PatientAdress": "7000 Mons"
+      },
+      "Doctor": {
+        "$type": "MedocScanner.Models.Doctor, MedocScanner",
+        "FullName": "Antoine okendi",
+        "Password": "Test1234",
+        "FirstName": "Antoine",
+        "LastName": "okendi",
+        "WorkerEmail": "Antoine@gmail.com",
+        "PhoneWorker": "0467833154",
+        "H_WorkerAdress": "Pv 2 - salle 345",
+        "WorkerAdress": "1000 Bruxelles"
+      }
     }
   ]
 }

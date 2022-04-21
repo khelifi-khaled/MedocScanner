@@ -1,0 +1,39 @@
+﻿<Window x:Class="MedocScanner.Views.MedocPrescriptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MedocPrescriptionWindow" Height="450" Width="800">
+    <StackPanel>
+        <Menu IsMainMenu="True">
+            <MenuItem Header="Informations">
+                <Separator/>
+                <MenuItem x:Name ="DoctorInfos" Header="les Information sur le Docteur" Click="DoctorInfos_Click" />
+                <MenuItem x:Name ="PatientInfos" Header="les Information sur le Patient" Click="PatientInfos_Click"/>
+            </MenuItem>
+        </Menu>
+        <StackPanel Grid.Column="1" Margin="0,0,0,80">
+            <DataGrid ItemsSource="{Binding Prescription.Medicines,UpdateSourceTrigger=PropertyChanged}" 
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False" 
+                      Margin="5 10" 
+                      ScrollViewer.CanContentScroll="True" 
+                      CanUserAddRows="False"
+                      HorizontalAlignment="Center"
+                      SelectionUnit="FullRow"
+                      CanUserDeleteRows="False" 
+                      Height="Auto"  
+                      AlternatingRowBackground="LightCyan">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Num Médicament" Binding="{Binding IdMedecine}"/>
+                    <DataGridTextColumn Header="Description Médicament" Binding="{Binding MedecineDescription}"/>
+                    <DataGridTextColumn Header="prix de Médicament " Binding="{Binding MedecinePrice}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <!-- Prix HTVA -->
+        <Label Content="Prix HTVA :" HorizontalAlignment="Center" />
+        <TextBox x:Name="Price" Width="100" HorizontalAlignment="Center" Text="{Binding Totalprice}" IsReadOnly="True"/>
+    </StackPanel>
+</Window>

@@ -12,11 +12,11 @@ namespace MedocScanner.Models
         {
             if (!string.IsNullOrEmpty(workerTypeSelected))
             {
-                if (workerTypeSelected.Equals("Doctor"))
+                if (workerTypeSelected.Equals("Médecin"))
                 {
                     return new Doctor();
                 }
-                else if (workerTypeSelected.Equals("Pharmacist"))
+                else if (workerTypeSelected.Equals("Pharmacien"))
                 {
                     return new Pharmacist();
                 }

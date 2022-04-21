@@ -12,7 +12,7 @@ namespace MedocScanner.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Worker _doctorConnected;
+        public Doctor _doctorConnected;
 
         private const string MEDICINES_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\medicines.json";
 
@@ -20,7 +20,7 @@ namespace MedocScanner.ViewModels
 
         private const string PRESCRIPTION_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\Prescriptions.json";
 
-        public DoctorWindowVM(Worker doctorConnected )
+        public DoctorWindowVM(Doctor doctorConnected )
         {
             DoctorConnected=doctorConnected;
             AccessjsonPatients = new DataAccessJsn(PATIENTS_JSON_FILE, new string[] { "json" });
@@ -48,7 +48,7 @@ namespace MedocScanner.ViewModels
         public DataAccessJsn AccessjsonPrescriptions { get; set; }
 
 
-        public Worker DoctorConnected
+        public Doctor DoctorConnected
         {
             get => _doctorConnected;
             set

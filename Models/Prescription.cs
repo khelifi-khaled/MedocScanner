@@ -8,12 +8,12 @@ namespace MedocScanner.Models
         private uint _idPrescription;
         private DateTime _prescriptionDate ;
         private Patient _patient;
-        private Worker _doctor;
+        private Doctor _doctor;
         private MedicineCollection _medicines;
 
         public Prescription() { }
 
-        public Prescription(DateTime prescriptionDate, uint idPrescription = 0,  Patient patient = null, Worker doctor = null, MedicineCollection medicines=null)
+        public Prescription(DateTime prescriptionDate, uint idPrescription = 0,  Patient patient = null, Doctor doctor = null, MedicineCollection medicines=null)
         {
             _idPrescription = idPrescription;
             _prescriptionDate = prescriptionDate;
@@ -62,7 +62,7 @@ namespace MedocScanner.Models
             }
         }
 
-        public Worker Doctor 
+        public Doctor Doctor 
         {
             get => _doctor;
             set

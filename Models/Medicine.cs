@@ -45,6 +45,8 @@ namespace MedocScanner.Models
                 _medecinePrice = value;
             }
         }
+
+
        
 
     }//end class 

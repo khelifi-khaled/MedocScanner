@@ -1,0 +1,34 @@
+﻿<Window x:Class="MedocScanner.Views.DoctorInfosWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedocScanner.Views"
+        mc:Ignorable="d"
+        Title="DoctorInfosWindow" Height="402" Width="250">
+    <StackPanel>
+        
+            <StackPanel >
+                <!--Prénom-->
+                <Label Content="Prénom :" Margin="10 0 0 0"/>
+            <TextBox x:Name="FirstName" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+                <!--Nom -->
+                <Label Content="Nom :" Margin="10 0 0 0"/>
+            <TextBox x:Name="LastName" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.LastName, UpdateSourceTrigger=PropertyChanged}"/>
+                <!--Email-->
+                <Label Content="Email :" Margin="10 0 0 0"/>
+            <TextBox x:Name="Email" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.WorkerEmail, UpdateSourceTrigger=PropertyChanged}"/>
+                <!-- numéro de téléphone -->
+                <Label Content="numéro de téléphone :" Margin="10 0 0 0"/>
+            <TextBox x:Name="Phone" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.PhoneWorker, UpdateSourceTrigger=PropertyChanged}"/>
+                <!-- Emplacement a l'hôpital -->
+                <Label Content="Emplacement a l'hôpital :" Margin="10 0 0 0"/>
+            <TextBox x:Name="H_WorkerAdress" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.H_WorkerAdress, UpdateSourceTrigger=PropertyChanged}"/>
+                <!-- adresse personnelle  -->
+                <Label Content="adresse personnelle :" Margin="10 0 0 0"/>
+            <TextBox x:Name="WorkerAdress" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.WorkerAdress, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        <Button x:Name="Exit" Content="Exit" Width="50" Margin="0 50 0 0" Click="Exit_Click"/>
+
+    </StackPanel>
+</Window>

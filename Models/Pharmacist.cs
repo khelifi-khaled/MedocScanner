@@ -1,4 +1,8 @@
 ﻿
+
+
+
+
 namespace MedocScanner.Models
 {
     public  class Pharmacist : Worker

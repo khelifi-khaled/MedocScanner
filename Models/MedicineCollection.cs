@@ -38,6 +38,14 @@ namespace MedocScanner.Models
             List<Medicine> Medicines = this.ToList();
 
             return Medicines.Find(m => m.IdMedecine.Equals(BarCode));
+        }//end GetMedicine
+
+
+        public double GetMedicinesPrice()
+        {
+            double price = 0.0;
+            this.ToList().ForEach(m => price += m.MedecinePrice);
+            return price;
         }
 
     }//end class 

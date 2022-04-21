@@ -1,0 +1,31 @@
+﻿<Window x:Class="MedocScanner.Views.PatientInfosWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedocScanner.Views"
+        mc:Ignorable="d"
+        Title="PatientIfosWindow" Height="402" Width="250">
+    <StackPanel>
+
+        <StackPanel >
+            <!--IdPatient-->
+            <Label Content="Numéro de Patient :" Margin="10 0 0 0"/>
+            <TextBox x:Name="IdPatient" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.IdPatient, UpdateSourceTrigger=PropertyChanged}"/>
+            <!--FirstNamePatient -->
+            <Label Content="Prenom de patient :" Margin="10 0 0 0"/>
+            <TextBox x:Name="FirstNamePatient" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.FirstNamePatient, UpdateSourceTrigger=PropertyChanged}"/>
+            <!--LastNamePatient-->
+            <Label Content="Nom de patient :" Margin="10 0 0 0"/>
+            <TextBox x:Name="LastNamePatient" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.LastNamePatient, UpdateSourceTrigger=PropertyChanged}"/>
+            <!-- PatientBirthday -->
+            <Label Content="Birthday de patient :" Margin="10 0 0 0"/>
+            <TextBox x:Name="PatientBirthday" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.PatientBirthday, UpdateSourceTrigger=PropertyChanged}"/>
+            <!-- PatientAdress -->
+            <Label Content="L'adresse de patient :" Margin="10 0 0 0"/>
+            <TextBox x:Name="PatientAdress" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.PatientAdress, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <Button x:Name="Exit" Content="Exit" Width="50" Margin="0 50 0 0"  Click="Exit_Click" />
+
+    </StackPanel>
+</Window>

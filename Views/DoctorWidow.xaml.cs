@@ -1,6 +1,5 @@
 ﻿using MedocScanner.Models;
 using MedocScanner.ViewModels;
-using System;
 using System.Windows;
 
 
@@ -13,7 +12,7 @@ namespace MedocScanner.Views
     {
         public DoctorWindowVM DoctorVM { get; set; }
 
-        public DoctorWidow(Worker doctorConnected)
+        public DoctorWidow(Doctor doctorConnected)
         {
             DoctorVM = new DoctorWindowVM(doctorConnected);
             DataContext = DoctorVM;

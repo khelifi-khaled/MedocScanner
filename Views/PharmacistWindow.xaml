@@ -1,0 +1,34 @@
+﻿<Window x:Class="MedocScanner.Views.PharmacistWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="PharmacistWindow" Height="450" Width="800">
+    <StackPanel>
+        <StackPanel Grid.Column="1" Margin="0,0,0,80">
+            <DataGrid ItemsSource="{Binding Prescriptions,UpdateSourceTrigger=PropertyChanged}" 
+                      SelectedItem="{Binding Path=ThisPrescription, Mode=TwoWay}"
+                      IsReadOnly="True"
+                      MouseDoubleClick="DataGrid_MouseDoubleClick"                   
+                      AutoGenerateColumns="False" 
+                      Margin="5 10" 
+                      ScrollViewer.CanContentScroll="True" 
+                      CanUserAddRows="False"
+                      HorizontalAlignment="Center"
+                      SelectionUnit="FullRow"
+                      CanUserDeleteRows="False" 
+                      Height="Auto"  
+                      AlternatingRowBackground="LightCyan">
+                      
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Num Prescription" Binding="{Binding IdPrescription}"/>
+                    <DataGridTextColumn Header="Date de Prescription" Binding="{Binding PrescriptionDate}"/>
+                    <DataGridTextColumn Header="Patient" Binding="{Binding Patient.FullName}"/>
+                    <DataGridTextColumn Header="Docteur" Binding="{Binding Doctor.FullName}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+    </StackPanel>
+</Window>
