@@ -2,7 +2,7 @@
 using MedocScanner.Views;
 using System.Windows;
 
-namespace MedocScanner
+namespace MedocScanner.Views
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
