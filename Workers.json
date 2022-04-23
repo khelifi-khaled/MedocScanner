@@ -29,7 +29,7 @@
       "WorkerEmail": "jon@gmail.com",
       "PhoneWorker": "0456789523",
       "H_WorkerAdress": "Pv 6 - salle 2-1",
-      "WorkerAdress": "1000 Bruxelles"
+      "WorkerAdress": "1050 Exelles"
     },
     {
       "$type": "MedocScanner.Models.Pharmacist, MedocScanner",

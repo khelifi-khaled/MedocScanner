@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodels="clr-namespace:MedocScanner.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MedocWindowVM}"
         mc:Ignorable="d"
-        Title="MedocWindow" Height="300" Width="250">
+        Title="MedocWindow" Height="300" Width="250"
+        Loaded="Window_Loaded">
     <StackPanel Margin="0,0,0,43">
 
         <!--Num de Médicament -->

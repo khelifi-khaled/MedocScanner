@@ -8,9 +8,6 @@ namespace MedocScanner.Models
     public class MedicineCollection : ObservableCollection<Medicine>
     {
 
-
-
-
         public void AddMedicine(Medicine medicine)
         {
             bool flage = false;

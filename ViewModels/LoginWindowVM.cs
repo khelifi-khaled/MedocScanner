@@ -74,6 +74,7 @@ namespace MedocScanner.ViewModels
                         else
                         {
                             MessageBox.Show("votre mot de passe est incorecte ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            
                         }
                     }else
                     {

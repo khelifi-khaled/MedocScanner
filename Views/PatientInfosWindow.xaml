@@ -20,7 +20,7 @@
             <TextBox x:Name="LastNamePatient" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.LastNamePatient, UpdateSourceTrigger=PropertyChanged}"/>
             <!-- PatientBirthday -->
             <Label Content="Birthday de patient :" Margin="10 0 0 0"/>
-            <TextBox x:Name="PatientBirthday" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.PatientBirthday, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="PatientBirthday" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.PatientBirthday, UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:MMMM dd yyyy}}"/>
             <!-- PatientAdress -->
             <Label Content="L'adresse de patient :" Margin="10 0 0 0"/>
             <TextBox x:Name="PatientAdress" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.PatientAdress, UpdateSourceTrigger=PropertyChanged}"/>

@@ -28,7 +28,13 @@ namespace MedocScanner.Views
 
         private void IdPatient_KeyDown(object sender, KeyEventArgs e)
         {
+     
             scannePatientVM.Scanner(e, IdPatient.Text, this);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            IdPatient.Focus();
         }
     }
 }

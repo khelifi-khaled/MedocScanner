@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedocScanner.Views"
         mc:Ignorable="d"
-        Title="DoctorInfosWindow" Height="402" Width="250">
-    <StackPanel>
+        Title="DoctorInfosWindow" Height="370" Width="250">
+    <StackPanel >
         
             <StackPanel >
                 <!--Prénom-->

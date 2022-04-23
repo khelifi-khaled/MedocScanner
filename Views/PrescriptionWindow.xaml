@@ -18,7 +18,7 @@
                 <TextBox x:Name="IdPrescription" Width="200" IsReadOnly="True" Background="#eee" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.IdPrescription, UpdateSourceTrigger=PropertyChanged}"/>
                 <!--La Date d'ordonnance -->
                 <Label Content="La Date d'ordonnance :" Margin="10 0 0 0"/>
-                <TextBox x:Name="PrescriptionDate" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.PrescriptionDate, UpdateSourceTrigger=PropertyChanged}"  />
+                <TextBox x:Name="PrescriptionDate" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.PrescriptionDate, UpdateSourceTrigger=PropertyChanged , StringFormat={}{0:dd/MM/yyyy}}"/>
                 <!--le nom + prenom de Médecin-->
                 <Label Content="Médecin:" Margin="10 0 0 0"/>
                 <TextBox x:Name="FullNameDoctor" Width="200" IsReadOnly="True"  HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Doctor.FullName, UpdateSourceTrigger=PropertyChanged}"/>
