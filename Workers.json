@@ -2,44 +2,44 @@
   "$type": "MedocScanner.Models.WorkerCollection, MedocScanner",
   "$values": [
     {
-      "$type": "MedocScanner.Models.Doctor, MedocScanner",
-      "Password": "Test1234",
-      "FirstName": "Antoine",
-      "LastName": "okendi",
-      "WorkerEmail": "Antoine@gmail.com",
-      "PhoneWorker": "0467833154",
-      "H_WorkerAdress": "Pv 2 - salle 345",
-      "WorkerAdress": "1000 Bruxelles"
+        "$type": "MedocScanner.Models.Doctor, MedocScanner",
+        "Password": "Antoine1234",
+        "FirstName": "Antoine",
+        "LastName": "okendi",
+        "WorkerEmail": "Antoine@gmail.com",
+        "PhoneWorker": "0467833154",
+        "H_WorkerAdress": "Pv 2 - salle 345",
+        "WorkerAdress": "1000 Bruxelles"
     },
     {
-      "$type": "MedocScanner.Models.Doctor, MedocScanner",
-      "Password": "Test1234567",
-      "FirstName": "zaki",
-      "LastName": "imponza",
-      "WorkerEmail": "imponza@yahoo.com",
-      "PhoneWorker": "0467835684",
-      "H_WorkerAdress": "Pv 1 - salle 854",
-      "WorkerAdress": "1040 Etterbeek"
+        "$type": "MedocScanner.Models.Doctor, MedocScanner",
+        "Password": "zaki1234",
+        "FirstName": "zaki",
+        "LastName": "imponza",
+        "WorkerEmail": "imponza@yahoo.com",
+        "PhoneWorker": "0467835684",
+        "H_WorkerAdress": "Pv 1 - salle 854",
+        "WorkerAdress": "1040 Etterbeek"
     },
     {
-      "$type": "MedocScanner.Models.Pharmacist, MedocScanner",
-      "Password": "toto123",
-      "FirstName": "jon",
-      "LastName": "kaka",
-      "WorkerEmail": "jon@gmail.com",
-      "PhoneWorker": "0456789523",
-      "H_WorkerAdress": "Pv 6 - salle 2-1",
-      "WorkerAdress": "1050 Exelles"
+        "$type": "MedocScanner.Models.Pharmacist, MedocScanner",
+        "Password": "jon123",
+        "FirstName": "jon",
+        "LastName": "kaka",
+        "WorkerEmail": "jon@gmail.com",
+        "PhoneWorker": "0456789523",
+        "H_WorkerAdress": "Pv 6 - salle 2-1",
+        "WorkerAdress": "1050 Exelles"
     },
     {
-      "$type": "MedocScanner.Models.Pharmacist, MedocScanner",
-      "Password": "toto123123123",
-      "FirstName": "noel",
-      "LastName": "Cotton",
-      "WorkerEmail": "noel@Hotmail.com",
-      "PhoneWorker": "0400000003",
-      "H_WorkerAdress": "Pv 3 - salle 225",
-      "WorkerAdress": "1040 Etterbeek"
+        "$type": "MedocScanner.Models.Pharmacist, MedocScanner",
+        "Password": "noel123",
+        "FirstName": "noel",
+        "LastName": "Cotton",
+        "WorkerEmail": "noel@Hotmail.com",
+        "PhoneWorker": "0400000003",
+        "H_WorkerAdress": "Pv 3 - salle 225",
+        "WorkerAdress": "1040 Etterbeek"
     }
   ]
 }

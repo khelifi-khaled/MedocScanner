@@ -8,9 +8,6 @@ namespace MedocScanner.Utilities
 {
     public class DataAccessCSV 
     {
-        public DataAccessCSV(string filePath)  { }
-
-        public DataAccessCSV(string filePath, string[] extensions)  { }
 
 
 

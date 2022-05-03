@@ -460,6 +460,106 @@
         "H_WorkerAdress": "Pv 2 - salle 345",
         "WorkerAdress": "1000 Bruxelles"
       }
+    },
+    {
+      "$type": "MedocScanner.Models.Prescription, MedocScanner",
+      "Medicines": {
+        "$type": "MedocScanner.Models.MedicineCollection, MedocScanner",
+        "$values": [
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "5454545457878",
+            "MedecineDescription": "Metagenics MetaRelax 100 Comprimés",
+            "MedecinePrice": 14.25
+          }
+        ]
+      },
+      "IdPrescription": 12,
+      "PrescriptionDate": "2022-05-01T21:54:27.5069671+02:00",
+      "Patient": {
+        "$type": "MedocScanner.Models.Patient, MedocScanner",
+        "FullName": "Abella hindrix",
+        "IdPatient": "1245236548521",
+        "FirstNamePatient": "Abella",
+        "LastNamePatient": "hindrix",
+        "DescriptionPatient": "mal au ventre coté droit",
+        "PatientGender": false,
+        "PatientBirthday": "1991-04-13T12:54:04.7727929+02:00",
+        "PatientAdress": "7000 Mons"
+      },
+      "Doctor": {
+        "$type": "MedocScanner.Models.Doctor, MedocScanner",
+        "FullName": "Antoine okendi",
+        "Password": "Antoine1234",
+        "FirstName": "Antoine",
+        "LastName": "okendi",
+        "WorkerEmail": "Antoine@gmail.com",
+        "PhoneWorker": "0467833154",
+        "H_WorkerAdress": "Pv 2 - salle 345",
+        "WorkerAdress": "1000 Bruxelles"
+      }
+    },
+    {
+      "$type": "MedocScanner.Models.Prescription, MedocScanner",
+      "Medicines": {
+        "$type": "MedocScanner.Models.MedicineCollection, MedocScanner",
+        "$values": [
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "3215647896548",
+            "MedecineDescription": "Metagenics MetaRelax 180 Comprimés",
+            "MedecinePrice": 12.99
+          },
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "5454545457878",
+            "MedecineDescription": "Metagenics MetaRelax 100 Comprimés",
+            "MedecinePrice": 14.25
+          },
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "2354679452154",
+            "MedecineDescription": "Bande adhésive non-tissé - 10mx5cm",
+            "MedecinePrice": 1.69
+          },
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "9632587412365",
+            "MedecineDescription": "Enterofytol 60 capsules",
+            "MedecinePrice": 19.89
+          },
+          {
+            "$type": "MedocScanner.Models.Medicine, MedocScanner",
+            "IdMedecine": "98745632125874",
+            "MedecineDescription": "perfusion algodystrophie 200 ml",
+            "MedecinePrice": 10.26
+          }
+        ]
+      },
+      "IdPrescription": 13,
+      "PrescriptionDate": "2022-05-02T00:32:23.895596+02:00",
+      "Patient": {
+        "$type": "MedocScanner.Models.Patient, MedocScanner",
+        "FullName": "Abella hindrix",
+        "IdPatient": "1245236548521",
+        "FirstNamePatient": "Abella",
+        "LastNamePatient": "hindrix",
+        "DescriptionPatient": "mal au ventre coté droit",
+        "PatientGender": false,
+        "PatientBirthday": "1991-04-13T12:54:04.7727929+02:00",
+        "PatientAdress": "7000 Mons"
+      },
+      "Doctor": {
+        "$type": "MedocScanner.Models.Doctor, MedocScanner",
+        "FullName": "zaki imponza",
+        "Password": "zaki1234",
+        "FirstName": "zaki",
+        "LastName": "imponza",
+        "WorkerEmail": "imponza@yahoo.com",
+        "PhoneWorker": "0467835684",
+        "H_WorkerAdress": "Pv 1 - salle 854",
+        "WorkerAdress": "1040 Etterbeek"
+      }
     }
   ]
 }

@@ -10,17 +10,17 @@ namespace MedocScanner.Models
 
         public void AddMedicine(Medicine medicine)
         {
-            bool flage = false;
+            bool flag = false;
 
             for (int i = 0; i < this.Count; i++)
             {
                 if(this[i].IdMedecine.Equals(medicine.IdMedecine))
                 {
-                    flage = true;
+                    flag = true;
                 }//end if 
             }//end for loop 
 
-            if (flage)
+            if (flag)
             {
                 MessageBox.Show("le medoc existe deja dans la liste des medocs de ce patient ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
             }

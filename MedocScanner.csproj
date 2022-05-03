@@ -187,8 +187,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\logo_large.png" />
-    <Resource Include="Images\logo_small.png" />
     <Resource Include="Images\logo_small_icon_only.png" />
   </ItemGroup>
   <ItemGroup>
