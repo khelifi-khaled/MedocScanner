@@ -1,4 +1,5 @@
-﻿using MedocScanner.Models;
+﻿
+using MedocScanner.Models;
 using MedocScanner.ViewModels;
 using System.Windows;
 

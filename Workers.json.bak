@@ -46,6 +46,30 @@
       "PhoneWorker": "0400000003",
       "H_WorkerAdress": "Pv 3 - salle 225",
       "WorkerAdress": "1040 Etterbeek"
+    },
+    {
+      "$type": "MedocScanner.Models.Doctor, MedocScanner",
+      "Inami": "myinami",
+      "FullName": "test lastename",
+      "Password": "totot",
+      "FirstName": "test",
+      "LastName": "lastename",
+      "WorkerEmail": "@",
+      "PhoneWorker": "045678",
+      "H_WorkerAdress": "hopital",
+      "WorkerAdress": "bruxelles"
+    },
+    {
+      "$type": "MedocScanner.Models.Doctor, MedocScanner",
+      "Inami": "myinami",
+      "FullName": "test lastename",
+      "Password": "totot",
+      "FirstName": "test",
+      "LastName": "lastename",
+      "WorkerEmail": "@",
+      "PhoneWorker": "045678",
+      "H_WorkerAdress": "hopital",
+      "WorkerAdress": "bruxelles"
     }
   ]
 }

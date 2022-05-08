@@ -124,6 +124,22 @@ namespace MedocScanner.Utilities
             }
         }
 
+        public  void UpdateAllWorkerDatas(WorkerCollection ps)
+        {
+            if (IsValidAccessPath)
+            {
+                JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+
+                string json = JsonConvert.SerializeObject(ps, (Newtonsoft.Json.Formatting)System.Xml.Formatting.Indented, settings);
+
+                File.WriteAllText(AccessPath, json);
+            }
+            else
+            {
+                Console.WriteLine("UpdateAllDoctorsDatas error can't update datasource file");
+            }
+        }
+
 
         public override PrescriptionCollection GetPrescriptionsDatas()
         {

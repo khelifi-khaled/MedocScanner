@@ -23,7 +23,7 @@ namespace MedocScanner.Views
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

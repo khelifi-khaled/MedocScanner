@@ -1,4 +1,6 @@
-﻿using MedocScanner.ViewModels;
+﻿using MedocScanner.Models;
+using MedocScanner.Utilities;
+using MedocScanner.ViewModels;
 using MedocScanner.Views;
 using System.Windows;
 
@@ -31,5 +33,7 @@ namespace MedocScanner.Views
         {
             this.Close();
         }
+
+       
     }//end class 
 }//end project 

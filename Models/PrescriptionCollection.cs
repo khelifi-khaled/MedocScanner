@@ -6,12 +6,6 @@ namespace MedocScanner.Models
     public  class PrescriptionCollection : ObservableCollection<Prescription>
     {
 
-
-
-       
-
-
-
         public uint GetPrescriptionId()
         {
             if (this.Count==0)

@@ -3,14 +3,6 @@
   "$values": [
     {
       "$type": "MedocScanner.Models.Prescription, MedocScanner",
-      "Medicines": null,
-      "IdPrescription": 1,
-      "PrescriptionDate": "2022-04-15T04:23:03.469316+02:00",
-      "Patient": null,
-      "Doctor": null
-    },
-    {
-      "$type": "MedocScanner.Models.Prescription, MedocScanner",
       "Medicines": {
         "$type": "MedocScanner.Models.MedicineCollection, MedocScanner",
         "$values": [
@@ -49,6 +41,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  Antoine",
         "FullName": "Antoine okendi",
         "Password": "Test1234",
         "FirstName": "Antoine",
@@ -87,6 +80,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  Antoine",
         "FullName": "Antoine okendi",
         "Password": "Test1234",
         "FirstName": "Antoine",
@@ -131,6 +125,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  Antoine",
         "FullName": "Antoine okendi",
         "Password": "Test1234",
         "FirstName": "Antoine",
@@ -181,6 +176,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  Antoine",
         "FullName": "Antoine okendi",
         "Password": "Test1234",
         "FirstName": "Antoine",
@@ -225,6 +221,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  Antoine",
         "FullName": "Antoine okendi",
         "Password": "Test1234",
         "FirstName": "Antoine",
@@ -269,6 +266,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  Antoine",
         "FullName": "Antoine okendi",
         "Password": "Test1234",
         "FirstName": "Antoine",
@@ -313,6 +311,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  zaki",
         "FullName": "zaki imponza",
         "Password": "Test1234567",
         "FirstName": "zaki",
@@ -351,6 +350,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  Antoine",
         "FullName": "Antoine okendi",
         "Password": "Test1234",
         "FirstName": "Antoine",
@@ -389,6 +389,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  Antoine",
         "FullName": "Antoine okendi",
         "Password": "Test1234",
         "FirstName": "Antoine",
@@ -451,6 +452,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  Antoine",
         "FullName": "Antoine okendi",
         "Password": "Test1234",
         "FirstName": "Antoine",
@@ -489,6 +491,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  Antoine",
         "FullName": "Antoine okendi",
         "Password": "Antoine1234",
         "FirstName": "Antoine",
@@ -551,6 +554,7 @@
       },
       "Doctor": {
         "$type": "MedocScanner.Models.Doctor, MedocScanner",
+		"Inami": "INAMI Doctor  zaki",
         "FullName": "zaki imponza",
         "Password": "zaki1234",
         "FirstName": "zaki",

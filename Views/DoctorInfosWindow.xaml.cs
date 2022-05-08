@@ -12,7 +12,7 @@ namespace MedocScanner.Views
     {
         public DoctorInfosWindowVM DoctorInfoVM { get; set; }
 
-        public DoctorInfosWindow(Worker doctor)
+        public DoctorInfosWindow(Doctor doctor)
         {
             DoctorInfoVM = new DoctorInfosWindowVM(doctor);
             DataContext = DoctorInfoVM;

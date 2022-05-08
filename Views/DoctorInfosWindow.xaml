@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedocScanner.Views"
         mc:Ignorable="d"
-        Title="DoctorInfosWindow" Height="370" Width="250">
+        Title="DoctorInfosWindow" Height="400" Width="250">
     <StackPanel >
         
-            <StackPanel >
+            <StackPanel Height="326" >
                 <!--Prénom-->
                 <Label Content="Prénom :" Margin="10 0 0 0"/>
             <TextBox x:Name="FirstName" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.FirstName, UpdateSourceTrigger=PropertyChanged}"/>
@@ -27,8 +27,12 @@
                 <!-- adresse personnelle  -->
                 <Label Content="adresse personnelle :" Margin="10 0 0 0"/>
             <TextBox x:Name="WorkerAdress" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.WorkerAdress, UpdateSourceTrigger=PropertyChanged}"/>
-            </StackPanel>
-        <Button x:Name="Exit" Content="Exit" Width="50" Margin="0 50 0 0" Click="Exit_Click"/>
+
+            <!-- Inami  -->
+            <Label Content="INAMI :" Margin="10 0 0 0"/>
+            <TextBox x:Name="INAMI" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.Inami, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <Button x:Name="Exit" Content="Exit" Width="50" Margin="0 0 0 0" Click="Exit_Click"/>
 
     </StackPanel>
 </Window>
