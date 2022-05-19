@@ -34,7 +34,7 @@ namespace MedocScanner.Models
         {
             List<Medicine> Medicines = this.ToList();
 
-            return Medicines.Find(m => m.IdMedecine.Equals(BarCode));
+            return Medicines.Find(m => m.Bar_Code_Medecine.Equals(BarCode));
         }//end GetMedicine
 
 

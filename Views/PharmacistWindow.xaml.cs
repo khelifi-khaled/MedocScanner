@@ -1,4 +1,5 @@
-﻿using MedocScanner.ViewModels;
+﻿using MedocScanner.Models;
+using MedocScanner.ViewModels;
 using System.Windows;
 
 namespace MedocScanner.Views
@@ -9,9 +10,9 @@ namespace MedocScanner.Views
         public PharmacistWindowVM PharmacistVM { get; set; }
 
 
-        public PharmacistWindow()
+        public PharmacistWindow(PrescriptionCollection prescreption)
         {
-            PharmacistVM = new PharmacistWindowVM();
+            PharmacistVM = new PharmacistWindowVM(prescreption);
             DataContext = PharmacistVM;
             InitializeComponent();
         }

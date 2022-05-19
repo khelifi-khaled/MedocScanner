@@ -12,16 +12,14 @@ namespace MedocScanner.ViewModels
         private const string PRESCRIPTION_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\Prescriptions.json";
 
 
-        public PharmacistWindowVM()
+        public PharmacistWindowVM(PrescriptionCollection prescriptions)
         {
-            AccessjsonPrescriptions = new DataAccessJsn(PRESCRIPTION_JSON_FILE, new string[] { "json" });
-
-            Prescriptions = AccessjsonPrescriptions.GetPrescriptionsDatas();
+            Prescriptions=prescriptions;
         }
 
         public PrescriptionCollection Prescriptions { get; set; }
 
-        public DataAccessJsn AccessjsonPrescriptions { get; set; }
+      
 
 
         public Prescription ThisPrescription { get; set; }

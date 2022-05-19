@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:MedocScanner.Views" xmlns:viewmodels="clr-namespace:MedocScanner.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:DoctorWindowVM}"
         mc:Ignorable="d"
         Title="DoctorWidow" Height="450" Width="450">
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/doctor-character-background_1270-84.jpg" />
+    </Window.Background>
     <StackPanel>
         <Menu IsMainMenu="True">
             <MenuItem Header="_Programme">
@@ -24,13 +27,13 @@
             <StackPanel Grid.Row="0">
 
 
-                <TextBlock Text="Bonjour Docteur " Margin="0 0 0 0 " Width="104" Height="33"/>
+                <TextBlock Text="Bonjour Docteur " Margin="0 0 0 0 " Width="90" Height="19" Foreground="Red"/>
 
                 <!--nom + prenom de docteur  -->
-                
-                <TextBlock Width="152" Height="39" Text="{Binding DoctorConnected.FullName, UpdateSourceTrigger=PropertyChanged}" Margin="50 0 0 0"/>
 
-                
+                <TextBlock Width="99" Height="18" Text="{Binding DoctorConnected.FullName, UpdateSourceTrigger=PropertyChanged}" Margin="50 0 0 0"  Foreground="Red" />
+
+
 
             </StackPanel>
 

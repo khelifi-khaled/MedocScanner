@@ -13,13 +13,13 @@ namespace MedocScanner.ViewModels
 
         private string[] _listTypeWorker = { "Médecin", "Pharmacien" };
 
-        public LoginWindowVM(WorkerCollection workers)
+        public LoginWindowVM(WorkerCollection workers, PrescriptionCollection prescriptions)
         {
             Workers = workers;
-
+            Prescriptions= prescriptions;
         }
 
-
+        public PrescriptionCollection Prescriptions { get; set; }
 
         public string[] ListTypeWorker
         {
@@ -67,7 +67,7 @@ namespace MedocScanner.ViewModels
 
                         if (WorkerSelected != null)//if worker is not null sow the password is correct  
                         {
-                            DoctorWidow doctor = new DoctorWidow((Doctor)WorkerSelected);
+                            DoctorWidow doctor = new DoctorWidow((Doctor)WorkerSelected, Prescriptions);
                             doctor.Show();
                             win.Close();
                         }
@@ -82,7 +82,7 @@ namespace MedocScanner.ViewModels
 
                         if (WorkerSelected != null)//if worker is not null sow the password is correct  
                         {
-                            PharmacistWindow pharmacis = new PharmacistWindow();
+                            PharmacistWindow pharmacis = new PharmacistWindow(Prescriptions);
                             pharmacis.Show();
                             win.Close();
                         }

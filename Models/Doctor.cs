@@ -1,16 +1,16 @@
 ﻿
-
-
+using System.Data.Linq.Mapping;
 
 namespace MedocScanner.Models
 {
+    
     public  class Doctor : Worker
     {
         private string _inami;
 
         public  Doctor() { }
 
-        public Doctor( string password = "", string firstName = "", string lastName = "", string workerEmail = "", string phoneWorker = "", string hWorkerAdress = "", string WorkerAdress = "",string inami="") : base(password, firstName, lastName, workerEmail, phoneWorker, hWorkerAdress, WorkerAdress)
+        public Doctor( string password = "", string firstName = "", string lastName = "", string workerEmail = "", string phoneWorker = "", string hWorkerAdress = "", string WorkerAdress = "",string inami="",int workerId=0) : base(password, firstName, lastName, workerEmail, phoneWorker, hWorkerAdress, WorkerAdress, workerId)
         {
             _inami = inami;
         }

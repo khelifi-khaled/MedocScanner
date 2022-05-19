@@ -1,5 +1,6 @@
 ﻿using MedocScanner.Models;
 using MedocScanner.Utilities;
+using MedocScanner.Views;
 using System.ComponentModel;
 
 
@@ -19,17 +20,28 @@ namespace MedocScanner.ViewModels
             //AccessjsonWorkers = new DataAccessJsn(WORKERS_JSON_FILE, new string[] { "json" });
             // Workers = AccessjsonWorkers.GetWorkersDatas();
 
-            AccessSQLWorkers = new DataAccessSQL(CONN_STRING);
-            Workers = AccessSQLWorkers.GetWorkersDatas();
-
+            AccessSQL = new DataAccessSQL(CONN_STRING);
+            Workers = AccessSQL.GetWorkersDatas();
+            Prescriptions= AccessSQL.GetPrescriptionsDatas();
         }
+
+
+        public PrescriptionCollection Prescriptions { get; set; }
+
 
         public WorkerCollection Workers { get; set; }
 
         // public DataAccessJsn AccessjsonWorkers { get; set;}
 
-        public DataAccessSQL AccessSQLWorkers { get; set; }
+        public DataAccessSQL AccessSQL { get; set; }
 
+
+        public void Login(MainWindow main)
+        {
+            LoginWindow Login = new LoginWindow(Workers, Prescriptions);
+            Login.Show();
+            main.Close();
+        }
 
         protected void OnPropertyChanged(string propertyName)
         {

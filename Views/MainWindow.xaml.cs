@@ -24,9 +24,7 @@ namespace MedocScanner.Views
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-           LoginWindow Login = new LoginWindow(MainVM.Workers);
-            Login.Show();
-            this.Close(); 
+            MainVM.Login(this);
         }
 
         private void Exit_Click_1(object sender, RoutedEventArgs e)

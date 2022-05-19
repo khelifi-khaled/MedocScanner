@@ -4,7 +4,7 @@ namespace MedocScanner.Models
 {
     public abstract class Worker : IWorker
     {
-       
+        private int _workerId;
         private string _password;
         private string  _firstName;
         private string _lastName;
@@ -15,7 +15,7 @@ namespace MedocScanner.Models
 
        public  Worker() { }
 
-        public Worker( string  password="",string firstName="",string lastName="",string workerEmail = "",string phoneWorker = "",string  hWorkerAdress="",string WorkerAdress="")
+        public Worker( string  password="",string firstName="",string lastName="",string workerEmail = "",string phoneWorker = "",string  hWorkerAdress="",string WorkerAdress="",int workerId=0)
         {
             _password= password;
             _firstName= firstName;
@@ -24,11 +24,20 @@ namespace MedocScanner.Models
             _phoneWorker= phoneWorker;
             _hWorkerAdress= hWorkerAdress;
             _workerAdress = WorkerAdress;
+            _workerId = workerId;
         }//end constructeur
 
 
+        public int WorkerId
+        {
+            get => _workerId;
+            set
+            {
+                _workerId = value;
+            }
+        }
 
-       
+
         public string FullName
         {
             get

@@ -40,6 +40,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -187,10 +189,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\logo_small_icon_only.png" />
+    <Resource Include="Images\Logo-Pharmacie.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\logo_small_icon_only_inverted.png" />
+    <Resource Include="Images\doctor-character-background_1270-84.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

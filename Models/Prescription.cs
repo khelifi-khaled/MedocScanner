@@ -5,7 +5,7 @@ namespace MedocScanner.Models
 {
     public class Prescription
     {
-        private uint _idPrescription;
+        private int _idPrescription;
         private DateTime _prescriptionDate ;
         private Patient _patient;
         private Doctor _doctor;
@@ -13,7 +13,7 @@ namespace MedocScanner.Models
 
         public Prescription() { }
 
-        public Prescription(DateTime prescriptionDate, uint idPrescription = 0,  Patient patient = null, Doctor doctor = null, MedicineCollection medicines=null)
+        public Prescription(DateTime prescriptionDate, int idPrescription = 0,  Patient patient = null, Doctor doctor = null, MedicineCollection medicines=null)
         {
             _idPrescription = idPrescription;
             _prescriptionDate = prescriptionDate;
@@ -34,7 +34,7 @@ namespace MedocScanner.Models
             }
         }
 
-        public uint IdPrescription
+        public int IdPrescription
         {
             get => _idPrescription;
             set

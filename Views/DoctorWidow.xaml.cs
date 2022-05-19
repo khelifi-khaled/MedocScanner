@@ -12,9 +12,9 @@ namespace MedocScanner.Views
     {
         public DoctorWindowVM DoctorVM { get; set; }
 
-        public DoctorWidow(Doctor doctorConnected)
+        public DoctorWidow(Doctor doctorConnected, PrescriptionCollection prescriptions)
         {
-            DoctorVM = new DoctorWindowVM(doctorConnected);
+            DoctorVM = new DoctorWindowVM(doctorConnected, prescriptions);
             DataContext = DoctorVM;
             InitializeComponent();
         }

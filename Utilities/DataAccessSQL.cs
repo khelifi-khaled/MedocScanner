@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace MedocScanner.Utilities
@@ -33,10 +32,12 @@ namespace MedocScanner.Utilities
 
 
 
-
+        /// <summary>
+        /// retrieve Workers collection datas from DB
+        /// </summary>
         public WorkerCollection GetWorkersDatas()
         {
-            string sql = "SELECT * FROM Workers;";
+            string sql = "SELECT * FROM Worker;";
             SqlCommand cmd = new SqlCommand(sql, SqlConnection);
             SqlDataReader dataReader = cmd.ExecuteReader();
             WorkerCollection Workers = new WorkerCollection();
@@ -53,17 +54,19 @@ namespace MedocScanner.Utilities
             return Workers;
         }
 
-
+        /// <summary>
+        /// retrieve 1  Worker  datas from DB 
+        /// </summary>
         private Worker GetWorker(SqlDataReader dr)
         {
-            string type = dr.GetValue(1).ToString().Trim().ToUpper();
+            string type = dr.GetValue(9).ToString().Trim().ToUpper();
 
             switch (type)
             {
                 case "DOCTOR":
-                    return new Doctor(dr.GetString(0), dr.GetString(3), dr.GetString(4), dr.GetString(5), dr.GetString(6), dr.GetString(7), dr.GetString(8), dr.GetString(2));
+                    return new Doctor(dr.GetString(1),dr.GetString(2).Trim(),dr.GetString(3).Trim(), dr.GetString(4).Trim(), dr.GetString(5).Trim(), dr.GetString(6), dr.GetString(7), dr.GetString(8),dr.GetInt32(0));
                 case "PHARMACIST":
-                    return new Pharmacist(dr.GetString(0), dr.GetString(3), dr.GetString(4), dr.GetString(5), dr.GetString(6), dr.GetString(7), dr.GetString(8));
+                    return new Pharmacist(dr.GetString(1), dr.GetString(2).Trim(), dr.GetString(3).Trim(), dr.GetString(4).Trim(), dr.GetString(5).Trim(), dr.GetString(6).Trim(), dr.GetString(7).Trim(), dr.GetInt32(0));
                 default:
                     MessageBox.Show($"SELECT sql error, le type {type} n'est pas reconnu", "Erreur de lecture", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return null;
@@ -76,9 +79,13 @@ namespace MedocScanner.Utilities
 
 
 
+        /// <summary>
+        /// retrieve Medicines collection datas from DB
+        /// </summary>
+
         public MedicineCollection GetMedicinesDatas()
         {
-            string sql = "SELECT * FROM Medicines;";
+            string sql = "SELECT * FROM Medicine;";
             SqlCommand cmd = new SqlCommand(sql, SqlConnection);
             SqlDataReader dataReader = cmd.ExecuteReader();
             MedicineCollection Medicines = new MedicineCollection();
@@ -95,20 +102,30 @@ namespace MedocScanner.Utilities
             return Medicines;
         }
 
+
+
+        /// <summary>
+        /// retrieve 1 Medicine datas from DB
+        /// </summary>
+        
         private Medicine GetMedicine(SqlDataReader dr)
         {
-            return new Medicine(dr.GetString(0), dr.GetString(1),Double.Parse(dr.GetDecimal(2).ToString()));
+            
+            return new Medicine(dr.GetInt32(0), dr.GetString(2), Double.Parse($"{ dr.GetValue(3)}"), dr.GetString(1));
         }
 
-
+        /// <summary>
+        /// retrieve Patients collection datas from DB
+        /// </summary>
         public PatientCollection GetPatientDatas()
         {
             PatientCollection Patients = new PatientCollection();
-            string sql = "SELECT * FROM Patients";
+            string sql = "SELECT * FROM Patient";
             SqlCommand cmd = new SqlCommand(sql, SqlConnection);
             SqlDataReader dataReader = cmd.ExecuteReader();
             while (dataReader.Read())
             {
+               
                 Patient w = GetPatient(dataReader);
                 if (w != null)
                 {
@@ -119,12 +136,110 @@ namespace MedocScanner.Utilities
             return Patients;
         }
 
+        /// <summary>
+        /// retrieve 1 Patient datas from DB
+        /// </summary>
+
         private Patient GetPatient(SqlDataReader dr)
         {
-            return new Patient(dr.GetDateTime(5), dr.GetValue(0).ToString(), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetBoolean(4), dr.GetString(6));
+            return new Patient(dr.GetDateTime(6), dr.GetString(1), dr.GetString(2).Trim(), dr.GetString(3).Trim(), dr.GetString(4), dr.GetBoolean(5),dr.GetString(7),dr.GetInt32(0));
         }
+
+
+        /// <summary>
+        /// retrieve Prescriptions collection datas from DB using 2 sql  query !!!
+        /// </summary>
+        public PrescriptionCollection GetPrescriptionsDatas()
+        {
+            PrescriptionCollection Prescriptions = new PrescriptionCollection();
+
+            string sql = "select P.Id_Patient , P.Bar_cod_Patient,P.firstNamePatient,P.lastNamePatient,P.descriptionPatient,P.patientGender,P.patientBirthday,P.patientAdress,w.Id_worker,w.Pasword_Worker,w.firsteName,w.lasteName,w.workerEmail,w.phoneWorker,w.hWorkerAdress,w.workerAdress,w.INAMI,c.idPrescription,c.prescriptionDate from Prescription c inner join Patient P on c.Id_Patient = P.Id_Patient inner join worker w on c.Id_worker = w.Id_worker;" +
+                "select P.idPrescription, M.idMedecine , M.bar_Code_Medicine , M.medecineDescription,M.medecinePrice from Medicine M inner join Prescription_Medicines P on M.idMedecine = p.idMedecine ";
+           
+            SqlCommand cmd = new SqlCommand(sql, SqlConnection);
+            
+            SqlDataReader dataReader = cmd.ExecuteReader();
+
+            
+            while (dataReader.Read())
+            {
+                Prescription p = GetPrescription(dataReader);               
+                if (p != null)
+                {
+                    Prescriptions.Add(p);
+                }
+            }
+
+
+            //next Table of MedCollection with IdPriscription
+            if (dataReader.NextResult())
+            {
+                foreach (var p in Prescriptions)
+                {
+                    p.Medicines = GetMedicinCollectionSQL(dataReader,p.IdPrescription) ;
+                }
+
+            }
+            dataReader.Close();
+            return Prescriptions;
+
+        }
+
+
+        /// <summary>
+        /// retrieve 1 Prescription datas from DB
+        /// </summary>
+
+        private Prescription GetPrescription(SqlDataReader dr)
+        {
+            Prescription Thisprescription = new Prescription(dr.GetDateTime(18), dr.GetInt32(17), GetPatientSQL(dr), GetDoctorSQL(dr)) ;
+            
+            return Thisprescription; 
+        }
+
+
+        /// <summary>
+        /// retrieve the patient of Thisprescription  from DB
+        /// </summary>
+        private Patient GetPatientSQL(SqlDataReader patientDr)
+        {
+            return new Patient(patientDr.GetDateTime(6), patientDr.GetString(1), patientDr.GetString(2), patientDr.GetString(3), patientDr.GetString(4), patientDr.GetBoolean(5), patientDr.GetString(7),patientDr.GetInt32(0)) ;
+        }
+
+
+        /// <summary>
+        /// retrieve the Doctor of Thisprescription  from DB
+        /// </summary>
+        private Doctor GetDoctorSQL(SqlDataReader DoctorDr)
+        {
+            return new Doctor(DoctorDr.GetString(9),DoctorDr.GetString(10),DoctorDr.GetString(11),DoctorDr.GetString(12),DoctorDr.GetString(13),DoctorDr.GetString(14),DoctorDr.GetString(15),DoctorDr.GetString(16),DoctorDr.GetInt32(8));
+
+        }
+
+        /// <summary>
+        /// retrieve Medicines collection of Thisprescription from DB
+        /// </summary>
+
+        private MedicineCollection GetMedicinCollectionSQL(SqlDataReader dr , int idPrescription )
+        {
+            MedicineCollection medicines = new MedicineCollection();
+            while (dr.Read())
+            {
+                var m = new Medicine(dr.GetInt32(1),dr.GetString(3), Double.Parse($"{ dr.GetValue(4)}"),dr.GetString(2)) ;
+                if (m!=null && dr.GetInt32(0)== idPrescription)
+                {
+                    medicines.Add(m);
+                }
+               
+            }
+            return medicines;
+
+        }//end GetMedicinCollectionSQL
+
+        
+
 
 
 
     }//end class 
-    }//end project 
+}//end project 

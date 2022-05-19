@@ -22,30 +22,22 @@ namespace MedocScanner.ViewModels
 
         private const string CONN_STRING = @"Data Source=DESKTOP-LQ71Q13\KHALED ;Initial Catalog=MedocScannerDB ;integrated security = True;";
 
-        public DoctorWindowVM(Doctor doctorConnected )
+        public DoctorWindowVM(Doctor doctorConnected ,PrescriptionCollection prescriptions)
         {
             DoctorConnected=doctorConnected;
-
+            Prescriptions=prescriptions;
             ////JSON
             //AccessjsonPatients = new DataAccessJsn(PATIENTS_JSON_FILE, new string[] { "json" });
             //AccessjsonMedicine = new DataAccessJsn(MEDICINES_JSON_FILE, new string[] { "json" });
-            AccessjsonPrescriptions = new DataAccessJsn(PRESCRIPTION_JSON_FILE, new string[] { "json" });
+            //AccessjsonPrescriptions = new DataAccessJsn(PRESCRIPTION_JSON_FILE, new string[] { "json" });
             //Medicines = AccessjsonMedicine.GetMedicinesDatas();
             //Patients = AccessjsonPatients.GetPatientsDatas();
-            Prescriptions = AccessjsonPrescriptions.GetPrescriptionsDatas();
-
-
-
-
-
+            //Prescriptions = AccessjsonPrescriptions.GetPrescriptionsDatas();
 
             //SQL
-            AccessSQLMedicine = new DataAccessSQL(CONN_STRING);
-            AccessSQLPatients = new DataAccessSQL(CONN_STRING);
-            //AccessSQLPrescriptions = new DataAccessSQL(CONN_STRING);
-            Patients = AccessSQLPatients.GetPatientDatas();
-            Medicines = AccessSQLMedicine.GetMedicinesDatas();
-            //Prescriptions=AccessSQLPrescriptions.GetPrescriptionsDatas();
+            AccessSQL = new DataAccessSQL(CONN_STRING);
+            Patients = AccessSQL.GetPatientDatas();
+            Medicines = AccessSQL.GetMedicinesDatas();
         }
 
 
@@ -59,12 +51,11 @@ namespace MedocScanner.ViewModels
         ////JSON
         //public DataAccessJsn AccessjsonMedicine { get; set; }     
         //public DataAccessJsn AccessjsonPatients { get; set; }
-        public DataAccessJsn AccessjsonPrescriptions { get; set; }
+        //public DataAccessJsn AccessjsonPrescriptions { get; set; }
 
         //SQL
-        public DataAccessSQL AccessSQLPatients { get; set; }
-        public DataAccessSQL AccessSQLMedicine { get; set; }
-        //public DataAccessSQL AccessSQLPrescriptions { get; set; }
+        public DataAccessSQL AccessSQL { get; set; }
+
 
         public Doctor DoctorConnected
         {
@@ -104,6 +95,12 @@ namespace MedocScanner.ViewModels
             //AccessjsonPrescriptions.UpdateAllPrescriptionsDatas(Prescriptions);
             MessageBox.Show("Tous les prescriptions ont bien été enregistrée dans le fichier JSON ", "Message", MessageBoxButton.OK);
         }//end SauvgardPrescription
+
+
+
+
+
+
 
         protected void OnPropertyChanged(string propertyName)
         {

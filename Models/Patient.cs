@@ -5,7 +5,8 @@ namespace MedocScanner.Models
 {
     public class Patient
     {
-        private string _idPatient;
+        private int _idPatient;
+        private string _bar_Code_Patient;
         private string _firstNamePatient;
         private string _lastNamePatient;
         private string _descriptionPatient;
@@ -15,9 +16,9 @@ namespace MedocScanner.Models
 
         public  Patient() { }
 
-        public Patient(DateTime PatientBirthday, string idPatient="0",string firstNamePatient="",string lastNamePatient="",string descriptionPatient="" , bool patientGender = true,string PatientAdress="") 
+        public Patient(DateTime PatientBirthday, string bar_Code_Patient = "0",string firstNamePatient="",string lastNamePatient="",string descriptionPatient="" , bool patientGender = true,string PatientAdress="",int idPatient=0) 
         {
-            _idPatient=idPatient;
+            _bar_Code_Patient = bar_Code_Patient;
             _firstNamePatient=firstNamePatient;
             _lastNamePatient=lastNamePatient;
             _descriptionPatient=descriptionPatient;
@@ -25,20 +26,28 @@ namespace MedocScanner.Models
             _patientGender = patientGender;
             _patientBirthday = PatientBirthday;
             _patientAdress=PatientAdress;
+            _idPatient=idPatient;
           
         }
 
-
+        public int IdPatient
+        {
+            get => _idPatient;
+            set
+            {
+                _idPatient = value;
+            }
+        }
         public string FullName
         {
             get { return $"{_firstNamePatient} {_lastNamePatient}"; }
             set { }
         }
 
-        public string IdPatient
+        public string Bar_Code_Patient
         {
-            get =>  _idPatient; 
-            set { _idPatient = value; }
+            get => _bar_Code_Patient; 
+            set { _bar_Code_Patient = value; }
         }
 
         public string FirstNamePatient

@@ -16,9 +16,9 @@ namespace MedocScanner.Views
 
 
 
-        public LoginWindow(WorkerCollection workers)
+        public LoginWindow(WorkerCollection workers,PrescriptionCollection prescriptions)
         {
-            LoginVM=new LoginWindowVM(workers); 
+            LoginVM=new LoginWindowVM(workers,prescriptions); 
             DataContext=LoginVM;
             InitializeComponent();
         }
