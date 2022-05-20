@@ -153,8 +153,9 @@ namespace MedocScanner.Utilities
         {
             PrescriptionCollection Prescriptions = new PrescriptionCollection();
 
-            string sql = "select P.Id_Patient , P.Bar_cod_Patient,P.firstNamePatient,P.lastNamePatient,P.descriptionPatient,P.patientGender,P.patientBirthday,P.patientAdress,w.Id_worker,w.Pasword_Worker,w.firsteName,w.lasteName,w.workerEmail,w.phoneWorker,w.hWorkerAdress,w.workerAdress,w.INAMI,c.idPrescription,c.prescriptionDate from Prescription c inner join Patient P on c.Id_Patient = P.Id_Patient inner join worker w on c.Id_worker = w.Id_worker;" +
-                "select P.idPrescription, M.idMedecine , M.bar_Code_Medicine , M.medecineDescription,M.medecinePrice from Medicine M inner join Prescription_Medicines P on M.idMedecine = p.idMedecine ";
+            string sql = " select P.Id_Patient , P.Bar_cod_Patient,RTRIM(P.firstNamePatient),RTRIM(P.lastNamePatient),P.descriptionPatient,P.patientGender,P.patientBirthday,P.patientAdress,w.Id_worker,w.Pasword_Worker,RTRIM(w.firsteName),RTRIM(w.lasteName),RTRIM(w.workerEmail),RTRIM(w.phoneWorker),w.hWorkerAdress,w.workerAdress,w.INAMI,c.idPrescription,c.prescriptionDate " +
+                "from Prescription c inner join Patient P on c.Id_Patient = P.Id_Patient inner join worker w on c.Id_worker = w.Id_worker; " +
+                "select M.idMedecine , M.bar_Code_Medicine , M.medecineDescription,M.medecinePrice , P.idPrescription from Medicine M inner join Prescription_Medicines P on M.idMedecine = p.idMedecine";
            
             SqlCommand cmd = new SqlCommand(sql, SqlConnection);
             
@@ -174,10 +175,9 @@ namespace MedocScanner.Utilities
             //next Table of MedCollection with IdPriscription
             if (dataReader.NextResult())
             {
-                foreach (var p in Prescriptions)
-                {
-                    p.Medicines = GetMedicinCollectionSQL(dataReader,p.IdPrescription) ;
-                }
+                
+               GetMedicinCollectionSQL(dataReader,Prescriptions);
+               
 
             }
             dataReader.Close();
@@ -220,25 +220,88 @@ namespace MedocScanner.Utilities
         /// retrieve Medicines collection of Thisprescription from DB
         /// </summary>
 
-        private MedicineCollection GetMedicinCollectionSQL(SqlDataReader dr , int idPrescription )
+        private void GetMedicinCollectionSQL(SqlDataReader dr, PrescriptionCollection prescriptions)
         {
-            MedicineCollection medicines = new MedicineCollection();
             while (dr.Read())
             {
-                var m = new Medicine(dr.GetInt32(1),dr.GetString(3), Double.Parse($"{ dr.GetValue(4)}"),dr.GetString(2)) ;
-                if (m!=null && dr.GetInt32(0)== idPrescription)
+                var mdoc = GetMedicine(dr);
+
+                for (int i = 0; i< prescriptions.Count;i++)
                 {
-                    medicines.Add(m);
+                    if (prescriptions[i].IdPrescription==i+1)
+                    {
+                        prescriptions[i].Medicines.Add(mdoc);
+                    }
                 }
                
             }
-            return medicines;
+            
 
         }//end GetMedicinCollectionSQL
 
-        
 
 
+        public void UpdateAllPrescriptionsDatas(PrescriptionCollection Prescriptions)
+        {
+            
+                try
+                {
+                    string sql = string.Empty;
+                    foreach (Prescription p in Prescriptions)
+                    {
+                        //if id Prescription already in databse, we don't do anythig , otherwise insert the new prescription 
+                        if (!IsInDb(p.IdPrescription, "IdPrescription", "Prescription"))
+                        {
+                        sql = GetSqlInsert(p);
+
+                            if (!string.IsNullOrEmpty(sql))
+                            {
+                                
+                                SqlCommand command = new SqlCommand(sql, SqlConnection);
+                                command.ExecuteNonQuery();
+                            }
+                        }
+                    
+
+                    }//end foreach
+
+                SqlConnection.Close();
+                MessageBox.Show("Sauvegarde effectuée");
+
+            }//end try 
+                catch (Exception e)
+                {
+                    MessageBox.Show($"insert or update sql request error {e.Message} ", "Erreur de suvegarde", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+
+
+        }//end UpdateAllPrescriptionsDatas
+
+        private bool IsInDb(int id, string idName, string tableName)
+        {
+            string sql = $"SELECT * FROM {tableName} WHERE {idName} = {id}";
+            SqlCommand cmd = new SqlCommand(sql, SqlConnection);
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            bool inDb = dataReader.HasRows;
+            dataReader.Close();
+            return inDb;
+        }
+
+
+        private string GetSqlInsert(Prescription thisPrescription)
+        {
+            //Insert in Prescription table 
+            string sqlInsrt = $"SET DATEFORMAT DMY; INSERT INTO Prescription VALUES('{thisPrescription.PrescriptionDate}',{thisPrescription.Doctor.WorkerId},{thisPrescription.Patient.IdPatient});  ";
+
+            //Insert in medoc  Prescription table 
+            foreach (Medicine medoc in thisPrescription.Medicines)
+            {
+                sqlInsrt += $"INSERT INTO Prescription_Medicines VALUES ({thisPrescription.IdPrescription},{medoc.IdMedecine}); ";
+            }
+
+            return sqlInsrt;
+
+        }//end GetSqlInsert
 
 
     }//end class 

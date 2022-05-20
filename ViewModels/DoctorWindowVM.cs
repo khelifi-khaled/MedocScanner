@@ -92,8 +92,8 @@ namespace MedocScanner.ViewModels
 
         public void SauvgardPrescription()
         {
-            //AccessjsonPrescriptions.UpdateAllPrescriptionsDatas(Prescriptions);
-            MessageBox.Show("Tous les prescriptions ont bien été enregistrée dans le fichier JSON ", "Message", MessageBoxButton.OK);
+            AccessSQL.UpdateAllPrescriptionsDatas(Prescriptions);
+            
         }//end SauvgardPrescription
 
 

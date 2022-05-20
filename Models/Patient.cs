@@ -23,7 +23,6 @@ namespace MedocScanner.Models
             _lastNamePatient=lastNamePatient;
             _descriptionPatient=descriptionPatient;
             _patientGender=patientGender;
-            _patientGender = patientGender;
             _patientBirthday = PatientBirthday;
             _patientAdress=PatientAdress;
             _idPatient=idPatient;
