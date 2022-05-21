@@ -1,10 +1,14 @@
-﻿
-using System.Data.Linq.Mapping;
+﻿using MedocScanner.Utilities.Interfaces;
+
+
+
+
+
 
 namespace MedocScanner.Models
 {
     
-    public  class Doctor : Worker
+    public  class Doctor : Worker, IWorker
     {
         private string _inami;
 
@@ -25,10 +29,9 @@ namespace MedocScanner.Models
         }
 
 
-        public override bool IsRightPassword(string tryPassword)
-        {
-            return tryPassword.Equals(this.Password);
+        
 
-        }//END IsRightPassword
-    }
-}
+
+
+    }//end class 
+}//end project 

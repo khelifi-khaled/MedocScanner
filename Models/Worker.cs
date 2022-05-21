@@ -1,4 +1,6 @@
 ﻿using MedocScanner.Utilities.Interfaces;
+using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace MedocScanner.Models
 {
@@ -83,7 +85,11 @@ namespace MedocScanner.Models
             get=> _workerEmail;
             set
             {
-                _workerEmail = value;
+                if (ChekEmail(value))
+                {
+                    _workerEmail = value;
+                }
+                
             }
         }
 
@@ -116,14 +122,45 @@ namespace MedocScanner.Models
         }
 
 
-        /// <summary>
-        /// Check if the entry password is the right password for this Worker
-        /// </summary>
-        /// <param name="tryPassword"></param>
-        /// <returns>true if password is correct</returns>
-        public abstract bool IsRightPassword(string tryPassword) ;
 
-        
+
+
+
+
+        /// <summary>
+        /// Check if the entry Email from DB is the right  for this Worker
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns>true if Email Formate is correct</returns>
+        public bool IsValidEmail(string email)
+        {
+            string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|" + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)" + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+            var regex = new Regex(pattern, RegexOptions.IgnoreCase);
+            return regex.IsMatch(email);
+
+        }//end IsValidEmail
+
+
+
+        /// <summary>
+        /// Check if the entry Email from DB is the right  for this Worker
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns>true if Email Formate is correct</returns>
+        public  bool ChekEmail(string email)
+        {
+            if (IsValidEmail(email))
+            {
+                return true; 
+            }else
+            {
+                MessageBox.Show($"le Formate de Mail de {this.FullName} est incorect !");
+                return false;
+            }//end if 
+        }//end ChekEmail
+
+
+
 
     }//end class 
 

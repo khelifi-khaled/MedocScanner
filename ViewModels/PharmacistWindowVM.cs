@@ -1,5 +1,4 @@
 ﻿using MedocScanner.Models;
-using MedocScanner.Utilities;
 using System.ComponentModel;
 
 
@@ -9,7 +8,6 @@ namespace MedocScanner.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private const string PRESCRIPTION_JSON_FILE = @"C:\Users\Admin\source\repos\MedocScanner\Prescriptions.json";
 
 
         public PharmacistWindowVM(PrescriptionCollection prescriptions)
@@ -18,13 +16,9 @@ namespace MedocScanner.ViewModels
         }
 
         public PrescriptionCollection Prescriptions { get; set; }
-
-      
-
+     
 
         public Prescription ThisPrescription { get; set; }
-
-
 
 
         protected void OnPropertyChanged(string propertyName)

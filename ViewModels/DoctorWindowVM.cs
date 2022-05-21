@@ -81,7 +81,10 @@ namespace MedocScanner.ViewModels
 
 
             //Prescription For our Patient with Now DateTime + id + the pateint is null + Doctor Connected
-            PrescriptionForPatient = new Prescription(DateTime.Now, Prescriptions.GetPrescriptionId(),null, DoctorConnected, PatientMedicines);
+            PrescriptionForPatient = new Prescription(DateTime.Now, Prescriptions.GetPrescriptionId(),null, DoctorConnected);
+
+
+            PrescriptionForPatient.Medicines = PatientMedicines;
 
             ScannePatientWindow ScannePatient = new ScannePatientWindow(Patients, Medicines, PrescriptionForPatient, Prescriptions);
             ScannePatient.Show();

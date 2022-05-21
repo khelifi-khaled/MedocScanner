@@ -1,11 +1,8 @@
-﻿
-
-
-
+﻿using MedocScanner.Utilities.Interfaces;
 
 namespace MedocScanner.Models
 {
-    public  class Pharmacist : Worker
+    public  class Pharmacist : Worker, IWorker
     {
 
 
@@ -17,10 +14,6 @@ namespace MedocScanner.Models
         }
 
 
-        public override bool IsRightPassword(string tryPassword)
-        {
-            return tryPassword.Equals(this.Password);
-
-        }//END IsRightPassword
+      
     }//end class 
 }//end project 

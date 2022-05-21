@@ -67,9 +67,15 @@ namespace MedocScanner.ViewModels
 
                         if (WorkerSelected != null)//if worker is not null sow the password is correct  
                         {
-                            DoctorWidow doctor = new DoctorWidow((Doctor)WorkerSelected, Prescriptions);
-                            doctor.Show();
-                            win.Close();
+                            if (WorkerSelected.GetType()==typeof(Doctor))
+                            {
+                                DoctorWidow doctor = new DoctorWidow((Doctor)WorkerSelected, Prescriptions);
+                                doctor.Show();
+                                win.Close();
+                            }else
+                            {
+                                MessageBox.Show($"Mr. {WorkerSelected.FullName} vous êtes Pharmacien, vous n'avais malheureusement pas l'axe a la page de Médecin ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            }
                         }
                         else
                         {

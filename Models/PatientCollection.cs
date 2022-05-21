@@ -13,7 +13,8 @@ namespace MedocScanner.Models
             List<Patient> Patients = this.ToList();
 
             return Patients.Find(p=>p.Bar_Code_Patient.Equals(BarCode));
-        }
+
+        }//end GetPatien
 
     }//end class 
 }//end project 

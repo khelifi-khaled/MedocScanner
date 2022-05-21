@@ -13,13 +13,13 @@ namespace MedocScanner.Models
 
         public Prescription() { }
 
-        public Prescription(DateTime prescriptionDate, int idPrescription = 0,  Patient patient = null, Doctor doctor = null, MedicineCollection medicines=null)
+        public Prescription(DateTime prescriptionDate, int idPrescription = 0,  Patient patient = null, Doctor doctor = null)
         {
             _idPrescription = idPrescription;
             _prescriptionDate = prescriptionDate;
             _patient= patient;
             _doctor= doctor;
-            _medicines= medicines;
+            Medicines=new MedicineCollection();
         }
 
        

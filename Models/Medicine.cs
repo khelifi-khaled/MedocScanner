@@ -1,6 +1,4 @@
-﻿
-
-namespace MedocScanner.Models
+﻿namespace MedocScanner.Models
 {
     public class Medicine
     {

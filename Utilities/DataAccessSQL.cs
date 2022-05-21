@@ -226,12 +226,17 @@ namespace MedocScanner.Utilities
             {
                 var mdoc = GetMedicine(dr);
 
+                //loop on my prescription list 
                 for (int i = 0; i< prescriptions.Count;i++)
                 {
-                    if (prescriptions[i].IdPrescription==i+1)
+                    Console.WriteLine(dr.GetInt32(4));
+                    Console.WriteLine(prescriptions[i].IdPrescription);
+                    //injection of medoc in prescription list 
+                    if (prescriptions[i].IdPrescription== dr.GetInt32(4))
                     {
                         prescriptions[i].Medicines.Add(mdoc);
-                    }
+
+                    }//end if 
                 }
                
             }

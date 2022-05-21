@@ -8,7 +8,7 @@ namespace MedocScanner.Models
 
         public int GetPrescriptionId()
         {
-            return this.Count == 0 ? 1 : this.Count + 1;
+            return( this.Count == 0) ? 1 : this.Count + 1;
         }
 
     }//end class 
