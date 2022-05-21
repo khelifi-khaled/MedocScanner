@@ -1,9 +1,6 @@
 ﻿using MedocScanner.Models;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using System.Windows;
 
 namespace MedocScanner.Utilities
@@ -82,7 +79,6 @@ namespace MedocScanner.Utilities
         /// <summary>
         /// retrieve Medicines collection datas from DB
         /// </summary>
-
         public MedicineCollection GetMedicinesDatas()
         {
             string sql = "SELECT * FROM Medicine;";
@@ -229,9 +225,8 @@ namespace MedocScanner.Utilities
                 //loop on my prescription list 
                 for (int i = 0; i< prescriptions.Count;i++)
                 {
-                    Console.WriteLine(dr.GetInt32(4));
-                    Console.WriteLine(prescriptions[i].IdPrescription);
-                    //injection of medoc in prescription list 
+
+                    //injection of medocs in prescription list 
                     if (prescriptions[i].IdPrescription== dr.GetInt32(4))
                     {
                         prescriptions[i].Medicines.Add(mdoc);
@@ -271,7 +266,7 @@ namespace MedocScanner.Utilities
                     }//end foreach
 
                 SqlConnection.Close();
-                MessageBox.Show("Sauvegarde effectuée");
+                MessageBox.Show("Sauvegarde effectuée dans la DB");
 
             }//end try 
                 catch (Exception e)

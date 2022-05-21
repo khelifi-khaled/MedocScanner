@@ -9,7 +9,6 @@ namespace MedocScanner.Utilities
     public  class DataAccessJsn : DataAccess
     {
 
-
         public DataAccessJsn(string filePath) : base(filePath) { }
 
         public DataAccessJsn( string filePath, string[] extensions) : base(filePath, extensions) { }

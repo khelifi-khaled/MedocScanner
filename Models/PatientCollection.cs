@@ -7,7 +7,11 @@ namespace MedocScanner.Models
     public class PatientCollection : ObservableCollection<Patient>
     {
 
-
+        /// <summary>
+        /// Get the Patien that we are looking for, from this list, throw the Patien BarCode  
+        /// </summary>
+        /// <param name="BarCode"></param>
+        /// <returns> Patien thant we are looking for</returns>
         public Patient GetPatien(string BarCode)
         {
             List<Patient> Patients = this.ToList();

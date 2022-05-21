@@ -6,6 +6,8 @@ namespace MedocScanner.Models
     public  class WorkerCollection : ObservableCollection<Worker>
     {
 
+
+
         public Worker GetWorkerSelected(string workerTypeSelected)
         {
             if (!string.IsNullOrEmpty(workerTypeSelected))
@@ -28,6 +30,9 @@ namespace MedocScanner.Models
                 return null;
             }
         }//end GetWorkerSelected
+
+
+
 
 
 

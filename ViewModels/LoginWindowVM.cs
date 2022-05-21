@@ -32,9 +32,6 @@ namespace MedocScanner.ViewModels
         }
 
 
-
-
-
         public WorkerCollection Workers { get; set; }
 
 
@@ -74,7 +71,7 @@ namespace MedocScanner.ViewModels
                                 win.Close();
                             }else
                             {
-                                MessageBox.Show($"Mr. {WorkerSelected.FullName} vous êtes Pharmacien, vous n'avais malheureusement pas l'axe a la page de Médecin ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                MessageBox.Show($"Mr. {WorkerSelected.FullName} vous êtes Pharmacien, vous n'avez malheureusement pas l'axe a la page des Médecins ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
                         }
                         else
@@ -88,9 +85,15 @@ namespace MedocScanner.ViewModels
 
                         if (WorkerSelected != null)//if worker is not null sow the password is correct  
                         {
-                            PharmacistWindow pharmacis = new PharmacistWindow(Prescriptions);
-                            pharmacis.Show();
-                            win.Close();
+                            if (WorkerSelected.GetType() == typeof(Pharmacist))
+                            {
+                                PharmacistWindow pharmacis = new PharmacistWindow(Prescriptions);
+                                pharmacis.Show();
+                                win.Close();
+                            }else
+                            {
+                                MessageBox.Show($"Dr. {WorkerSelected.FullName} vous êtes docteur, vous n'avez malheureusement pas l'axe a la page des Pharmaciens ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            }
                         }
                         else
                         {
