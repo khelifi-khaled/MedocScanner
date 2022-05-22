@@ -102,11 +102,9 @@ namespace MedocScanner.Utilities
 
         /// <summary>
         /// retrieve 1 Medicine datas from DB
-        /// </summary>
-        
+        /// </summary>      
         private Medicine GetMedicine(SqlDataReader dr)
-        {
-            
+        {            
             return new Medicine(dr.GetInt32(0), dr.GetString(2), Double.Parse($"{ dr.GetValue(3)}"), dr.GetString(1));
         }
 
@@ -170,26 +168,20 @@ namespace MedocScanner.Utilities
 
             //next Table of MedCollection with IdPriscription
             if (dataReader.NextResult())
-            {
-                
+            {                
                GetMedicinCollectionSQL(dataReader,Prescriptions);
-               
-
             }
             dataReader.Close();
             return Prescriptions;
-
         }
 
 
         /// <summary>
         /// retrieve 1 Prescription datas from DB
         /// </summary>
-
         private Prescription GetPrescription(SqlDataReader dr)
         {
-            Prescription Thisprescription = new Prescription(dr.GetDateTime(18), dr.GetInt32(17), GetPatientSQL(dr), GetDoctorSQL(dr)) ;
-            
+            Prescription Thisprescription = new Prescription(dr.GetDateTime(18), dr.GetInt32(17), GetPatientSQL(dr), GetDoctorSQL(dr)) ;           
             return Thisprescription; 
         }
 
@@ -209,23 +201,19 @@ namespace MedocScanner.Utilities
         private Doctor GetDoctorSQL(SqlDataReader DoctorDr)
         {
             return new Doctor(DoctorDr.GetString(9),DoctorDr.GetString(10),DoctorDr.GetString(11),DoctorDr.GetString(12),DoctorDr.GetString(13),DoctorDr.GetString(14),DoctorDr.GetString(15),DoctorDr.GetString(16),DoctorDr.GetInt32(8));
-
         }
 
         /// <summary>
         /// retrieve Medicines collection of Thisprescription from DB
         /// </summary>
-
         private void GetMedicinCollectionSQL(SqlDataReader dr, PrescriptionCollection prescriptions)
         {
             while (dr.Read())
             {
                 var mdoc = GetMedicine(dr);
-
                 //loop on my prescription list 
                 for (int i = 0; i< prescriptions.Count;i++)
                 {
-
                     //injection of medocs in prescription list 
                     if (prescriptions[i].IdPrescription== dr.GetInt32(4))
                     {
@@ -233,10 +221,7 @@ namespace MedocScanner.Utilities
 
                     }//end if 
                 }
-               
             }
-            
-
         }//end GetMedicinCollectionSQL
 
 
@@ -261,21 +246,17 @@ namespace MedocScanner.Utilities
                                 command.ExecuteNonQuery();
                             }
                         }
-                    
-
                     }//end foreach
-
                 SqlConnection.Close();
                 MessageBox.Show("Sauvegarde effectuée dans la DB");
-
             }//end try 
                 catch (Exception e)
                 {
                     MessageBox.Show($"insert or update sql request error {e.Message} ", "Erreur de suvegarde", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-
-
         }//end UpdateAllPrescriptionsDatas
+
+
 
         private bool IsInDb(int id, string idName, string tableName)
         {
@@ -291,18 +272,14 @@ namespace MedocScanner.Utilities
         private string GetSqlInsert(Prescription thisPrescription)
         {
             //Insert in Prescription table 
-            string sqlInsrt = $"SET DATEFORMAT DMY; INSERT INTO Prescription VALUES('{thisPrescription.PrescriptionDate}',{thisPrescription.Doctor.WorkerId},{thisPrescription.Patient.IdPatient});  ";
-
+            string sqlInsrt = $"SET DATEFORMAT DMY; INSERT INTO Prescription VALUES('{thisPrescription.PrescriptionDate}',{thisPrescription.Doctor.WorkerId},{thisPrescription.Patient.IdPatient});";
             //Insert in medoc  Prescription table 
             foreach (Medicine medoc in thisPrescription.Medicines)
             {
-                sqlInsrt += $"INSERT INTO Prescription_Medicines VALUES ({thisPrescription.IdPrescription},{medoc.IdMedecine}); ";
+                sqlInsrt += $"INSERT INTO Prescription_Medicines VALUES ({thisPrescription.IdPrescription},{medoc.IdMedecine});";
             }
-
             return sqlInsrt;
-
         }//end GetSqlInsert
-
 
     }//end class 
 }//end project 

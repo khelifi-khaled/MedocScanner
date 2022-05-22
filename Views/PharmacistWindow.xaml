@@ -25,10 +25,10 @@
                       AlternatingRowBackground="LightCyan">
                       
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Num Prescription" Binding="{Binding IdPrescription}"/>
-                    <DataGridTextColumn Header="Date de Prescription" Binding="{Binding PrescriptionDate,StringFormat={}{0:dd-MM-yyyy}}"/>
+                    <DataGridTextColumn Header="Num.prescription" Binding="{Binding IdPrescription}"/>
+                    <DataGridTextColumn Header="Date prescription" Binding="{Binding PrescriptionDate,StringFormat={}{0:dd-MM-yyyy}}"/>
                     <DataGridTextColumn Header="Patient" Binding="{Binding Patient.FullName}"/>
-                    <DataGridTextColumn Header="Docteur" Binding="{Binding Doctor.FullName}"/>
+                    <DataGridTextColumn Header="Médecin" Binding="{Binding Doctor.FullName}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

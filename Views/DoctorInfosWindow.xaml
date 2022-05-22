@@ -10,26 +10,26 @@
         
             <StackPanel Height="326" >
                 <!--Prénom-->
-                <Label Content="Prénom :" Margin="10 0 0 0"/>
+                <Label Content="Prénom:" Margin="10 0 0 0"/>
             <TextBox x:Name="FirstName" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.FirstName, UpdateSourceTrigger=PropertyChanged}"/>
                 <!--Nom -->
-                <Label Content="Nom :" Margin="10 0 0 0"/>
+                <Label Content="Nom:" Margin="10 0 0 0"/>
             <TextBox x:Name="LastName" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.LastName, UpdateSourceTrigger=PropertyChanged}"/>
                 <!--Email-->
-                <Label Content="Email :" Margin="10 0 0 0"/>
+                <Label Content="Email:" Margin="10 0 0 0"/>
             <TextBox x:Name="Email" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.WorkerEmail, UpdateSourceTrigger=PropertyChanged}"/>
                 <!-- numéro de téléphone -->
-                <Label Content="numéro de téléphone :" Margin="10 0 0 0"/>
+                <Label Content="Numéro de téléphone:" Margin="10 0 0 0"/>
             <TextBox x:Name="Phone" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.PhoneWorker, UpdateSourceTrigger=PropertyChanged}"/>
                 <!-- Emplacement a l'hôpital -->
-                <Label Content="Emplacement a l'hôpital :" Margin="10 0 0 0"/>
+                <Label Content="Localisation dans l'hôpital:" Margin="10 0 0 0"/>
             <TextBox x:Name="H_WorkerAdress" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.H_WorkerAdress, UpdateSourceTrigger=PropertyChanged}"/>
                 <!-- adresse personnelle  -->
-                <Label Content="adresse personnelle :" Margin="10 0 0 0"/>
+                <Label Content="Adresse personnelle:" Margin="10 0 0 0"/>
             <TextBox x:Name="WorkerAdress" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.WorkerAdress, UpdateSourceTrigger=PropertyChanged}"/>
 
             <!-- Inami  -->
-            <Label Content="INAMI :" Margin="10 0 0 0"/>
+            <Label Content="INAMI:" Margin="10 0 0 0"/>
             <TextBox x:Name="INAMI" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisDoctor.Inami, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <Button x:Name="Exit" Content="Exit" Width="50" Margin="0 0 0 0" Click="Exit_Click"/>

@@ -71,12 +71,12 @@ namespace MedocScanner.ViewModels
                                 win.Close();
                             }else
                             {
-                                MessageBox.Show($"Mr. {WorkerSelected.FullName} vous êtes Pharmacien, vous n'avez malheureusement pas l'axe a la page des Médecins ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                MessageBox.Show($"Mr. {WorkerSelected.FullName} Vous êtes pharmacien, vous n'avez malheureusement pas l'accès à la page des médecins.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("votre mot de passe est incorecte ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("Votre mot de passe est incorrect.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                             
                         }
                     }else
@@ -92,24 +92,24 @@ namespace MedocScanner.ViewModels
                                 win.Close();
                             }else
                             {
-                                MessageBox.Show($"Dr. {WorkerSelected.FullName} vous êtes docteur, vous n'avez malheureusement pas l'axe a la page des Pharmaciens ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                MessageBox.Show($"Dr. {WorkerSelected.FullName} Vous êtes médecin, vous n'avez malheureusement pas l'accès à la page des pharmaciens.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("votre mot de passe est incorecte ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("Votre mot de passe est incorrect.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                         
                     }
                 }
                 else
                 {
-                    MessageBox.Show("vous devez ecrire votre mot de passe ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Vous devez indiquer votre mot de passe.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("vous devez choisir votre professional ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Vous devez choisir votre profession.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

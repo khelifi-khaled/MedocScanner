@@ -48,7 +48,7 @@ namespace MedocScanner.ViewModels
                 }
                 else
                 {
-                    MessageBox.Show($"cher docteur {PrescriptionForPatient.Doctor.FullName} ce patient n'existe pas dans le fichier json ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show($"Cher docteur {PrescriptionForPatient.Doctor.FullName} ce patient n'existe pas dans la base de données.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }

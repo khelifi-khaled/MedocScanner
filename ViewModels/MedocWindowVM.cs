@@ -43,7 +43,7 @@ namespace MedocScanner.ViewModels
             }
             else
             {
-                MessageBox.Show("le médicament sélectionné est introuvable", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Le médicament sélectionné est introuvable.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

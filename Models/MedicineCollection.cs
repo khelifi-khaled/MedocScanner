@@ -30,7 +30,7 @@ namespace MedocScanner.Models
 
             if (flag)
             {
-                MessageBox.Show("le medoc existe deja dans la liste des medocs de ce patient ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Le médicament existe déjà dans la liste des médicaments de cette prescription. ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {

@@ -50,7 +50,7 @@ namespace MedocScanner.ViewModels
             }
             else
             {
-                MessageBox.Show($"pas de changement détecter, vous devez ajouter des médocs pour le patient ou annuler la creation de cette prescription ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show($"Pas de changement détecté, vous devez ajouter des médicaments pour le patient ou annuler la création de cette prescription.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
         protected void OnPropertyChanged(string propertyName)

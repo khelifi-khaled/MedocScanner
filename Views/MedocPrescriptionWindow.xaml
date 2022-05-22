@@ -12,8 +12,8 @@
         <Menu IsMainMenu="True">
             <MenuItem Header="Informations">
                 <Separator/>
-                <MenuItem x:Name ="DoctorInfos" Header="les Information sur le Docteur" Click="DoctorInfos_Click" />
-                <MenuItem x:Name ="PatientInfos" Header="les Information sur le Patient" Click="PatientInfos_Click"/>
+                <MenuItem x:Name ="DoctorInfos" Header="Informations médecin" Click="DoctorInfos_Click" />
+                <MenuItem x:Name ="PatientInfos" Header="Informations patient" Click="PatientInfos_Click"/>
             </MenuItem>
         </Menu>
         <StackPanel Grid.Column="1" Margin="0,0,0,80">
@@ -29,14 +29,14 @@
                       Height="Auto"  
                       AlternatingRowBackground="LightCyan">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Num Médicament" Binding="{Binding IdMedecine}"/>
-                    <DataGridTextColumn Header="Description Médicament" Binding="{Binding MedecineDescription}"/>
-                    <DataGridTextColumn Header="prix de Médicament " Binding="{Binding MedecinePrice}"/>
+                    <DataGridTextColumn Header="Num. médicament" Binding="{Binding IdMedecine}"/>
+                    <DataGridTextColumn Header="Description médicament" Binding="{Binding MedecineDescription}"/>
+                    <DataGridTextColumn Header="Prix médicament" Binding="{Binding MedecinePrice}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
         <!-- Prix HTVA -->
-        <Label Content="Prix HTVA :" HorizontalAlignment="Center"  Background="Wheat"/>
+        <Label Content="Prix HTVA:" HorizontalAlignment="Center"  Background="Wheat"/>
         <TextBox x:Name="Price" Width="100" HorizontalAlignment="Center" Text="{Binding Totalprice}" IsReadOnly="True"/>
     </StackPanel>
 </Window>

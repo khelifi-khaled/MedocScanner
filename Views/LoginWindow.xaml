@@ -9,12 +9,12 @@
     <StackPanel>
         
         <!-- login -->
-        <Label Content="votre statue  :"  HorizontalAlignment="Center" Margin="0 10 10 0"/>
+        <Label Content="Votre statut:"  HorizontalAlignment="Center" Margin="0 10 10 0"/>
         <ComboBox x:Name="ComboBoxTypesWorker" ItemsSource="{Binding Path=ListTypeWorker , UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Path=WorkerTypeStected}" Width="150" HorizontalAlignment="Center" Margin="0 30 0 0" />
 
 
         <!--le mot de passe -->
-        <Label Content="le mot de passe :" HorizontalAlignment="Center" Margin="0 10 10 0"/>
+        <Label Content="Mot de passe:" HorizontalAlignment="Center" Margin="0 10 10 0"/>
         <PasswordBox x:Name="password" Width="150" HorizontalAlignment="Center"/>
         <!--BTN login -->
         <Button x:Name="Btnlogin" Width="100" Margin="0 50 0 0" Click="Btnlogin_Click" Content="Login" />

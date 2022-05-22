@@ -9,13 +9,13 @@
     <StackPanel Margin="0,0,0,43">
 
         <!--Num de Médicament -->
-        <Label Content="scannez votre Médicament  ici SVP " Margin=" 0 0 0 0" Width="206"/>
+        <Label Content="Scannez votre médicament ici:" Margin=" 0 0 0 0" Width="206"/>
         <TextBox x:Name="TxtIdMedicin" TextChanged="TxtIdMedicin_TextChanged" Margin=" 0 10 0 0" Height="20" Width="219"/>
         <!--La description de Médicament -->
-        <Label Content="La description de Médicament : " Margin=" 0 0 0 0" Width="206"/>
+        <Label Content="Description médicament: " Margin=" 0 0 0 0" Width="206"/>
         <TextBox x:Name="TxtMedecineDescription"  Margin=" 0 10 0 0" Height="20" Width="219"  IsReadOnly="True" Text="{Binding Path=MedicineSelected.MedecineDescription, UpdateSourceTrigger=PropertyChanged}" />
         <!--Le Prix de Médicament -->
-        <Label Content="Le prix de Médicament HTVA : " Margin=" 0 0 0 0" Width="206"/>
+        <Label Content="Prix médicament HTVA: " Margin=" 0 0 0 0" Width="206"/>
         <TextBox x:Name="TxtMedecinePrice"  Margin=" 0 10 0 0" Height="20" Width="219"  IsReadOnly="True" Text="{Binding Path=MedicineSelected.MedecinePrice, UpdateSourceTrigger=PropertyChanged}" />
 
         
@@ -32,7 +32,7 @@
                 Width="100"
                 Margin="5,25,5,0"
                 Click="CancelAddMedoc_Click"
-                Content="Anuler" Height="20"/>
+                Content="Annuler" Height="20"/>
 
         </StackPanel>
     </StackPanel>

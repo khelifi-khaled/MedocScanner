@@ -14,19 +14,19 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Margin="0,0,0,80">
                 <!--N° d'ordonnance-->
-                <Label Content="N° d'ordonnance:" Margin="10 0 0 0"/>
+                <Label Content="Num. prescription:" Margin="10 0 0 0"/>
                 <TextBox x:Name="IdPrescription" Width="200" IsReadOnly="True" Background="#eee" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.IdPrescription, UpdateSourceTrigger=PropertyChanged}"/>
                 <!--La Date d'ordonnance -->
-                <Label Content="La Date d'ordonnance :" Margin="10 0 0 0"/>
+                <Label Content="Date prescription:" Margin="10 0 0 0"/>
                 <TextBox x:Name="PrescriptionDate" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.PrescriptionDate, UpdateSourceTrigger=PropertyChanged , StringFormat={}{0:dd/MM/yyyy}}"/>
                 <!--le nom + prenom de Médecin-->
                 <Label Content="Médecin:" Margin="10 0 0 0"/>
                 <TextBox x:Name="FullNameDoctor" Width="200" IsReadOnly="True"  HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Doctor.FullName, UpdateSourceTrigger=PropertyChanged}"/>
                 <!--le nom + prenom de Patient -->
-                <Label Content="Patient :" Margin="10 0 0 0"/>
+                <Label Content="Patient:" Margin="10 0 0 0"/>
                 <TextBox x:Name="PatientFullName" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Patient.FullName, UpdateSourceTrigger=PropertyChanged}"  />
                 <!--Discription de Patient -->
-                <Label Content="Discription de Patient :" Margin="10 0 0 0"/>
+                <Label Content="Description patient:" Margin="10 0 0 0"/>
                 <TextBox x:Name="PatientDiscription" Width="200" IsReadOnly="True"  HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Patient.DescriptionPatient, UpdateSourceTrigger=PropertyChanged}" Height="68" />
 
             </StackPanel>
@@ -42,9 +42,9 @@
                   Height="Auto"  
                   AlternatingRowBackground="LightCyan">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="barcode" Binding="{Binding IdMedecine}"/>
-                        <DataGridTextColumn Header="Medecine Description " Binding="{Binding MedecineDescription}"/>
-                        <DataGridTextColumn Header="Medecine Price" Binding="{Binding MedecinePrice}"/>
+                        <DataGridTextColumn Header="Code-barre" Binding="{Binding IdMedecine}"/>
+                        <DataGridTextColumn Header="Description médicament" Binding="{Binding MedecineDescription}"/>
+                        <DataGridTextColumn Header="Prix médicament" Binding="{Binding MedecinePrice}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
@@ -56,13 +56,13 @@
                 Width="100"
                 Margin="5,0,5,0"
                 Click="ButtonSave_Click"
-                Content="Sauver" />
+                Content="Sauvegarder" />
             <Button
                 x:Name="NouveauMedoc"
                 Width="100"
                 Margin="5,0,5,0"
                 Click="NouveauMedoc_Click"
-                Content="NouveauMedoc" />
+                Content="New médicament" />
             <Button
                 x:Name="Cancel"
                 Width="100"

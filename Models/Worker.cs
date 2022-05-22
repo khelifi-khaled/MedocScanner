@@ -154,7 +154,7 @@ namespace MedocScanner.Models
                 return true; 
             }else
             {
-                MessageBox.Show($"le Formate de Mail de {this.FullName} est incorect !");
+                MessageBox.Show($"Le formate de l'adresse mail {this.FullName} est incorrect!");
                 return false;
             }//end if 
         }//end ChekEmail

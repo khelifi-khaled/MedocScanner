@@ -10,22 +10,22 @@
 
         <StackPanel Height="268" >
             <!--IdPatient-->
-            <Label Content="Numéro de Patient :" Margin="10 0 0 0"/>
+            <Label Content="Numéro:" Margin="10 0 0 0"/>
             <TextBox x:Name="IdPatient" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.IdPatient, UpdateSourceTrigger=PropertyChanged}"/>
             <!--FirstNamePatient -->
-            <Label Content="Prenom de patient :" Margin="10 0 0 0"/>
+            <Label Content="Prénom:" Margin="10 0 0 0"/>
             <TextBox x:Name="FirstNamePatient" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.FirstNamePatient, UpdateSourceTrigger=PropertyChanged}"/>
             <!--LastNamePatient-->
-            <Label Content="Nom de patient :" Margin="10 0 0 0"/>
+            <Label Content="Nom:" Margin="10 0 0 0"/>
             <TextBox x:Name="LastNamePatient" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.LastNamePatient, UpdateSourceTrigger=PropertyChanged}"/>
             <!-- PatientBirthday -->
-            <Label Content="Birthday de patient :" Margin="10 0 0 0"/>
+            <Label Content="Date de naissance:" Margin="10 0 0 0"/>
             <TextBox x:Name="PatientBirthday" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.PatientBirthday, UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:MMMM dd yyyy}}"/>
             <!-- PatientAdress -->
-            <Label Content="L'adresse de patient :" Margin="10 0 0 0"/>
+            <Label Content="Adresse:" Margin="10 0 0 0"/>
             <TextBox x:Name="PatientAdress" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.PatientAdress, UpdateSourceTrigger=PropertyChanged}"/>
             <!-- Bar-Code Patient -->
-            <Label Content="Bar-Code Patient :" Margin="10 0 0 0"/>
+            <Label Content="Code-barre patient:" Margin="10 0 0 0"/>
             <TextBox x:Name="Bar_Code_P" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPatient.Bar_Code_Patient, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <Button x:Name="Exit" Content="Exit" Width="50" Margin="0 50 0 0"  Click="Exit_Click" />

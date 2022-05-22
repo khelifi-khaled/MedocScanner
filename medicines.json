@@ -27,7 +27,7 @@
         },
         {
             "$type": "MedocScanner.Models.Medicine, MedocScanner",
-            "IdMedecine": "98745632125874",
+            "IdMedecine": "8745632125874",
             "MedecineDescription": "perfusion algodystrophie 200 ml",
             "MedecinePrice": 10.26
         }

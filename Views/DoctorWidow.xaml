@@ -13,8 +13,8 @@
         <Menu IsMainMenu="True">
             <MenuItem Header="_Programme">
                 <Separator/>
-                <MenuItem x:Name ="Sauver" Header="Sauver" Click="Sauver_Click"/>
-                <MenuItem x:Name ="se_deconnecter" Header="se deconnecter" Click="se_deconnecter_Click"/>
+                <MenuItem x:Name ="Sauver" Header="Sauvegarder" Click="Sauver_Click"/>
+                <MenuItem x:Name ="se_deconnecter" Header="Se déconnecter" Click="se_deconnecter_Click"/>
                 <MenuItem x:Name ="Exit" Header="Exit" Click="Exit_Click" />
             </MenuItem>
 
@@ -27,7 +27,7 @@
             <StackPanel Grid.Row="0">
 
 
-                <TextBlock Text="Bonjour Docteur " Margin="0 0 0 0 " Width="90" Height="19" Foreground="Red"/>
+                <TextBlock Text="Bonjour docteur" Margin="0 0 0 0 " Width="90" Height="19" Foreground="Red"/>
 
                 <!--nom + prenom de docteur  -->
 
@@ -43,7 +43,7 @@
                 Width="183"
                 Margin="5,150,5,0"
                 Click="ButtonNew_prescription_Click"
-                Content="nouvelle prescription médicale" />
+                Content="Nouvelle prescription médicale" />
 
 
             </StackPanel>
