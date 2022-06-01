@@ -112,6 +112,8 @@ namespace MedocScanner.Models
             }
         }
 
+
+
         public string  WorkerAdress
         {
             get => _workerAdress;
@@ -149,12 +151,20 @@ namespace MedocScanner.Models
         /// <returns>true if Email Formate is correct</returns>
         public  bool ChekEmail(string email)
         {
-            if (IsValidEmail(email))
+            if (IsValidEmail(email) )
             {
-                return true; 
+                if (!string.IsNullOrEmpty(email))
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show($"Email est vide !");
+                    return false;
+                }
             }else
             {
-                MessageBox.Show($"Le formate de l'adresse mail {this.FullName} est incorrect!");
+                MessageBox.Show($"Le formate de l'adresse mail {this.FullName} est incorrect !");
                 return false;
             }//end if 
         }//end ChekEmail

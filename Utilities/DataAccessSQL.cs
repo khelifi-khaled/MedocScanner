@@ -1,14 +1,15 @@
 ﻿using MedocScanner.Models;
+using MedocScanner.Utilities.Interfaces;
 using System;
 using System.Data.SqlClient;
 using System.Windows;
 
 namespace MedocScanner.Utilities
 {
-    public class DataAccessSQL 
+    public class DataAccessSQL : DataAccess , IDataAccess
     {
 
-        public DataAccessSQL(string connString) 
+        public DataAccessSQL(string connString) : base(connString)
         {
 
             SqlConnection = new SqlConnection(connString);
@@ -19,12 +20,12 @@ namespace MedocScanner.Utilities
         /// Connection String
         /// replaced by the connection string
         /// </summary>
-        public  string AccessPath { get; set; }
+        public override string AccessPath { get; set; }
 
         /// <summary>
         /// Connection to the database
         /// </summary>
-        public SqlConnection SqlConnection { get; set; }
+        public  SqlConnection SqlConnection { get; set; }
 
 
 
@@ -32,7 +33,7 @@ namespace MedocScanner.Utilities
         /// <summary>
         /// retrieve Workers collection datas from DB
         /// </summary>
-        public WorkerCollection GetWorkersDatas()
+        public override WorkerCollection GetWorkersDatas()
         {
             string sql = "SELECT * FROM Worker;";
             SqlCommand cmd = new SqlCommand(sql, SqlConnection);
@@ -79,7 +80,7 @@ namespace MedocScanner.Utilities
         /// <summary>
         /// retrieve Medicines collection datas from DB
         /// </summary>
-        public MedicineCollection GetMedicinesDatas()
+        public override MedicineCollection GetMedicinesDatas()
         {
             string sql = "SELECT * FROM Medicine;";
             SqlCommand cmd = new SqlCommand(sql, SqlConnection);
@@ -111,7 +112,7 @@ namespace MedocScanner.Utilities
         /// <summary>
         /// retrieve Patients collection datas from DB
         /// </summary>
-        public PatientCollection GetPatientDatas()
+        public override PatientCollection GetPatientsDatas()
         {
             PatientCollection Patients = new PatientCollection();
             string sql = "SELECT * FROM Patient";
@@ -143,11 +144,11 @@ namespace MedocScanner.Utilities
         /// <summary>
         /// retrieve Prescriptions collection datas from DB using 2 sql  query !!!
         /// </summary>
-        public PrescriptionCollection GetPrescriptionsDatas()
+        public override PrescriptionCollection GetPrescriptionsDatas()
         {
             PrescriptionCollection Prescriptions = new PrescriptionCollection();
 
-            string sql = " select P.Id_Patient , P.Bar_cod_Patient,RTRIM(P.firstNamePatient),RTRIM(P.lastNamePatient),P.descriptionPatient,P.patientGender,P.patientBirthday,P.patientAdress,w.Id_worker,w.Pasword_Worker,RTRIM(w.firsteName),RTRIM(w.lasteName),RTRIM(w.workerEmail),RTRIM(w.phoneWorker),w.hWorkerAdress,w.workerAdress,w.INAMI,c.idPrescription,c.prescriptionDate " +
+            string sql = "select P.Id_Patient , P.Bar_cod_Patient,RTRIM(P.firstNamePatient),RTRIM(P.lastNamePatient),P.descriptionPatient,P.patientGender,P.patientBirthday,P.patientAdress,w.Id_worker,w.Pasword_Worker,RTRIM(w.firsteName),RTRIM(w.lasteName),RTRIM(w.workerEmail),RTRIM(w.phoneWorker),w.hWorkerAdress,w.workerAdress,w.INAMI,c.idPrescription,c.prescriptionDate " +
                 "from Prescription c inner join Patient P on c.Id_Patient = P.Id_Patient inner join worker w on c.Id_worker = w.Id_worker; " +
                 "select M.idMedecine , M.bar_Code_Medicine , M.medecineDescription,M.medecinePrice , P.idPrescription from Medicine M inner join Prescription_Medicines P on M.idMedecine = p.idMedecine";
            
@@ -226,7 +227,7 @@ namespace MedocScanner.Utilities
 
 
 
-        public void UpdateAllPrescriptionsDatas(PrescriptionCollection Prescriptions)
+        public override void UpdateAllPrescriptionsDatas(PrescriptionCollection Prescriptions)
         {
             
                 try

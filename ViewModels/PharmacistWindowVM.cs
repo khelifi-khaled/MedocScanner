@@ -1,4 +1,5 @@
 ﻿using MedocScanner.Models;
+using MedocScanner.Views;
 using System.ComponentModel;
 
 
@@ -10,10 +11,13 @@ namespace MedocScanner.ViewModels
 
 
 
-        public PharmacistWindowVM(PrescriptionCollection prescriptions)
+        public PharmacistWindowVM(PrescriptionCollection prescriptions, Pharmacist workerConnected)
         {
             Prescriptions=prescriptions;
+            WorkerConnected=workerConnected;
         }
+
+        public Pharmacist WorkerConnected { get; set; }
 
         public PrescriptionCollection Prescriptions { get; set; }
      
@@ -26,6 +30,20 @@ namespace MedocScanner.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         }//end OnPropertyChanged
+
+        public void DataGrid_DoubleClick()
+        {
+            MedocPrescriptionWindow MedocWindow = new MedocPrescriptionWindow(ThisPrescription);
+            MedocWindow.Show();
+        }
+
+        public void se_deconnecter(PharmacistWindow win)
+        {
+            WorkerConnected = null;
+            MainWindow main = new MainWindow();
+            main.Show();
+            win.Close();
+        }
 
 
     }//end class 

@@ -36,7 +36,7 @@ namespace MedocScanner.ViewModels
 
             //SQL
             AccessSQL = new DataAccessSQL(CONN_STRING);
-            Patients = AccessSQL.GetPatientDatas();
+            Patients = AccessSQL.GetPatientsDatas();
             Medicines = AccessSQL.GetMedicinesDatas();
         }
 
@@ -103,7 +103,13 @@ namespace MedocScanner.ViewModels
 
 
 
-
+        public void se_deconnecter(DoctorWidow wid)
+        {
+            DoctorConnected = null;
+            MainWindow main = new MainWindow();
+            main.Show();
+            wid.Close();
+        }
 
         protected void OnPropertyChanged(string propertyName)
         {

@@ -21,15 +21,12 @@ namespace MedocScanner.Views
 
         private void se_deconnecter_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.Show();
-            this.Close();           
+            DoctorVM.se_deconnecter(this);
         }
 
         private void ButtonNew_prescription_Click(object sender, RoutedEventArgs e)
         {
             DoctorVM.CreateNewPrescription();
-
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -41,5 +38,8 @@ namespace MedocScanner.Views
         {
             DoctorVM.SauvgardPrescription();
         }
-    }
-}
+
+
+
+    }//end class 
+}//end project 

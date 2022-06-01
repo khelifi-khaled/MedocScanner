@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MedocScanner.Models.Doctor">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <InheritanceLine Type="MedocScanner.Models.Worker" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="0.75" />
+        <Point X="6.25" Y="0.246" />
+        <Point X="10.062" Y="0.246" />
+        <Point X="10.062" Y="1.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\Doctor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MedocScanner.Models.Medicine">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAIAIAAAAAAAACAAAAAgAAAAACBAAAAAAAIAAA=</HashCode>
+      <FileName>Models\Medicine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MedocScanner.Models.MedicineCollection">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\MedicineCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MedocScanner.Models.Patient">
+    <Position X="10.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAYgIBAAgAAAAAAAAAQgAAABAAAACICFgA=</HashCode>
+      <FileName>Models\Patient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MedocScanner.Models.PatientCollection">
+    <Position X="13.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PatientCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MedocScanner.Models.Pharmacist">
+    <Position X="0.75" Y="1" Width="2.5" />
+    <InheritanceLine Type="MedocScanner.Models.Worker" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="0.75" />
+        <Point X="6.25" Y="0.252" />
+        <Point X="2" Y="0.252" />
+        <Point X="2" Y="1" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Pharmacist.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MedocScanner.Models.Prescription">
+    <Position X="3" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAQAAAAAAAAAAAAAAAIAAARgAAACAAABCAA=</HashCode>
+      <FileName>Models\Prescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MedocScanner.Models.PrescriptionCollection">
+    <Position X="0.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Models\PrescriptionCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MedocScanner.Models.Worker">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAUAAEAAIACAgIAIBAEAAAAAAAAAAEACAABAAgAAECg=</HashCode>
+      <FileName>Models\Worker.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MedocScanner.Models.WorkerCollection">
+    <Position X="8.75" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\WorkerCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MedocScanner.Utilities.Interfaces.IWorker" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Utilities\Interfaces\IWorker.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MedocScanner.Utilities.Interfaces.IDataAccess" Collapsed="true">
+    <Position X="13.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAQAAAAAAAIAAAAAAAAAAAABAAAAAAAGAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\Interfaces\IDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

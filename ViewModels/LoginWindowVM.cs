@@ -37,7 +37,7 @@ namespace MedocScanner.ViewModels
 
 
 
-        public Worker WorkerSelected
+        public Worker WorkerConnected
         {
             get;set;
         }
@@ -52,26 +52,26 @@ namespace MedocScanner.ViewModels
 
         public void Login(string password , LoginWindow win)
         {
-            WorkerSelected = Workers.GetWorkerSelected(WorkerTypeStected);
+            WorkerConnected = Workers.GetWorkerSelected(WorkerTypeStected);
 
-            if (WorkerSelected != null)//checking if the worker choosed his profession or not 
+            if (WorkerConnected != null)//checking if the worker choosed his profession or not 
             {
                 if (!string.IsNullOrEmpty(password))//checking if the worker Enter his password or not 
                 {
-                    if (WorkerSelected.GetType() == typeof(Doctor))//checking the worker type 
+                    if (WorkerConnected.GetType() == typeof(Doctor))//checking the worker type 
                     {
-                        WorkerSelected = Workers.GetWorkerConected(password);
+                        WorkerConnected = Workers.GetWorkerConected(password);
 
-                        if (WorkerSelected != null)//if worker is not null sow the password is correct  
+                        if (WorkerConnected != null)//if worker is not null sow the password is correct  
                         {
-                            if (WorkerSelected.GetType()==typeof(Doctor))
+                            if (WorkerConnected.GetType()==typeof(Doctor))
                             {
-                                DoctorWidow doctor = new DoctorWidow((Doctor)WorkerSelected, Prescriptions);
+                                DoctorWidow doctor = new DoctorWidow((Doctor)WorkerConnected, Prescriptions);
                                 doctor.Show();
                                 win.Close();
                             }else
                             {
-                                MessageBox.Show($"Mr. {WorkerSelected.FullName} Vous êtes pharmacien, vous n'avez malheureusement pas l'accès à la page des médecins.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                MessageBox.Show($"Mr. {WorkerConnected.FullName} Vous êtes pharmacien, vous n'avez malheureusement pas l'accès à la page des médecins.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
                         }
                         else
@@ -81,18 +81,18 @@ namespace MedocScanner.ViewModels
                         }
                     }else
                     {
-                        WorkerSelected= Workers.GetWorkerConected(password);
+                        WorkerConnected = Workers.GetWorkerConected(password);
 
-                        if (WorkerSelected != null)//if worker is not null sow the password is correct  
+                        if (WorkerConnected != null)//if worker is not null sow the password is correct  
                         {
-                            if (WorkerSelected.GetType() == typeof(Pharmacist))
+                            if (WorkerConnected.GetType() == typeof(Pharmacist))
                             {
-                                PharmacistWindow pharmacis = new PharmacistWindow(Prescriptions);
+                                PharmacistWindow pharmacis = new PharmacistWindow(Prescriptions,(Pharmacist)WorkerConnected);
                                 pharmacis.Show();
                                 win.Close();
                             }else
                             {
-                                MessageBox.Show($"Dr. {WorkerSelected.FullName} Vous êtes médecin, vous n'avez malheureusement pas l'accès à la page des pharmaciens.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                MessageBox.Show($"Dr. {WorkerConnected.FullName} Vous êtes médecin, vous n'avez malheureusement pas l'accès à la page des pharmaciens.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
                         }
                         else

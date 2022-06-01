@@ -5,8 +5,9 @@ namespace MedocScanner.Models
 {
     public  class PrescriptionCollection : ObservableCollection<Prescription>
     {
+
         /// <summary>
-        /// Check the number of Prescriptions in this list, if the number of Prescriptions 0 return 1, 
+        /// Check the number of Prescriptions in this list, if the number of Prescriptions 0 return 1,
         /// else return the number of priscriptions +1
         /// </summary>
         /// <returns> int correct PrescriptionId </returns>

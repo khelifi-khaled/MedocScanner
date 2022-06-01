@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedocScanner.Views" xmlns:viewmodels="clr-namespace:MedocScanner.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:DoctorWindowVM}"
         mc:Ignorable="d"
-        Title="DoctorWidow" Height="450" Width="450">
+        Title="DoctorWidow" Height="800" Width="500">
     <Window.Background>
         <ImageBrush ImageSource="/Images/doctor-character-background_1270-84.jpg" />
     </Window.Background>
@@ -37,17 +37,16 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Row="1" >
-                <Button
+            
+        </Grid>
+        <StackPanel>
+            <Button
                 x:Name="ButtonNew_prescription"
                 Width="183"
-                Margin="5,150,5,0"
+                Margin="5,300,5,0"
                 Click="ButtonNew_prescription_Click"
                 Content="Nouvelle prescription médicale" />
-
-
-            </StackPanel>
-        </Grid>
+        </StackPanel>
 
     </StackPanel>
 </Window>

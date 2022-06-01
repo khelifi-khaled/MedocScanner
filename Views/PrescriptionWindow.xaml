@@ -42,7 +42,7 @@
                   Height="Auto"  
                   AlternatingRowBackground="LightCyan">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Code-barre" Binding="{Binding IdMedecine}"/>
+                        <DataGridTextColumn Header="N°" Binding="{Binding IdMedecine}"/>
                         <DataGridTextColumn Header="Description médicament" Binding="{Binding MedecineDescription}"/>
                         <DataGridTextColumn Header="Prix médicament" Binding="{Binding MedecinePrice}"/>
                     </DataGrid.Columns>
