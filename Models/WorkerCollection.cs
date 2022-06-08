@@ -7,7 +7,9 @@ namespace MedocScanner.Models
     {
 
 
-
+        /// <summary>
+        /// return an empty worker Doctor or Pharmacist 
+        /// </summary>
         public Worker GetWorkerSelected(string workerTypeSelected)
         {
             if (!string.IsNullOrEmpty(workerTypeSelected))

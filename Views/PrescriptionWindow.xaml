@@ -15,19 +15,46 @@
             <StackPanel Grid.Column="0" Margin="0,0,0,80">
                 <!--N° d'ordonnance-->
                 <Label Content="Num. prescription:" Margin="10 0 0 0"/>
-                <TextBox x:Name="IdPrescription" Width="200" IsReadOnly="True" Background="#eee" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.IdPrescription, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="IdPrescription" 
+                         Width="200"
+                         IsReadOnly="True"
+                         Background="#eee" 
+                         HorizontalAlignment="Left"
+                         Margin="10 0 0 0"
+                         Text="{Binding Path=ThisPrescription.IdPrescription, UpdateSourceTrigger=PropertyChanged}"/>
                 <!--La Date d'ordonnance -->
                 <Label Content="Date prescription:" Margin="10 0 0 0"/>
-                <TextBox x:Name="PrescriptionDate" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.PrescriptionDate, UpdateSourceTrigger=PropertyChanged , StringFormat={}{0:dd/MM/yyyy}}"/>
+                <TextBox x:Name="PrescriptionDate"
+                         Width="200"
+                         IsReadOnly="True" 
+                         HorizontalAlignment="Left"
+                         Margin="10 0 0 0" 
+                         Text="{Binding Path=ThisPrescription.PrescriptionDate, UpdateSourceTrigger=PropertyChanged , StringFormat={}{0:dd/MM/yyyy}}"/>
                 <!--le nom + prenom de Médecin-->
                 <Label Content="Médecin:" Margin="10 0 0 0"/>
-                <TextBox x:Name="FullNameDoctor" Width="200" IsReadOnly="True"  HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Doctor.FullName, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="FullNameDoctor"
+                         Width="200" IsReadOnly="True"  
+                         HorizontalAlignment="Left"
+                         Margin="10 0 0 0" 
+                         Text="{Binding Path=ThisPrescription.Doctor.FullName, UpdateSourceTrigger=PropertyChanged}"/>
                 <!--le nom + prenom de Patient -->
                 <Label Content="Patient:" Margin="10 0 0 0"/>
-                <TextBox x:Name="PatientFullName" Width="200" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Patient.FullName, UpdateSourceTrigger=PropertyChanged}"  />
+                <TextBox x:Name="PatientFullName" 
+                         Width="200" IsReadOnly="True"
+                         HorizontalAlignment="Left" 
+                         Margin="10 0 0 0" 
+                         Text="{Binding Path=ThisPrescription.Patient.FullName, UpdateSourceTrigger=PropertyChanged}"  />
                 <!--Discription de Patient -->
                 <Label Content="Description patient:" Margin="10 0 0 0"/>
-                <TextBox x:Name="PatientDiscription" Width="200" IsReadOnly="True"  HorizontalAlignment="Left" Margin="10 0 0 0" Text="{Binding Path=ThisPrescription.Patient.DescriptionPatient, UpdateSourceTrigger=PropertyChanged}" Height="68" />
+                <TextBox x:Name="PatientDiscription" 
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True" 
+                         Width="200" 
+                         IsReadOnly="True"  
+                         HorizontalAlignment="Left" 
+                         Margin="10 0 0 0"
+                         Text="{Binding Path=ThisPrescription.Patient.DescriptionPatient, UpdateSourceTrigger=PropertyChanged}"
+                         Height="68" />
 
             </StackPanel>
             <StackPanel Grid.Column="1" Margin="0,0,0,80">
@@ -50,7 +77,7 @@
             </StackPanel>
         </Grid>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-            
+
             <Button
                 x:Name="ButtonSave"
                 Width="100"
@@ -69,9 +96,6 @@
                 Margin="5,0,5,0"
                 Click="Cancel_Click"
                 Content="Annuler" />
-            
         </StackPanel>
-
-
     </StackPanel>
 </Window>

@@ -1,4 +1,6 @@
 ﻿using MedocScanner.Utilities.Interfaces;
+using System;
+using System.Net.Mail;
 using System.Text.RegularExpressions;
 using System.Windows;
 
@@ -85,7 +87,7 @@ namespace MedocScanner.Models
             get=> _workerEmail;
             set
             {
-                if (ChekEmail(value))
+                if (IsValid_Email(value))
                 {
                     _workerEmail = value;
                 }
@@ -125,49 +127,13 @@ namespace MedocScanner.Models
 
 
 
-
-
-
-
         /// <summary>
         /// Check if the entry Email from DB is the right  for this Worker
         /// </summary>
         /// <param name="email"></param>
         /// <returns>true if Email Formate is correct</returns>
-        public bool IsValidEmail(string email)
-        {
-            string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|" + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)" + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
-            var regex = new Regex(pattern, RegexOptions.IgnoreCase);
-            return regex.IsMatch(email);
-
-        }//end IsValidEmail
-
-
-
-        /// <summary>
-        /// Check if the entry Email from DB is the right  for this Worker
-        /// </summary>
-        /// <param name="email"></param>
-        /// <returns>true if Email Formate is correct</returns>
-        public  bool ChekEmail(string email)
-        {
-            if (IsValidEmail(email) )
-            {
-                if (!string.IsNullOrEmpty(email))
-                {
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show($"Email est vide !");
-                    return false;
-                }
-            }else
-            {
-                MessageBox.Show($"Le formate de l'adresse mail {this.FullName} est incorrect !");
-                return false;
-            }//end if 
-        }//end ChekEmail
+        public abstract bool IsValid_Email(string emailaddress);
+ 
 
 
 
