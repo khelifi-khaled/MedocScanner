@@ -71,7 +71,16 @@ namespace MedocScanner.ViewModels
 
        public  Prescription PrescriptionForPatient { get; set; }
 
+
+
+
+
         public MedicineCollection PatientMedicines { get; set; }
+
+
+
+
+
 
 
         public void CreateNewPrescription()

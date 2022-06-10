@@ -17,6 +17,12 @@ namespace MedocScanner.Models
             _inami = inami;
         }
 
+
+
+        /// <summary>
+        /// Inami of the Doctor 
+        /// </summary>
+
         public string Inami
         {
             get => _inami;

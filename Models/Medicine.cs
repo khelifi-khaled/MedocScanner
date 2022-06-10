@@ -18,6 +18,12 @@
 
         }
 
+
+        /// <summary>
+        ///  Medecine Bar Code Medecine 
+        /// </summary>
+
+
         public string Bar_Code_Medecine
         {
             get => _bar_Code_Medecine;
@@ -27,6 +33,10 @@
             }
         }
 
+
+        /// <summary>
+        /// the number of  Medecine coming from DB
+        /// </summary>
         public int IdMedecine
         {
             get => _idMedecine;
@@ -38,6 +48,12 @@
             }
         }
 
+
+
+        /// <summary>
+        /// Medecine Description (Name .....)
+        /// </summary>
+
         public string MedecineDescription
         {
             get => _medecineDescription; 
@@ -47,6 +63,11 @@
             }
         }
 
+
+
+        /// <summary>
+        /// the price of the medecine
+        /// </summary>
         public double MedecinePrice
         {
             get => _medecinePrice;   

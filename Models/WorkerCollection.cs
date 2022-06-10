@@ -8,7 +8,7 @@ namespace MedocScanner.Models
 
 
         /// <summary>
-        /// return an empty worker Doctor or Pharmacist 
+        /// return an empty worker( Doctor or Pharmacist )
         /// </summary>
         public Worker GetWorkerSelected(string workerTypeSelected)
         {
@@ -38,7 +38,9 @@ namespace MedocScanner.Models
 
 
 
-
+        /// <summary>
+        /// return worker, Doctor or Pharmacist , if the password is right , or null 
+        /// </summary>
         public Worker GetWorkerConected(string password)
         {
             return this.ToList().Find(d => d.Password.Equals(password));

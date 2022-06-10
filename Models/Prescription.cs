@@ -22,9 +22,11 @@ namespace MedocScanner.Models
             Medicines=new MedicineCollection();
         }
 
-       
-        
 
+
+        /// <summary>
+        /// Medicines of the patien of this prescription 
+        /// </summary>
         public MedicineCollection Medicines
         {
             get => _medicines;
@@ -34,6 +36,10 @@ namespace MedocScanner.Models
             }
         }
 
+
+        /// <summary>
+        /// Id of Prescription coming from DB 
+        /// </summary>
         public int IdPrescription
         {
             get => _idPrescription;
@@ -43,7 +49,9 @@ namespace MedocScanner.Models
             }
         }
 
-
+        /// <summary>
+        /// the date of creation of this prescription 
+        /// </summary>
         public DateTime PrescriptionDate
         {
             get => _prescriptionDate;
@@ -53,6 +61,12 @@ namespace MedocScanner.Models
             }
         }
 
+
+
+
+        /// <summary>
+        /// the Patient of this prescription 
+        /// </summary>
         public Patient Patient 
         {
             get => _patient;
@@ -62,6 +76,11 @@ namespace MedocScanner.Models
             }
         }
 
+
+
+        /// <summary>
+        /// the doctor who  create  this prescription 
+        /// </summary>
         public Doctor Doctor 
         {
             get => _doctor;

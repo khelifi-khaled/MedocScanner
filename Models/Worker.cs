@@ -32,6 +32,9 @@ namespace MedocScanner.Models
         }//end constructeur
 
 
+        /// <summary>
+        /// the Id of  Worker  coming for DB
+        /// </summary>
         public int WorkerId
         {
             get => _workerId;
@@ -41,7 +44,9 @@ namespace MedocScanner.Models
             }
         }
 
-
+        /// <summary>
+        /// the FullName  Worker  
+        /// </summary>
         public string FullName
         {
             get
@@ -52,6 +57,10 @@ namespace MedocScanner.Models
 
         }
 
+
+        /// <summary>
+        /// the Password  Worker  
+        /// </summary>
         public string Password
         {
             get => _password;
@@ -61,7 +70,9 @@ namespace MedocScanner.Models
             }
         }
 
-
+        /// <summary>
+        /// the FirstName  Worker  
+        /// </summary>
         public string FirstName
         {
             get => _firstName;
@@ -71,7 +82,9 @@ namespace MedocScanner.Models
             }
         }
 
-
+        /// <summary>
+        /// the LastName  Worker  
+        /// </summary>
         public string LastName
         {
             get=> _lastName;
@@ -81,7 +94,9 @@ namespace MedocScanner.Models
             }
         }
 
-
+        /// <summary>
+        /// the Email of the worker coming form DB  
+        /// </summary>
         public string WorkerEmail
         {
             get=> _workerEmail;
@@ -96,6 +111,10 @@ namespace MedocScanner.Models
         }
 
 
+
+        /// <summary>
+        /// the Phone of the worker coming form DB  
+        /// </summary>
         public string PhoneWorker
         {
             get => _phoneWorker;
@@ -105,6 +124,11 @@ namespace MedocScanner.Models
             }
         }
 
+
+
+        /// <summary>
+        /// the  worker address in the hospital coming form DB  
+        /// </summary>
         public string H_WorkerAdress
         {
             get=> _hWorkerAdress;
@@ -115,7 +139,9 @@ namespace MedocScanner.Models
         }
 
 
-
+        /// <summary>
+        ///  Personal  worker address coming form DB  
+        /// </summary>
         public string  WorkerAdress
         {
             get => _workerAdress;

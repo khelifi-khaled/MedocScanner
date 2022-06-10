@@ -29,6 +29,10 @@ namespace MedocScanner.Models
           
         }
 
+
+        /// <summary>
+        /// Id Patient coming from DB
+        /// </summary>
         public int IdPatient
         {
             get => _idPatient;
@@ -37,51 +41,83 @@ namespace MedocScanner.Models
                 _idPatient = value;
             }
         }
+
+
+
+        /// <summary>
+        /// FullName of the patien 
+        /// </summary>
         public string FullName
         {
             get { return $"{_firstNamePatient} {_lastNamePatient}"; }
             set { }
         }
 
+
+
+        /// <summary>
+        /// the Bar Code of the Patient 
+        /// </summary>
         public string Bar_Code_Patient
         {
             get => _bar_Code_Patient; 
             set { _bar_Code_Patient = value; }
         }
 
+
+        /// <summary>
+        /// First Name of  Patient coming from DB
+        /// </summary>
         public string FirstNamePatient
         {
             get =>  _firstNamePatient; 
             set { _firstNamePatient = value; }
         }
 
+
+        /// <summary>
+        /// Last Name of  Patient coming from DB
+        /// </summary>
         public string LastNamePatient
         {
             get => _lastNamePatient; 
             set { _lastNamePatient = value; }
         }
 
+
+        /// <summary>
+        /// Patient Description (the problem of the patien) coming from DB
+        /// </summary>
         public string DescriptionPatient
         {
             get => _descriptionPatient;
             set { _descriptionPatient = value; }
         }
-       
 
+        /// <summary>
+        /// Patient Gender (true = male , false = feminine )
+        /// </summary>
         public bool PatientGender
         {
             get => _patientGender;
             set { _patientGender = value; }
         }
 
-        
 
+        /// <summary>
+        /// Patient Birthday
+        /// </summary>
         public DateTime PatientBirthday
         {
             get => _patientBirthday;
             set { _patientBirthday = value; }
         }
 
+
+
+        /// <summary>
+        /// Patient Personal address
+        /// </summary>
         public string PatientAdress
         {
             get => _patientAdress;
